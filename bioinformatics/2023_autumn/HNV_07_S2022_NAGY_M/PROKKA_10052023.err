@@ -1,0 +1,345 @@
+Discrepancy Report Results
+
+Summary
+DISC_SOURCE_QUALS_ASNDISC:strain (all present, all unique)
+DISC_SOURCE_QUALS_ASNDISC:taxname (all present, all unique)
+DISC_FEATURE_COUNT:gene: 100 present
+DISC_FEATURE_COUNT:CDS: 100 present
+DISC_COUNT_NUCLEOTIDES:1 nucleotide Bioseqs are present
+OVERLAPPING_GENES:14 genes overlap another gene on the same strand.
+SUSPECT_PRODUCT_NAMES:153 product_names contain suspect phrase or characters
+	Putative Typo
+		75 features starts with 'hypothetical protein' but not equals 'hypothetical protein'
+	May contain database identifier more appropriate in note; remove from product name
+		76 features contains three or more numbers together that may be identifiers more appropriate in note
+	Use short product name instead of descriptive phrase
+		2 features Is longer than 100 characters. Remove descriptive phrases or synonyms from product names. Keep valid long product names, eg long enzyme names
+DISC_QUALITY_SCORES:Quality scores are missing on all sequences.
+ONCALLER_COMMENT_PRESENT:1 comment descriptors were found (all same)
+SHORT_PROT_SEQUENCES:1 protein sequences are shorter than 50 aa.
+MISSING_GENOMEASSEMBLY_COMMENTS:1 bioseqs are missing GenomeAssembly structured comments
+MOLTYPE_NOT_MRNA:1 molecule types are not set as mRNA.
+TECHNIQUE_NOT_TSA:1 technique are not set as TSA
+MISSING_STRUCTURED_COMMENT:1 sequences do not include structured comments.
+MISSING_PROJECT:101 sequences do not include project.
+DISC_INCONSISTENT_MOLINFO_TECH:Molinfo Technique Report (some missing, all same)
+
+
+Detailed Report
+
+DiscRep_ALL:DISC_SOURCE_QUALS_ASNDISC::strain (all present, all unique)
+DiscRep_SUB:DISC_SOURCE_QUALS_ASNDISC::1 sources have unique values for strain
+DiscRep_ALL:DISC_SOURCE_QUALS_ASNDISC::taxname (all present, all unique)
+DiscRep_SUB:DISC_SOURCE_QUALS_ASNDISC::1 sources have unique values for taxname
+DiscRep_ALL:DISC_FEATURE_COUNT::gene: 100 present
+DiscRep_ALL:DISC_FEATURE_COUNT::CDS: 100 present
+DiscRep_ALL:DISC_COUNT_NUCLEOTIDES::1 nucleotide Bioseqs are present
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_1 (length 124552)
+
+DiscRep_ALL:OVERLAPPING_GENES::14 genes overlap another gene on the same strand.
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Gene	MdSGHV_00017	MdSGHV_1:c18326-17940	MdSGHV_00017
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Gene	MdSGHV_00018	MdSGHV_1:c19023-18316	MdSGHV_00018
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Gene	MdSGHV_00030	MdSGHV_1:32449-32961	MdSGHV_00030
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Gene	MdSGHV_00031	MdSGHV_1:32946-33716	MdSGHV_00031
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Gene	MdSGHV_00035	MdSGHV_1:37075-37545	MdSGHV_00035
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Gene	MdSGHV_00036	MdSGHV_1:37536-38117	MdSGHV_00036
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Gene	MdSGHV_00045	MdSGHV_1:c50738-50142	MdSGHV_00045
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Gene	MdSGHV_00046	MdSGHV_1:c52105-50738	MdSGHV_00046
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Gene	MdSGHV_00048	MdSGHV_1:c55090-53939	MdSGHV_00048
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Gene	MdSGHV_00049	MdSGHV_1:c55178-55077	MdSGHV_00049
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Gene	MdSGHV_00071	MdSGHV_1:86558-88573	MdSGHV_00071
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Gene	MdSGHV_00072	MdSGHV_1:88545-89768	MdSGHV_00072
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Gene	MdSGHV_00088	MdSGHV_1:109444-109929	MdSGHV_00088
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Gene	MdSGHV_00089	MdSGHV_1:109884-110324	MdSGHV_00089
+
+DiscRep_ALL:SUSPECT_PRODUCT_NAMES::153 product_names contain suspect phrase or characters
+DiscRep_SUB:SUSPECT_PRODUCT_NAMES::Putative Typo
+DiscRep_SUB:SUSPECT_PRODUCT_NAMES::75 features starts with 'hypothetical protein' but not equals 'hypothetical protein'
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV041 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:64-348	MdSGHV_00001
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV040 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c2208-382	MdSGHV_00002
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV038 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:4394-5140	MdSGHV_00004
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV037 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:5150-6037	MdSGHV_00005
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV035 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:6653-7375	MdSGHV_00007
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV034 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c7616-7422	MdSGHV_00008
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV032 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:9303-10490	MdSGHV_00010
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV031 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:10503-10703	MdSGHV_00011
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV030 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:10747-12822	MdSGHV_00012
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV028 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c15940-14792	MdSGHV_00014
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV027 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:15980-16489	MdSGHV_00015
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV025 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c17905-16778	MdSGHV_00016
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV024 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c18326-17940	MdSGHV_00017
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV023 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c19023-18316	MdSGHV_00018
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV022 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c20084-19053	MdSGHV_00019
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV021 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c22023-20095	MdSGHV_00020
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV020 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c22605-22291	MdSGHV_00021
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV019 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c23315-22671	MdSGHV_00022
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV018 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:23327-24031	MdSGHV_00023
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV017 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c25674-24028	MdSGHV_00024
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV016 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c27457-25958	MdSGHV_00025
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV015 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c28519-27563	MdSGHV_00026
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV013 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:29464-31404	MdSGHV_00028
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV004 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:36650-37045	MdSGHV_00034
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV003 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:37075-37545	MdSGHV_00035
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV002 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:37536-38117	MdSGHV_00036
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV107 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c45414-42031	MdSGHV_00039
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV105 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:46200-46721	MdSGHV_00041
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV103 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:49167-49370	MdSGHV_00043
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV102 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:49401-50183	MdSGHV_00044
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV101 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c50738-50142	MdSGHV_00045
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV100 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c52105-50738	MdSGHV_00046
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV099 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:52142-53956	MdSGHV_00047
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV098 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c55090-53939	MdSGHV_00048
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV097 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c56760-55309	MdSGHV_00050
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV096 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c61261-56798	MdSGHV_00051
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV095 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:61291-61779	MdSGHV_00052
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV094 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c62111-61776	MdSGHV_00053
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV093 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c63027-62173	MdSGHV_00054
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV092 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c63368-63150	MdSGHV_00055
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV091 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c64774-63500	MdSGHV_00056
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV090 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:64800-66734	MdSGHV_00057
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV088 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:67961-68500	MdSGHV_00059
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV087 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:68543-70177	MdSGHV_00060
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV086 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c71386-70241	MdSGHV_00061
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV085 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c72763-71558	MdSGHV_00062
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV084 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c74350-72821	MdSGHV_00063
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV083 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:74507-79849	MdSGHV_00064
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV082 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c80989-79910	MdSGHV_00065
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV079 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c82662-82291	MdSGHV_00066
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV077 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:83168-84070	MdSGHV_00068
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV076 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:84943-86091	MdSGHV_00069
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV075 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:86112-86423	MdSGHV_00070
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV074 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:86558-88573	MdSGHV_00071
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV073 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:88545-89768	MdSGHV_00072
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV072 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:89807-90217	MdSGHV_00073
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV071 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c91266-90271	MdSGHV_00074
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV070 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c94179-91270	MdSGHV_00075
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV068 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c95669-95271	MdSGHV_00077
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV067 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:95749-96237	MdSGHV_00078
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV066 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c97962-96226	MdSGHV_00079
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV064 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c102978-101554	MdSGHV_00082
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV058 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:106818-107213	MdSGHV_00084
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV057 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:107285-107509	MdSGHV_00085
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV056 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:107687-108034	MdSGHV_00086
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV055 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:108071-109321	MdSGHV_00087
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV054 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:109444-109929	MdSGHV_00088
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV053 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:109884-110324	MdSGHV_00089
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV051 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:110975-111931	MdSGHV_00091
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV048 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:113541-114578	MdSGHV_00094
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV046 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c118496-117309	MdSGHV_00096
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV045 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:118529-119581	MdSGHV_00097
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV044 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c120313-119558	MdSGHV_00098
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV043 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:120501-121556	MdSGHV_00099
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV042 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c123449-121569	MdSGHV_00100
+
+DiscRep_SUB:SUSPECT_PRODUCT_NAMES::May contain database identifier more appropriate in note; remove from product name
+DiscRep_SUB:SUSPECT_PRODUCT_NAMES::76 features contains three or more numbers together that may be identifiers more appropriate in note
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV041 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:64-348	MdSGHV_00001
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV040 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c2208-382	MdSGHV_00002
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV038 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:4394-5140	MdSGHV_00004
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV037 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:5150-6037	MdSGHV_00005
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV035 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:6653-7375	MdSGHV_00007
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV034 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c7616-7422	MdSGHV_00008
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV032 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:9303-10490	MdSGHV_00010
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV031 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:10503-10703	MdSGHV_00011
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV030 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:10747-12822	MdSGHV_00012
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV028 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c15940-14792	MdSGHV_00014
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV027 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:15980-16489	MdSGHV_00015
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV025 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c17905-16778	MdSGHV_00016
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV024 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c18326-17940	MdSGHV_00017
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV023 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c19023-18316	MdSGHV_00018
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV022 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c20084-19053	MdSGHV_00019
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV021 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c22023-20095	MdSGHV_00020
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV020 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c22605-22291	MdSGHV_00021
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV019 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c23315-22671	MdSGHV_00022
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV018 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:23327-24031	MdSGHV_00023
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV017 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c25674-24028	MdSGHV_00024
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV016 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c27457-25958	MdSGHV_00025
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV015 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c28519-27563	MdSGHV_00026
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV013 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:29464-31404	MdSGHV_00028
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV004 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:36650-37045	MdSGHV_00034
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV003 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:37075-37545	MdSGHV_00035
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV002 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:37536-38117	MdSGHV_00036
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV107 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c45414-42031	MdSGHV_00039
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV105 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:46200-46721	MdSGHV_00041
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV103 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:49167-49370	MdSGHV_00043
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV102 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:49401-50183	MdSGHV_00044
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV101 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c50738-50142	MdSGHV_00045
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV100 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c52105-50738	MdSGHV_00046
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV099 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:52142-53956	MdSGHV_00047
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV098 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c55090-53939	MdSGHV_00048
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV097 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c56760-55309	MdSGHV_00050
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV096 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c61261-56798	MdSGHV_00051
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV095 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:61291-61779	MdSGHV_00052
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV094 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c62111-61776	MdSGHV_00053
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV093 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c63027-62173	MdSGHV_00054
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV092 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c63368-63150	MdSGHV_00055
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV091 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c64774-63500	MdSGHV_00056
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV090 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:64800-66734	MdSGHV_00057
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV088 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:67961-68500	MdSGHV_00059
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV087 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:68543-70177	MdSGHV_00060
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV086 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c71386-70241	MdSGHV_00061
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV085 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c72763-71558	MdSGHV_00062
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV084 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c74350-72821	MdSGHV_00063
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV083 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:74507-79849	MdSGHV_00064
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV082 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c80989-79910	MdSGHV_00065
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV079 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c82662-82291	MdSGHV_00066
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV077 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:83168-84070	MdSGHV_00068
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV076 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:84943-86091	MdSGHV_00069
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV075 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:86112-86423	MdSGHV_00070
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV074 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:86558-88573	MdSGHV_00071
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV073 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:88545-89768	MdSGHV_00072
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV072 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:89807-90217	MdSGHV_00073
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV071 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c91266-90271	MdSGHV_00074
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV070 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c94179-91270	MdSGHV_00075
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV068 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c95669-95271	MdSGHV_00077
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV067 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:95749-96237	MdSGHV_00078
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV066 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c97962-96226	MdSGHV_00079
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV064 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c102978-101554	MdSGHV_00082
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV058 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:106818-107213	MdSGHV_00084
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV057 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:107285-107509	MdSGHV_00085
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV056 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:107687-108034	MdSGHV_00086
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV055 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:108071-109321	MdSGHV_00087
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV054 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:109444-109929	MdSGHV_00088
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV053 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:109884-110324	MdSGHV_00089
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV051 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:110975-111931	MdSGHV_00091
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	Ac150-like protein [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:113201-113524	MdSGHV_00093
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV048 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:113541-114578	MdSGHV_00094
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV046 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c118496-117309	MdSGHV_00096
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV045 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:118529-119581	MdSGHV_00097
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV044 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c120313-119558	MdSGHV_00098
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV043 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:120501-121556	MdSGHV_00099
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	hypothetical protein MdSGHV042 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c123449-121569	MdSGHV_00100
+
+DiscRep_SUB:SUSPECT_PRODUCT_NAMES::Use short product name instead of descriptive phrase
+DiscRep_SUB:SUSPECT_PRODUCT_NAMES::2 features Is longer than 100 characters. Remove descriptive phrases or synonyms from product names. Keep valid long product names, eg long enzyme names
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	ribonucleoside diphosphate reductase large subunit, rr1 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:98253-100598	MdSGHV_00080
+HNV_07_S2022_NAGY_M/PROKKA_10052023:CDS	ribonucleoside diphosphate reductase small subunit, rr2 [Musca domestica salivary gland hypertrophy virus]	MdSGHV_1:c104604-103576	MdSGHV_00083
+
+DiscRep_ALL:DISC_QUALITY_SCORES::Quality scores are missing on all sequences.
+
+DiscRep_ALL:ONCALLER_COMMENT_PRESENT::1 comment descriptors were found (all same)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_1:Annotated using prokka 1.14.6 from https://github.com/tseemann/prokka
+
+DiscRep_ALL:SHORT_PROT_SEQUENCES::1 protein sequences are shorter than 50 aa.
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00049 (length 33)
+
+DiscRep_ALL:MISSING_GENOMEASSEMBLY_COMMENTS::1 bioseqs are missing GenomeAssembly structured comments
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_1 (length 124552)
+
+DiscRep_ALL:MOLTYPE_NOT_MRNA::1 molecule types are not set as mRNA.
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_1 (length 124552)
+
+DiscRep_ALL:TECHNIQUE_NOT_TSA::1 technique are not set as TSA
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_1 (length 124552)
+
+DiscRep_ALL:MISSING_STRUCTURED_COMMENT::1 sequences do not include structured comments.
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_1 (length 124552)
+
+DiscRep_ALL:MISSING_PROJECT::101 sequences do not include project.
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_1 (length 124552)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00001 (length 94)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00002 (length 608)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00003 (length 707)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00004 (length 248)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00005 (length 295)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00006 (length 196)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00007 (length 240)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00008 (length 64)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00009 (length 497)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00010 (length 395)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00011 (length 66)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00012 (length 691)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00013 (length 643)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00014 (length 382)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00015 (length 169)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00016 (length 375)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00017 (length 128)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00018 (length 235)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00019 (length 343)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00020 (length 642)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00021 (length 104)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00022 (length 214)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00023 (length 234)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00024 (length 548)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00025 (length 499)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00026 (length 318)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00027 (length 249)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00028 (length 646)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00029 (length 294)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00030 (length 170)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00031 (length 256)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00032 (length 158)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00033 (length 115)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00034 (length 131)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00035 (length 156)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00036 (length 193)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00037 (length 978)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00038 (length 205)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00039 (length 1127)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00040 (length 242)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00041 (length 173)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00042 (length 766)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00043 (length 67)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00044 (length 260)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00045 (length 198)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00046 (length 455)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00047 (length 604)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00048 (length 383)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00049 (length 33)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00050 (length 483)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00051 (length 1487)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00052 (length 162)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00053 (length 111)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00054 (length 284)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00055 (length 72)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00056 (length 424)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00057 (length 644)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00058 (length 379)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00059 (length 179)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00060 (length 544)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00061 (length 381)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00062 (length 401)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00063 (length 509)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00064 (length 1780)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00065 (length 359)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00066 (length 123)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00067 (length 142)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00068 (length 300)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00069 (length 382)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00070 (length 103)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00071 (length 671)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00072 (length 407)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00073 (length 136)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00074 (length 331)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00075 (length 969)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00076 (length 203)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00077 (length 132)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00078 (length 162)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00079 (length 578)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00080 (length 781)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00081 (length 59)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00082 (length 474)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00083 (length 342)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00084 (length 131)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00085 (length 74)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00086 (length 115)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00087 (length 416)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00088 (length 161)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00089 (length 146)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00090 (length 150)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00091 (length 318)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00092 (length 404)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00093 (length 107)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00094 (length 345)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00095 (length 700)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00096 (length 395)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00097 (length 350)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00098 (length 251)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00099 (length 351)
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_00100 (length 626)
+
+DiscRep_ALL:DISC_INCONSISTENT_MOLINFO_TECH::Molinfo Technique Report (some missing, all same)
+DiscRep_SUB:DISC_INCONSISTENT_MOLINFO_TECH::technique (all missing)
+DiscRep_SUB:DISC_INCONSISTENT_MOLINFO_TECH::1 Molinfos are missing field technique
+HNV_07_S2022_NAGY_M/PROKKA_10052023:Prokka:MdSGHV_1 (length 124552)
+

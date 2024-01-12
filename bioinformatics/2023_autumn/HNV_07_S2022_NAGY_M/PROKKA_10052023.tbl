@@ -1,0 +1,701 @@
+>Feature gnl|Prokka|MdSGHV_1
+64	348	gene
+			locus_tag	MdSGHV_00001
+64	348	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00001
+			product	hypothetical protein MdSGHV041 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00001
+2208	382	gene
+			locus_tag	MdSGHV_00002
+2208	382	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00002
+			product	hypothetical protein MdSGHV040 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00002
+2262	4385	gene
+			locus_tag	MdSGHV_00003
+2262	4385	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00003
+			product	p74 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00003
+4394	5140	gene
+			locus_tag	MdSGHV_00004
+4394	5140	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00004
+			product	hypothetical protein MdSGHV038 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00004
+5150	6037	gene
+			locus_tag	MdSGHV_00005
+5150	6037	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00005
+			product	hypothetical protein MdSGHV037 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00005
+6047	6637	gene
+			locus_tag	MdSGHV_00006
+6047	6637	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00006
+			product	matrix metalloproteinase [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00006
+6653	7375	gene
+			locus_tag	MdSGHV_00007
+6653	7375	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00007
+			product	hypothetical protein MdSGHV035 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00007
+7616	7422	gene
+			locus_tag	MdSGHV_00008
+7616	7422	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00008
+			product	hypothetical protein MdSGHV034 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00008
+7715	9208	gene
+			locus_tag	MdSGHV_00009
+7715	9208	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00009
+			product	putative vacuolar sorting ATPase [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00009
+9303	10490	gene
+			locus_tag	MdSGHV_00010
+9303	10490	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00010
+			product	hypothetical protein MdSGHV032 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00010
+10503	10703	gene
+			locus_tag	MdSGHV_00011
+10503	10703	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00011
+			product	hypothetical protein MdSGHV031 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00011
+10747	12822	gene
+			locus_tag	MdSGHV_00012
+10747	12822	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00012
+			product	hypothetical protein MdSGHV030 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00012
+14786	12855	gene
+			locus_tag	MdSGHV_00013
+14786	12855	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00013
+			product	pif-1 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00013
+15940	14792	gene
+			locus_tag	MdSGHV_00014
+15940	14792	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00014
+			product	hypothetical protein MdSGHV028 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00014
+15980	16489	gene
+			locus_tag	MdSGHV_00015
+15980	16489	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00015
+			product	hypothetical protein MdSGHV027 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00015
+17905	16778	gene
+			locus_tag	MdSGHV_00016
+17905	16778	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00016
+			product	hypothetical protein MdSGHV025 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00016
+18326	17940	gene
+			locus_tag	MdSGHV_00017
+18326	17940	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00017
+			product	hypothetical protein MdSGHV024 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00017
+19023	18316	gene
+			locus_tag	MdSGHV_00018
+19023	18316	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00018
+			product	hypothetical protein MdSGHV023 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00018
+20084	19053	gene
+			locus_tag	MdSGHV_00019
+20084	19053	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00019
+			product	hypothetical protein MdSGHV022 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00019
+22023	20095	gene
+			locus_tag	MdSGHV_00020
+22023	20095	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00020
+			product	hypothetical protein MdSGHV021 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00020
+22605	22291	gene
+			locus_tag	MdSGHV_00021
+22605	22291	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00021
+			product	hypothetical protein MdSGHV020 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00021
+23315	22671	gene
+			locus_tag	MdSGHV_00022
+23315	22671	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00022
+			product	hypothetical protein MdSGHV019 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00022
+23327	24031	gene
+			locus_tag	MdSGHV_00023
+23327	24031	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00023
+			product	hypothetical protein MdSGHV018 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00023
+25674	24028	gene
+			locus_tag	MdSGHV_00024
+25674	24028	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00024
+			product	hypothetical protein MdSGHV017 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00024
+27457	25958	gene
+			locus_tag	MdSGHV_00025
+27457	25958	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00025
+			product	hypothetical protein MdSGHV016 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00025
+28519	27563	gene
+			locus_tag	MdSGHV_00026
+28519	27563	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00026
+			product	hypothetical protein MdSGHV015 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00026
+29281	28532	gene
+			locus_tag	MdSGHV_00027
+29281	28532	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00027
+			product	molybdopterin oxidoreductase [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00027
+29464	31404	gene
+			locus_tag	MdSGHV_00028
+29464	31404	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00028
+			product	hypothetical protein MdSGHV013 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00028
+32384	31500	gene
+			locus_tag	MdSGHV_00029
+32384	31500	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00029
+			product	thymidylate synthase [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00029
+32449	32961	gene
+			locus_tag	MdSGHV_00030
+32449	32961	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00030
+			product	dihydrofolate reductase [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00030
+32946	33716	gene
+			locus_tag	MdSGHV_00031
+32946	33716	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00031
+			product	mitochondrial carrier protein [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00031
+35184	35660	gene
+			locus_tag	MdSGHV_00032
+35184	35660	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00032
+			product	hypothetical protein
+			protein_id	gnl|Prokka|MdSGHV_00032
+36503	36156	gene
+			locus_tag	MdSGHV_00033
+36503	36156	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00033
+			product	hypothetical protein
+			protein_id	gnl|Prokka|MdSGHV_00033
+36650	37045	gene
+			locus_tag	MdSGHV_00034
+36650	37045	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00034
+			product	hypothetical protein MdSGHV004 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00034
+37075	37545	gene
+			locus_tag	MdSGHV_00035
+37075	37545	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00035
+			product	hypothetical protein MdSGHV003 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00035
+37536	38117	gene
+			locus_tag	MdSGHV_00036
+37536	38117	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00036
+			product	hypothetical protein MdSGHV002 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00036
+41207	38271	gene
+			locus_tag	MdSGHV_00037
+41207	38271	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00037
+			product	DNA polymerase [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00037
+41224	41841	gene
+			locus_tag	MdSGHV_00038
+41224	41841	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00038
+			product	Ac81-like protein [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00038
+45414	42031	gene
+			locus_tag	MdSGHV_00039
+45414	42031	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00039
+			product	hypothetical protein MdSGHV107 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00039
+46144	45416	gene
+			locus_tag	MdSGHV_00040
+46144	45416	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00040
+			product	per os infectivity factor-3 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00040
+46200	46721	gene
+			locus_tag	MdSGHV_00041
+46200	46721	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00041
+			product	hypothetical protein MdSGHV105 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00041
+49004	46704	gene
+			locus_tag	MdSGHV_00042
+49004	46704	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00042
+			product	helicase-like protein [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00042
+49167	49370	gene
+			locus_tag	MdSGHV_00043
+49167	49370	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00043
+			product	hypothetical protein MdSGHV103 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00043
+49401	50183	gene
+			locus_tag	MdSGHV_00044
+49401	50183	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00044
+			product	hypothetical protein MdSGHV102 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00044
+50738	50142	gene
+			locus_tag	MdSGHV_00045
+50738	50142	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00045
+			product	hypothetical protein MdSGHV101 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00045
+52105	50738	gene
+			locus_tag	MdSGHV_00046
+52105	50738	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00046
+			product	hypothetical protein MdSGHV100 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00046
+52142	53956	gene
+			locus_tag	MdSGHV_00047
+52142	53956	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00047
+			product	hypothetical protein MdSGHV099 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00047
+55090	53939	gene
+			locus_tag	MdSGHV_00048
+55090	53939	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00048
+			product	hypothetical protein MdSGHV098 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00048
+55178	55077	gene
+			locus_tag	MdSGHV_00049
+55178	55077	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00049
+			product	hypothetical protein
+			protein_id	gnl|Prokka|MdSGHV_00049
+56760	55309	gene
+			locus_tag	MdSGHV_00050
+56760	55309	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00050
+			product	hypothetical protein MdSGHV097 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00050
+61261	56798	gene
+			locus_tag	MdSGHV_00051
+61261	56798	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00051
+			product	hypothetical protein MdSGHV096 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00051
+61291	61779	gene
+			locus_tag	MdSGHV_00052
+61291	61779	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00052
+			product	hypothetical protein MdSGHV095 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00052
+62111	61776	gene
+			locus_tag	MdSGHV_00053
+62111	61776	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00053
+			product	hypothetical protein MdSGHV094 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00053
+63027	62173	gene
+			locus_tag	MdSGHV_00054
+63027	62173	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00054
+			product	hypothetical protein MdSGHV093 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00054
+63368	63150	gene
+			locus_tag	MdSGHV_00055
+63368	63150	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00055
+			product	hypothetical protein MdSGHV092 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00055
+64774	63500	gene
+			locus_tag	MdSGHV_00056
+64774	63500	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00056
+			product	hypothetical protein MdSGHV091 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00056
+64800	66734	gene
+			locus_tag	MdSGHV_00057
+64800	66734	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00057
+			product	hypothetical protein MdSGHV090 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00057
+66796	67935	gene
+			locus_tag	MdSGHV_00058
+66796	67935	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00058
+			product	pif-2 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00058
+67961	68500	gene
+			locus_tag	MdSGHV_00059
+67961	68500	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00059
+			product	hypothetical protein MdSGHV088 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00059
+68543	70177	gene
+			locus_tag	MdSGHV_00060
+68543	70177	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00060
+			product	hypothetical protein MdSGHV087 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00060
+71386	70241	gene
+			locus_tag	MdSGHV_00061
+71386	70241	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00061
+			product	hypothetical protein MdSGHV086 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00061
+72763	71558	gene
+			locus_tag	MdSGHV_00062
+72763	71558	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00062
+			product	hypothetical protein MdSGHV085 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00062
+74350	72821	gene
+			locus_tag	MdSGHV_00063
+74350	72821	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00063
+			product	hypothetical protein MdSGHV084 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00063
+74507	79849	gene
+			locus_tag	MdSGHV_00064
+74507	79849	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00064
+			product	hypothetical protein MdSGHV083 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00064
+80989	79910	gene
+			locus_tag	MdSGHV_00065
+80989	79910	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00065
+			product	hypothetical protein MdSGHV082 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00065
+82662	82291	gene
+			locus_tag	MdSGHV_00066
+82662	82291	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00066
+			product	hypothetical protein MdSGHV079 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00066
+82715	83143	gene
+			locus_tag	MdSGHV_00067
+82715	83143	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00067
+			product	inhibitor of apoptosis protein [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00067
+83168	84070	gene
+			locus_tag	MdSGHV_00068
+83168	84070	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00068
+			product	hypothetical protein MdSGHV077 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00068
+84943	86091	gene
+			locus_tag	MdSGHV_00069
+84943	86091	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00069
+			product	hypothetical protein MdSGHV076 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00069
+86112	86423	gene
+			locus_tag	MdSGHV_00070
+86112	86423	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00070
+			product	hypothetical protein MdSGHV075 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00070
+86558	88573	gene
+			locus_tag	MdSGHV_00071
+86558	88573	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00071
+			product	hypothetical protein MdSGHV074 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00071
+88545	89768	gene
+			locus_tag	MdSGHV_00072
+88545	89768	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00072
+			product	hypothetical protein MdSGHV073 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00072
+89807	90217	gene
+			locus_tag	MdSGHV_00073
+89807	90217	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00073
+			product	hypothetical protein MdSGHV072 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00073
+91266	90271	gene
+			locus_tag	MdSGHV_00074
+91266	90271	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00074
+			product	hypothetical protein MdSGHV071 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00074
+94179	91270	gene
+			locus_tag	MdSGHV_00075
+94179	91270	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00075
+			product	hypothetical protein MdSGHV070 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00075
+94247	94858	gene
+			locus_tag	MdSGHV_00076
+94247	94858	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00076
+			product	thymidine kinase [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00076
+95669	95271	gene
+			locus_tag	MdSGHV_00077
+95669	95271	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00077
+			product	hypothetical protein MdSGHV068 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00077
+95749	96237	gene
+			locus_tag	MdSGHV_00078
+95749	96237	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00078
+			product	hypothetical protein MdSGHV067 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00078
+97962	96226	gene
+			locus_tag	MdSGHV_00079
+97962	96226	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00079
+			product	hypothetical protein MdSGHV066 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00079
+98253	100598	gene
+			locus_tag	MdSGHV_00080
+98253	100598	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00080
+			product	ribonucleoside diphosphate reductase large subunit, rr1 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00080
+100817	100996	gene
+			locus_tag	MdSGHV_00081
+100817	100996	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00081
+			product	hypothetical protein
+			protein_id	gnl|Prokka|MdSGHV_00081
+102978	101554	gene
+			locus_tag	MdSGHV_00082
+102978	101554	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00082
+			product	hypothetical protein MdSGHV064 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00082
+104604	103576	gene
+			locus_tag	MdSGHV_00083
+104604	103576	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00083
+			product	ribonucleoside diphosphate reductase small subunit, rr2 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00083
+106818	107213	gene
+			locus_tag	MdSGHV_00084
+106818	107213	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00084
+			product	hypothetical protein MdSGHV058 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00084
+107285	107509	gene
+			locus_tag	MdSGHV_00085
+107285	107509	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00085
+			product	hypothetical protein MdSGHV057 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00085
+107687	108034	gene
+			locus_tag	MdSGHV_00086
+107687	108034	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00086
+			product	hypothetical protein MdSGHV056 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00086
+108071	109321	gene
+			locus_tag	MdSGHV_00087
+108071	109321	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00087
+			product	hypothetical protein MdSGHV055 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00087
+109444	109929	gene
+			locus_tag	MdSGHV_00088
+109444	109929	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00088
+			product	hypothetical protein MdSGHV054 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00088
+109884	110324	gene
+			locus_tag	MdSGHV_00089
+109884	110324	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00089
+			product	hypothetical protein MdSGHV053 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00089
+110888	110436	gene
+			locus_tag	MdSGHV_00090
+110888	110436	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00090
+			product	dUTPase [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00090
+110975	111931	gene
+			locus_tag	MdSGHV_00091
+110975	111931	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00091
+			product	hypothetical protein MdSGHV051 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00091
+113176	111962	gene
+			locus_tag	MdSGHV_00092
+113176	111962	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00092
+			product	aminoacylase [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00092
+113201	113524	gene
+			locus_tag	MdSGHV_00093
+113201	113524	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00093
+			product	Ac150-like protein [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00093
+113541	114578	gene
+			locus_tag	MdSGHV_00094
+113541	114578	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00094
+			product	hypothetical protein MdSGHV048 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00094
+117178	115076	gene
+			locus_tag	MdSGHV_00095
+117178	115076	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00095
+			product	occlusion-derived virus envelope protein [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00095
+118496	117309	gene
+			locus_tag	MdSGHV_00096
+118496	117309	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00096
+			product	hypothetical protein MdSGHV046 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00096
+118529	119581	gene
+			locus_tag	MdSGHV_00097
+118529	119581	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00097
+			product	hypothetical protein MdSGHV045 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00097
+120313	119558	gene
+			locus_tag	MdSGHV_00098
+120313	119558	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00098
+			product	hypothetical protein MdSGHV044 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00098
+120501	121556	gene
+			locus_tag	MdSGHV_00099
+120501	121556	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00099
+			product	hypothetical protein MdSGHV043 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00099
+123449	121569	gene
+			locus_tag	MdSGHV_00100
+123449	121569	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	MdSGHV_00100
+			product	hypothetical protein MdSGHV042 [Musca domestica salivary gland hypertrophy virus]
+			protein_id	gnl|Prokka|MdSGHV_00100

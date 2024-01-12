@@ -1,0 +1,201 @@
+locus_tag	ftype	length_bp	gene	EC_number	COG	product
+MdSGHV_00001	gene	285				
+MdSGHV_00001	CDS	285				hypothetical protein MdSGHV041 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00002	gene	1827				
+MdSGHV_00002	CDS	1827				hypothetical protein MdSGHV040 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00003	gene	2124				
+MdSGHV_00003	CDS	2124				p74 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00004	gene	747				
+MdSGHV_00004	CDS	747				hypothetical protein MdSGHV038 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00005	gene	888				
+MdSGHV_00005	CDS	888				hypothetical protein MdSGHV037 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00006	gene	591				
+MdSGHV_00006	CDS	591				matrix metalloproteinase [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00007	gene	723				
+MdSGHV_00007	CDS	723				hypothetical protein MdSGHV035 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00008	gene	195				
+MdSGHV_00008	CDS	195				hypothetical protein MdSGHV034 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00009	gene	1494				
+MdSGHV_00009	CDS	1494				putative vacuolar sorting ATPase [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00010	gene	1188				
+MdSGHV_00010	CDS	1188				hypothetical protein MdSGHV032 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00011	gene	201				
+MdSGHV_00011	CDS	201				hypothetical protein MdSGHV031 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00012	gene	2076				
+MdSGHV_00012	CDS	2076				hypothetical protein MdSGHV030 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00013	gene	1932				
+MdSGHV_00013	CDS	1932				pif-1 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00014	gene	1149				
+MdSGHV_00014	CDS	1149				hypothetical protein MdSGHV028 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00015	gene	510				
+MdSGHV_00015	CDS	510				hypothetical protein MdSGHV027 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00016	gene	1128				
+MdSGHV_00016	CDS	1128				hypothetical protein MdSGHV025 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00017	gene	387				
+MdSGHV_00017	CDS	387				hypothetical protein MdSGHV024 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00018	gene	708				
+MdSGHV_00018	CDS	708				hypothetical protein MdSGHV023 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00019	gene	1032				
+MdSGHV_00019	CDS	1032				hypothetical protein MdSGHV022 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00020	gene	1929				
+MdSGHV_00020	CDS	1929				hypothetical protein MdSGHV021 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00021	gene	315				
+MdSGHV_00021	CDS	315				hypothetical protein MdSGHV020 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00022	gene	645				
+MdSGHV_00022	CDS	645				hypothetical protein MdSGHV019 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00023	gene	705				
+MdSGHV_00023	CDS	705				hypothetical protein MdSGHV018 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00024	gene	1647				
+MdSGHV_00024	CDS	1647				hypothetical protein MdSGHV017 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00025	gene	1500				
+MdSGHV_00025	CDS	1500				hypothetical protein MdSGHV016 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00026	gene	957				
+MdSGHV_00026	CDS	957				hypothetical protein MdSGHV015 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00027	gene	750				
+MdSGHV_00027	CDS	750				molybdopterin oxidoreductase [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00028	gene	1941				
+MdSGHV_00028	CDS	1941				hypothetical protein MdSGHV013 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00029	gene	885				
+MdSGHV_00029	CDS	885				thymidylate synthase [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00030	gene	513				
+MdSGHV_00030	CDS	513				dihydrofolate reductase [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00031	gene	771				
+MdSGHV_00031	CDS	771				mitochondrial carrier protein [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00032	gene	477				
+MdSGHV_00032	CDS	477				hypothetical protein
+MdSGHV_00033	gene	348				
+MdSGHV_00033	CDS	348				hypothetical protein
+MdSGHV_00034	gene	396				
+MdSGHV_00034	CDS	396				hypothetical protein MdSGHV004 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00035	gene	471				
+MdSGHV_00035	CDS	471				hypothetical protein MdSGHV003 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00036	gene	582				
+MdSGHV_00036	CDS	582				hypothetical protein MdSGHV002 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00037	gene	2937				
+MdSGHV_00037	CDS	2937				DNA polymerase [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00038	gene	618				
+MdSGHV_00038	CDS	618				Ac81-like protein [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00039	gene	3384				
+MdSGHV_00039	CDS	3384				hypothetical protein MdSGHV107 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00040	gene	729				
+MdSGHV_00040	CDS	729				per os infectivity factor-3 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00041	gene	522				
+MdSGHV_00041	CDS	522				hypothetical protein MdSGHV105 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00042	gene	2301				
+MdSGHV_00042	CDS	2301				helicase-like protein [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00043	gene	204				
+MdSGHV_00043	CDS	204				hypothetical protein MdSGHV103 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00044	gene	783				
+MdSGHV_00044	CDS	783				hypothetical protein MdSGHV102 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00045	gene	597				
+MdSGHV_00045	CDS	597				hypothetical protein MdSGHV101 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00046	gene	1368				
+MdSGHV_00046	CDS	1368				hypothetical protein MdSGHV100 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00047	gene	1815				
+MdSGHV_00047	CDS	1815				hypothetical protein MdSGHV099 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00048	gene	1152				
+MdSGHV_00048	CDS	1152				hypothetical protein MdSGHV098 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00049	gene	102				
+MdSGHV_00049	CDS	102				hypothetical protein
+MdSGHV_00050	gene	1452				
+MdSGHV_00050	CDS	1452				hypothetical protein MdSGHV097 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00051	gene	4464				
+MdSGHV_00051	CDS	4464				hypothetical protein MdSGHV096 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00052	gene	489				
+MdSGHV_00052	CDS	489				hypothetical protein MdSGHV095 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00053	gene	336				
+MdSGHV_00053	CDS	336				hypothetical protein MdSGHV094 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00054	gene	855				
+MdSGHV_00054	CDS	855				hypothetical protein MdSGHV093 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00055	gene	219				
+MdSGHV_00055	CDS	219				hypothetical protein MdSGHV092 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00056	gene	1275				
+MdSGHV_00056	CDS	1275				hypothetical protein MdSGHV091 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00057	gene	1935				
+MdSGHV_00057	CDS	1935				hypothetical protein MdSGHV090 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00058	gene	1140				
+MdSGHV_00058	CDS	1140				pif-2 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00059	gene	540				
+MdSGHV_00059	CDS	540				hypothetical protein MdSGHV088 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00060	gene	1635				
+MdSGHV_00060	CDS	1635				hypothetical protein MdSGHV087 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00061	gene	1146				
+MdSGHV_00061	CDS	1146				hypothetical protein MdSGHV086 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00062	gene	1206				
+MdSGHV_00062	CDS	1206				hypothetical protein MdSGHV085 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00063	gene	1530				
+MdSGHV_00063	CDS	1530				hypothetical protein MdSGHV084 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00064	gene	5343				
+MdSGHV_00064	CDS	5343				hypothetical protein MdSGHV083 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00065	gene	1080				
+MdSGHV_00065	CDS	1080				hypothetical protein MdSGHV082 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00066	gene	372				
+MdSGHV_00066	CDS	372				hypothetical protein MdSGHV079 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00067	gene	429				
+MdSGHV_00067	CDS	429				inhibitor of apoptosis protein [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00068	gene	903				
+MdSGHV_00068	CDS	903				hypothetical protein MdSGHV077 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00069	gene	1149				
+MdSGHV_00069	CDS	1149				hypothetical protein MdSGHV076 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00070	gene	312				
+MdSGHV_00070	CDS	312				hypothetical protein MdSGHV075 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00071	gene	2016				
+MdSGHV_00071	CDS	2016				hypothetical protein MdSGHV074 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00072	gene	1224				
+MdSGHV_00072	CDS	1224				hypothetical protein MdSGHV073 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00073	gene	411				
+MdSGHV_00073	CDS	411				hypothetical protein MdSGHV072 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00074	gene	996				
+MdSGHV_00074	CDS	996				hypothetical protein MdSGHV071 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00075	gene	2910				
+MdSGHV_00075	CDS	2910				hypothetical protein MdSGHV070 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00076	gene	612				
+MdSGHV_00076	CDS	612				thymidine kinase [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00077	gene	399				
+MdSGHV_00077	CDS	399				hypothetical protein MdSGHV068 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00078	gene	489				
+MdSGHV_00078	CDS	489				hypothetical protein MdSGHV067 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00079	gene	1737				
+MdSGHV_00079	CDS	1737				hypothetical protein MdSGHV066 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00080	gene	2346				
+MdSGHV_00080	CDS	2346				ribonucleoside diphosphate reductase large subunit, rr1 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00081	gene	180				
+MdSGHV_00081	CDS	180				hypothetical protein
+MdSGHV_00082	gene	1425				
+MdSGHV_00082	CDS	1425				hypothetical protein MdSGHV064 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00083	gene	1029				
+MdSGHV_00083	CDS	1029				ribonucleoside diphosphate reductase small subunit, rr2 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00084	gene	396				
+MdSGHV_00084	CDS	396				hypothetical protein MdSGHV058 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00085	gene	225				
+MdSGHV_00085	CDS	225				hypothetical protein MdSGHV057 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00086	gene	348				
+MdSGHV_00086	CDS	348				hypothetical protein MdSGHV056 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00087	gene	1251				
+MdSGHV_00087	CDS	1251				hypothetical protein MdSGHV055 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00088	gene	486				
+MdSGHV_00088	CDS	486				hypothetical protein MdSGHV054 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00089	gene	441				
+MdSGHV_00089	CDS	441				hypothetical protein MdSGHV053 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00090	gene	453				
+MdSGHV_00090	CDS	453				dUTPase [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00091	gene	957				
+MdSGHV_00091	CDS	957				hypothetical protein MdSGHV051 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00092	gene	1215				
+MdSGHV_00092	CDS	1215				aminoacylase [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00093	gene	324				
+MdSGHV_00093	CDS	324				Ac150-like protein [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00094	gene	1038				
+MdSGHV_00094	CDS	1038				hypothetical protein MdSGHV048 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00095	gene	2103				
+MdSGHV_00095	CDS	2103				occlusion-derived virus envelope protein [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00096	gene	1188				
+MdSGHV_00096	CDS	1188				hypothetical protein MdSGHV046 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00097	gene	1053				
+MdSGHV_00097	CDS	1053				hypothetical protein MdSGHV045 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00098	gene	756				
+MdSGHV_00098	CDS	756				hypothetical protein MdSGHV044 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00099	gene	1056				
+MdSGHV_00099	CDS	1056				hypothetical protein MdSGHV043 [Musca domestica salivary gland hypertrophy virus]
+MdSGHV_00100	gene	1881				
+MdSGHV_00100	CDS	1881				hypothetical protein MdSGHV042 [Musca domestica salivary gland hypertrophy virus]
