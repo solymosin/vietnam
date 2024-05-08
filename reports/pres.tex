@@ -1,0 +1,337 @@
+\documentclass[t, usepdftitle=false, red]{beamer}
+\usepackage{beamertexpower}
+\usepackage{beamerthemeshadow}
+\usepackage{beamerthemesplit}
+\usetheme{CambridgeUS}
+\usepackage{animate}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\usefonttheme{professionalfonts}
+\usepackage{times}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{verbatim}
+\usetikzlibrary{arrows,shapes,fadings,decorations.pathreplacing}
+
+\usepackage[english]{babel}
+% \usepackage[magyar]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{fancyvrb}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+% \usepackage[dvips]{graphicx}
+\usepackage{graphicx}
+% \usepackage{multimedia}
+% \usepackage{hyperref}
+\usepackage{booktabs}
+% \usepackage{tabularx}
+% \usepackage{rotating}
+\usepackage{wasysym}
+
+\usepackage{textcomp}
+\usepackage{colortbl}
+% \usepackage[table]{xcolor}
+
+
+\usepackage{pstricks,pst-node,pst-text,pst-3d,pst-slpe}
+\usepackage{smartdiagram}
+\usesmartdiagramlibrary{additions}
+\usepackage{amsmath}
+% \usepackage{eqnarray}
+\usepackage{natbib}
+\bibliographystyle{chicago}%unsrtnat02
+%nature, 
+%siam, amsplain, apalike, unsrt, unsrtnat, acm, chicago
+%harvard, apalike, chicago, astron, authordate, 
+% plainnat.bst         abbrvnat.bst         unsrtnat.bst
+\bibpunct{(}{)}{;}{a}{,}{,}
+% \usepackage{multicol}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\renewcommand{\bibname}{Közlemények}
+
+\setbeamercovered{invisible}
+% \usepackage[inactive]{fancytooltips}
+\usepackage{cancel}
+\usepackage{pgfplots}
+
+\usepackage{units}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,positioning,decorations.pathreplacing,shapes,automata,intersections,backgrounds, calc, shadows, arrows.met}
+
+\tikzset{
+    buffer/.style={
+        draw,
+        shape border rotate=90,
+        isosceles triangle,
+        isosceles triangle apex angle=60,
+        fill=grey!5,
+        node distance=0.2cm
+    }
+}
+
+\newcommand{\ExternalLink}{%
+    \tikz[x=1.2ex, y=1.2ex, baseline=-0.05ex]{% 
+        \begin{scope}[x=1ex, y=1ex]
+            \clip (-0.1,-0.1) 
+                --++ (-0, 1.2) 
+                --++ (0.6, 0) 
+                --++ (0, -0.6) 
+                --++ (0.6, 0) 
+                --++ (0, -1);
+            \path[draw, 
+                line width = 0.5, 
+                rounded corners=0.5] 
+                (0,0) rectangle (1,1);
+        \end{scope}
+        \path[draw, line width = 0.5] (0.5, 0.5) 
+            -- (1, 1);
+        \path[draw, line width = 0.5] (0.6, 1) 
+            -- (1, 1) -- (1, 0.6);
+        }
+    }
+
+\newcommand{\mx}[1]{\mathbf{\bm{#1}}} % Matrix command
+\newcommand{\vc}[1]{\mathbf{\bm{#1}}} % Vector command
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+% Define a few styles and constants
+\tikzstyle{sensor}=[draw, fill=blue!20, text width=5em, 
+    text centered, minimum height=2.5em]
+\tikzstyle{ann} = [above, text width=5em]
+\tikzstyle{naveqs} = [sensor, text width=6em, fill=red!20, 
+    minimum height=12em, rounded corners]
+\def\blockdist{2.3}
+\def\edgedist{2.5}
+
+% https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ%
+% 3A_A_Tutorial_for_Beginners_(Part_3)%E2%80%94Creating_Flowcharts
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=1.5cm,
+minimum height=1cm,text centered, draw=black, fill=green!30]
+% \tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110,
+% minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+% \tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text
+% centered, draw=black, fill=orange!30]
+% \tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text
+% centered, draw=black, fill=green!30]
+
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\newcommand\gauss[2]{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}
+
+% \institute[2023]{}
+% \title[Bevezetés]{Epidemiológiai bevezetés}
+% \author[QEpi]{\href{mailto:Solymosi.Norbert@gmail.com}{Solymosi Norbert}}
+% \date[]{\textit{Kvantitatív állatorvosi epidemiológia}\medskip\\Járványtani és Mikrobiológiai Tanszék\smallskip\\Állatorvostudományi Egyetem}
+
+% \institute[2023]{}
+% \title[Intro]{Introduction to epidemiology}
+% \author[QEpi]{\href{mailto:Solymosi.Norbert@gmail.com}{Solymosi Norbert}}
+% \date[]{\textit{Quantitative veterinary epidemiology}\medskip\\Department of Microbiology and Infectious Diseases\smallskip\\University of Veterinary Medicine Budapest}
+
+% \institute[2023]{}
+% \title[Betegség-számszerűsítés]{Fertőző betegségek állományokban való előfordulásának számszerű leírása}
+% \author[QEpi]{\href{mailto:Solymosi.Norbert@gmail.com}{Solymosi Norbert}}
+% \date[]{\textit{Kvantitatív állatorvosi epidemiológia}\medskip\\Járványtani és Mikrobiológiai Tanszék\smallskip\\Állatorvostudományi Egyetem}
+%
+% \institute[2023]{}
+% \title[Measures of health]{Measures of health}
+% \author[QEpi]{\href{mailto:Solymosi.Norbert@gmail.com}{Solymosi Norbert}}
+% \date[]{\textit{Quantitative veterinary epidemiology}\medskip\\Department of Microbiology and Infectious Diseases\smallskip\\University of Veterinary Medicine Budapest}
+
+% \institute[2023]{}
+% \title[Diagnosztikai tesztek]{Fertőző betegségek diagnosztikájában használt tesztek eredményének értelmezése}
+% \author[QEpi]{\href{mailto:Solymosi.Norbert@gmail.com}{Solymosi Norbert}}
+% \date[]{\textit{Kvantitatív állatorvosi epidemiológia}\medskip\\Járványtani és Mikrobiológiai Tanszék\smallskip\\Állatorvostudományi Egyetem}
+
+% \institute[2023]{}
+% \title[Diagnostic Tests]{Interpretation of diagnostic test results in the context of infectious diseases}
+% \author[QEpi]{\href{mailto:Solymosi.Norbert@gmail.com}{Solymosi Norbert}}
+% \date[]{\textit{Quantitative veterinary epidemiology}\medskip\\Department of Microbiology and Infectious Diseases\smallskip\\University of Veterinary Medicine Budapest}
+
+% \institute[2020.X.14.]{}
+% \title[Diagnosztikai tesztek II.]{Fertőző betegségek diagnosztikájában használt tesztek eredményének értelmezése II.}
+% \author[QEpi]{\href{mailto:Solymosi.Norbert@gmail.com}{Solymosi Norbert}}
+% \date[]{\textit{Kvantitatív állatorvosi epidemiológia}\medskip\\Járványtani és Mikrobiológiai Tanszék\smallskip\\Állatorvostudományi Egyetem\bigskip\\2020. október 14.}
+% 
+% \institute[13/10/2021]{}
+% % \title[Diagnostic Tests]{Interpretation of diagnostic test results in the context of infectious diseases}
+% \title[Diagnostic Tests II]{Diagnostic Tests II}
+% \author[QEpi]{\href{mailto:Solymosi.Norbert@gmail.com}{Solymosi Norbert}}
+% \date[]{\textit{Quantitative veterinary epidemiology}\medskip\\Department of Microbiology and Infectious Diseases\smallskip\\University of Veterinary Medicine Budapest\bigskip\\13/10/2021}
+% 
+% \institute[2022.X.25.]{}
+% \title[Asszociációs mértékek]{Asszociációs mértékek}
+% % \title[Összefüggések mértékei]{Fertőző betegségekkel kapcsolatban használt, kockázatot számszerűsítő mértékek}
+% \author[QEpi]{\href{mailto:Solymosi.Norbert@gmail.com}{Solymosi Norbert}}
+% \date[]{\textit{Kvantitatív állatorvosi epidemiológia}\medskip\\Járványtani
+% és Mikrobiológiai Tanszék\smallskip\\Állatorvostudományi Egyetem}
+
+% \institute[25/10/2022]{}
+% \title[Measures of Association]{Measures of Association}
+% \author[QEpi]{\href{mailto:Solymosi.Norbert@gmail.com}{Solymosi Norbert}}
+% \date[]{\textit{Quantitative veterinary epidemiology}\medskip\\Department of
+% Microbiology and Infectious Diseases\smallskip\\University of Veterinary
+%  Medicine Budapest}
+
+% \institute[2020.X.28.]{}
+% \title[Asszociációs mértékek]{Asszociációs mértékek II.}
+% \author[QEpi]{\href{mailto:Solymosi.Norbert@gmail.com}{Solymosi Norbert}}
+% \date[]{\textit{Kvantitatív állatorvosi epidemiológia}\medskip\\Járványtani és Mikrobiológiai Tanszék\smallskip\\Állatorvostudományi Egyetem\bigskip\\2020. október 28.}
+% 
+% \institute[29/11/2022]{}
+% \title[EBVM]{Evidence Based Veterinary Medicine}
+% \author[QEpi]{\href{mailto:Solymosi.Norbert@gmail.com}{Solymosi Norbert}}
+% \date[]{\textit{Quantitative veterinary epidemiology}\medskip\\Department of
+% Microbiology and Infectious Diseases\smallskip\\University of Veterinary
+% Medicine Budapest}
+
+% \institute[2022.XI.29.]{}
+% \title[EBVM]{Bizonyítékokon alapuló állatorvoslás}
+% \author[QEpi]{\href{mailto:Solymosi.Norbert@gmail.com}{Solymosi Norbert}}
+% \date[]{\textit{Kvantitatív állatorvosi epidemiológia}\medskip\\Járványtani
+% és Mikrobiológiai Tanszék\smallskip\\Állatorvostudományi Egyetem}
+%
+% \institute[2022.XII.6.]{}
+% \title[GeoEpi]{Geoepidemiológia}
+% \author[QEpi]{\href{mailto:Solymosi.Norbert@gmail.com}{Solymosi Norbert}}
+% \date[]{\textit{Kvantitatív állatorvosi epidemiológia}\medskip\\Járványtani
+% és Mikrobiológiai Tanszék\smallskip\\Állatorvostudományi Egyetem}
+%
+% \institute[6/12/2022]{}
+% \title[GeoEpi]{Spatial epidemiology}
+% \author[QEpi]{\href{mailto:Solymosi.Norbert@gmail.com}{Solymosi Norbert}}
+% \date[]{\textit{Quantitative veterinary epidemiology}\medskip\\Department of
+% Microbiology and Infectious Diseases\smallskip\\University of Veterinary
+% Medicine Budapest}
+
+% \institute[2022.XII.16.]{}
+% \title[TheorEpi]{Elméleti epidemiológia}
+% \author[QEpi]{\href{mailto:Solymosi.Norbert@gmail.com}{Solymosi Norbert}}
+% \date[]{\textit{Kvantitatív állatorvosi epidemiológia}\medskip\\Járványtani
+% és Mikrobiológiai Tanszék\smallskip\\Állatorvostudományi Egyetem}
+
+\institute[17/10/2023]{}
+\title[epidemiology \& metagenomics]{Preliminary results}
+\date[]{}
+\author[Viet-Hun]
+
+
+
+\definecolor{Rinput}{RGB}{255,0,0}
+\definecolor{Routput}{RGB}{0,0,255}
+
+% \usepackage{etoolbox}
+% \makeatletter
+% \patchcmd{\Ginclude@eps}{"#1"}{#1}{}{}
+% \makeatother
+\usepackage[space]{grffile}
+\usepackage{transparent}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+% \begin{frame}%[plain]
+% % \tableofcontents
+% \vfill
+%   \begin{center}
+%     \begin{columns}[t]
+%       \begin{column}{5cm}
+% 	\tableofcontents[sections={1-5}]
+%       \end{column}
+%       \begin{column}{5cm}
+% 	\tableofcontents[sections={6-9}]
+%       \end{column}
+%     \end{columns}
+%   \end{center}
+% \vfill
+% \end{frame}
+
+\input{results01}
+\input{results02}
+
+% \input{slidesHU02}
+% \input{slidesHU03}
+% \input{slidesHU04}
+% \input{slidesHU05}
+% \input{slidesHU06}
+% % % \institute[04/12/2019]{}
+% \title[EBM]{Bizonyítékokra alapozott orvoslás}
+% \author[QEpi]{}
+% \date[]{}
+% \begin{frame}[plain]
+% \maketitle
+% \end{frame}
+% \input{slidesHU07}
+% \input{slidesHU08}
+% % \input{slidesHU09}
+%
+% \section{Ajánlott irodalom}
+%
+% \begin{frame}
+%
+% {\tiny
+% \bibliography{refs}
+% %
+% % \nocite{Dohoo2003,Noordhuizen2001,Pfeiffer2002,Pfeiffer2010,Smith2005,
+% % Thrusfield2007} %1, 2
+% \nocite{Gardner2012,Stevenson2012,Noordhuizen2001,Woodworth2004,
+% grimes2005refining} %3
+% \nocite{messam2008frequentist,Noordhuizen2001,Gardner2012} %4
+% % \nocite{Stevenson2012,Noordhuizen2001,epiR,Thrusfield2007} %5
+% % \nocite{Noordhuizen2001,Stevenson2012,barratt2004tips,Dubecz2013} %6
+% % \nocite{greenhalgh2010read,cockcroft2008handbook,heneghan2006evidence,
+% % sanhueza2018meta,halasa2011meta,Thrusfield2007} %7
+% % % \nocite{Thrusfield2007,gelman2020regression}%6-7
+% % \nocite{lawson2016handbook,lawson2013statistical,lawson2013bayesian}
+% }
+% \end{frame}
+
+% \input{slidesEN01}
+% \input{slidesEN02}
+% \input{slidesEN03}
+% \input{slidesEN04}
+% % \input{slidesEN05}
+% % \input{slidesEN06}
+% % % % % % % \institute[04/12/2019]{}
+% % % % % \title[EBM]{Evidence Based Medicine}
+% % % % % \author[QEpi]{}
+% % % % % \date[]{}
+% % % % % \begin{frame}[plain]
+% % % % % \maketitle
+% % % % % \end{frame}
+% % \input{slidesEN07}
+% \input{slidesEN08}
+% % % % % % %
+% %
+% \section{References}
+% \begin{frame}
+%
+% {\tiny
+% %
+% \bibliography{refs}
+% % \nocite{Dohoo2003,Noordhuizen2001,Pfeiffer2002,Pfeiffer2010,Smith2005,Thrusfield2007} %1, 2
+% \nocite{Gardner2012,Stevenson2012,Noordhuizen2001,Woodworth2004,grimes2005refining} %3
+% \nocite{messam2008frequentist,Noordhuizen2001,Gardner2012} %4
+% % \nocite{Stevenson2012,Noordhuizen2001,epiR,Thrusfield2007} %5
+% % \nocite{Noordhuizen2001,Stevenson2012,barratt2004tips,Dubecz2013} %6
+% % \nocite{greenhalgh2010read,cockcroft2008handbook,heneghan2006evidence,Patai2017,
+% % sanhueza2018meta,cuzick2005forest,halasa2011meta,Thrusfield2007,
+% % hothorn2014handbook} %7
+% % \nocite{Thrusfield2007,gelman2020regression}%6-7
+% % \nocite{lawson2016handbook,lawson2013statistical,lawson2013bayesian}
+% }
+% \end{frame}
+
+\end{document}
+
+

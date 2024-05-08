@@ -1,0 +1,12 @@
+\babel@toc {english}{}\relax 
+\beamer@sectionintoc {1}{Serology}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Samples}{2}{0}{1}
+\beamer@sectionintoc {2}{Prevalence}{10}{0}{2}
+\beamer@subsectionintoc {2}{1}{Anaplasma}{11}{0}{2}
+\beamer@subsectionintoc {2}{2}{Babesia}{16}{0}{2}
+\beamer@subsectionintoc {2}{3}{Theileria}{21}{0}{2}
+\beamer@subsectionintoc {2}{4}{\textit {Trypanosoma evansi}}{26}{0}{2}
+\beamer@sectionintoc {3}{Metagenome}{31}{0}{3}
+\beamer@subsectionintoc {3}{1}{\textit {Musca domestica} salivary gland hypertrophy virus}{31}{0}{3}
+\beamer@subsectionintoc {3}{2}{\textit {Haematobia irritans} densovirus}{32}{0}{3}
+\beamer@subsectionintoc {3}{3}{Pathogens}{33}{0}{3}
