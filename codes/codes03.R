@@ -272,7 +272,8 @@ map = provinces |> tm_shape(bbox=bb) + tm_borders() +
 inner_join(provinces |> rename(Province=NAME_1), wd |> group_by(Province, Ana) |> summarize(n=n()) |> ungroup() |> pivot_wider(names_from=Ana, values_from=n) |> mutate(prev=100*`1`/(`1`+`0`)) |> select(-c(2,3))) |> tm_shape() + tm_polygons('prev', lwd=0.5, fill.scale = tm_scale_continuous(values='Reds', limits=c(0,100)), fill.legend = tm_legend(
 orientation='landscape',
 title='Prevalence',
-position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23))
+position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23)) +
+tm_text('VARNAME_1')
 CairoPDF(paste0('map_province_', path,'_', seas,'.pdf'), width=9, height=4.5)
 print(map)
 print(insetmap, vp = grid::viewport(0.905, 0.625, width=0.4, height=0.6))
@@ -283,7 +284,8 @@ map = provinces |> tm_shape(bbox=bb) + tm_borders() +
 inner_join(provinces |> rename(Province=NAME_1), wd |> filter(`Animal types`==spec) |> group_by(Province, Ana) |> summarize(n=n()) |> ungroup() |> pivot_wider(names_from=Ana, values_from=n) |> mutate(prev=100*`1`/(`1`+`0`)) |> select(-c(2,3))) |> tm_shape() + tm_polygons('prev', lwd=0.5, fill.scale = tm_scale_continuous(values='Reds', limits=c(0,100)), fill.legend = tm_legend(
 orientation='landscape',
 title='Prevalence',
-position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23))
+position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23)) +
+tm_text('VARNAME_1')
 CairoPDF(paste0('map_province_', path,'_', seas,'_', spec,'.pdf'), width=9, height=4.5)
 print(map)
 print(insetmap, vp = grid::viewport(0.905, 0.625, width=0.4, height=0.6))
@@ -296,7 +298,8 @@ for(seas in seasons){
   inner_join(provinces |> rename(Province=NAME_1), wd |> filter(s==seas) |> group_by(Province, Ana) |> summarize(n=n()) |> ungroup() |> pivot_wider(names_from=Ana, values_from=n) |> mutate(prev=100*`1`/(`1`+`0`)) |> select(-c(2,3))) |> tm_shape() + tm_polygons('prev', lwd=0.5, fill.scale = tm_scale_continuous(values='Reds', limits=c(0,100)), fill.legend = tm_legend(
   orientation='landscape',
   title='Prevalence',
-  position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23))
+  position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23)) +
+tm_text('VARNAME_1')
   CairoPDF(paste0('map_province_', path,'_', seas,'.pdf'), width=9, height=4.5)
   print(map)
   print(insetmap, vp = grid::viewport(0.905, 0.625, width=0.4, height=0.6))
@@ -306,7 +309,8 @@ for(seas in seasons){
     inner_join(provinces |> rename(Province=NAME_1), wd |> filter(s==seas, `Animal types`==spec) |> group_by(Province, Ana) |> summarize(n=n()) |> ungroup() |> pivot_wider(names_from=Ana, values_from=n) |> mutate(prev=100*`1`/(`1`+`0`)) |> select(-c(2,3))) |> tm_shape() + tm_polygons('prev', lwd=0.5, fill.scale = tm_scale_continuous(values='Reds', limits=c(0,100)), fill.legend = tm_legend(
     orientation='landscape',
     title='Prevalence',
-    position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23))
+    position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23)) +
+tm_text('VARNAME_1')
     CairoPDF(paste0('map_province_', path,'_', seas,'_', spec,'.pdf'), width=9, height=4.5)
     print(map)
     print(insetmap, vp = grid::viewport(0.905, 0.625, width=0.4, height=0.6))
@@ -320,7 +324,8 @@ map = provinces |> tm_shape(bbox=bb) + tm_borders() +
 inner_join(provinces |> rename(Province=NAME_1), wd |> group_by(Province, Babe) |> summarize(n=n()) |> ungroup() |> pivot_wider(names_from=Babe, values_from=n) |> mutate(prev=100*`1`/(`1`+`0`)) |> select(-c(2,3))) |> tm_shape() + tm_polygons('prev', lwd=0.5, fill.scale = tm_scale_continuous(values='Reds', limits=c(0,100)), fill.legend = tm_legend(
 orientation='landscape',
 title='Prevalence',
-position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23))
+position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23)) +
+tm_text('VARNAME_1')
 CairoPDF(paste0('map_province_', path,'_', seas,'.pdf'), width=9, height=4.5)
 print(map)
 print(insetmap, vp = grid::viewport(0.905, 0.625, width=0.4, height=0.6))
@@ -331,7 +336,8 @@ map = provinces |> tm_shape(bbox=bb) + tm_borders() +
 inner_join(provinces |> rename(Province=NAME_1), wd |> filter(`Animal types`==spec) |> group_by(Province, Babe) |> summarize(n=n()) |> ungroup() |> pivot_wider(names_from=Babe, values_from=n) |> mutate(prev=100*`1`/(`1`+`0`)) |> select(-c(2,3))) |> tm_shape() + tm_polygons('prev', lwd=0.5, fill.scale = tm_scale_continuous(values='Reds', limits=c(0,100)), fill.legend = tm_legend(
 orientation='landscape',
 title='Prevalence',
-position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23))
+position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23)) +
+tm_text('VARNAME_1')
 CairoPDF(paste0('map_province_', path,'_', seas,'_', spec,'.pdf'), width=9, height=4.5)
 print(map)
 print(insetmap, vp = grid::viewport(0.905, 0.625, width=0.4, height=0.6))
@@ -344,7 +350,8 @@ for(seas in seasons){
   inner_join(provinces |> rename(Province=NAME_1), wd |> filter(s==seas) |> group_by(Province, Babe) |> summarize(n=n()) |> ungroup() |> pivot_wider(names_from=Babe, values_from=n) |> mutate(prev=100*`1`/(`1`+`0`)) |> select(-c(2,3))) |> tm_shape() + tm_polygons('prev', lwd=0.5, fill.scale = tm_scale_continuous(values='Reds', limits=c(0,100)), fill.legend = tm_legend(
   orientation='landscape',
   title='Prevalence',
-  position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23))
+  position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23)) +
+tm_text('VARNAME_1')
   CairoPDF(paste0('map_province_', path,'_', seas,'.pdf'), width=9, height=4.5)
   print(map)
   print(insetmap, vp = grid::viewport(0.905, 0.625, width=0.4, height=0.6))
@@ -354,7 +361,8 @@ for(seas in seasons){
     inner_join(provinces |> rename(Province=NAME_1), wd |> filter(s==seas, `Animal types`==spec) |> group_by(Province, Babe) |> summarize(n=n()) |> ungroup() |> pivot_wider(names_from=Babe, values_from=n) |> mutate(prev=100*`1`/(`1`+`0`)) |> select(-c(2,3))) |> tm_shape() + tm_polygons('prev', lwd=0.5, fill.scale = tm_scale_continuous(values='Reds', limits=c(0,100)), fill.legend = tm_legend(
     orientation='landscape',
     title='Prevalence',
-    position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23))
+    position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23)) +
+tm_text('VARNAME_1')
     CairoPDF(paste0('map_province_', path,'_', seas,'_', spec,'.pdf'), width=9, height=4.5)
     print(map)
     print(insetmap, vp = grid::viewport(0.905, 0.625, width=0.4, height=0.6))
@@ -369,7 +377,8 @@ map = provinces |> tm_shape(bbox=bb) + tm_borders() +
 inner_join(provinces |> rename(Province=NAME_1), wd |> group_by(Province, Theile) |> summarize(n=n()) |> ungroup() |> pivot_wider(names_from=Theile, values_from=n) |> mutate(prev=100*`1`/(`1`+`0`)) |> select(-c(2,3))) |> tm_shape() + tm_polygons('prev', lwd=0.5, fill.scale = tm_scale_continuous(values='Reds', limits=c(0,100)), fill.legend = tm_legend(
 orientation='landscape',
 title='Prevalence',
-position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23))
+position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23)) +
+tm_text('VARNAME_1')
 CairoPDF(paste0('map_province_', path,'_', seas,'.pdf'), width=9, height=4.5)
 print(map)
 print(insetmap, vp = grid::viewport(0.905, 0.625, width=0.4, height=0.6))
@@ -380,7 +389,8 @@ map = provinces |> tm_shape(bbox=bb) + tm_borders() +
 inner_join(provinces |> rename(Province=NAME_1), wd |> filter(`Animal types`==spec) |> group_by(Province, Theile) |> summarize(n=n()) |> ungroup() |> pivot_wider(names_from=Theile, values_from=n) |> mutate(prev=100*`1`/(`1`+`0`)) |> select(-c(2,3))) |> tm_shape() + tm_polygons('prev', lwd=0.5, fill.scale = tm_scale_continuous(values='Reds', limits=c(0,100)), fill.legend = tm_legend(
 orientation='landscape',
 title='Prevalence',
-position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23))
+position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23)) +
+tm_text('VARNAME_1')
 CairoPDF(paste0('map_province_', path,'_', seas,'_', spec,'.pdf'), width=9, height=4.5)
 print(map)
 print(insetmap, vp = grid::viewport(0.905, 0.625, width=0.4, height=0.6))
@@ -393,7 +403,8 @@ for(seas in seasons){
   inner_join(provinces |> rename(Province=NAME_1), wd |> filter(s==seas) |> group_by(Province, Theile) |> summarize(n=n()) |> ungroup() |> pivot_wider(names_from=Theile, values_from=n) |> mutate(prev=100*`1`/(`1`+`0`)) |> select(-c(2,3))) |> tm_shape() + tm_polygons('prev', lwd=0.5, fill.scale = tm_scale_continuous(values='Reds', limits=c(0,100)), fill.legend = tm_legend(
   orientation='landscape',
   title='Prevalence',
-  position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23))
+  position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23)) +
+tm_text('VARNAME_1')
   CairoPDF(paste0('map_province_', path,'_', seas,'.pdf'), width=9, height=4.5)
   print(map)
   print(insetmap, vp = grid::viewport(0.905, 0.625, width=0.4, height=0.6))
@@ -403,7 +414,8 @@ for(seas in seasons){
     inner_join(provinces |> rename(Province=NAME_1), wd |> filter(s==seas, `Animal types`==spec) |> group_by(Province, Theile) |> summarize(n=n()) |> ungroup() |> pivot_wider(names_from=Theile, values_from=n) |> mutate(prev=100*`1`/(`1`+`0`)) |> select(-c(2,3))) |> tm_shape() + tm_polygons('prev', lwd=0.5, fill.scale = tm_scale_continuous(values='Reds', limits=c(0,100)), fill.legend = tm_legend(
     orientation='landscape',
     title='Prevalence',
-    position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23))
+    position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23)) +
+tm_text('VARNAME_1')
     CairoPDF(paste0('map_province_', path,'_', seas,'_', spec,'.pdf'), width=9, height=4.5)
     print(map)
     print(insetmap, vp = grid::viewport(0.905, 0.625, width=0.4, height=0.6))
@@ -417,7 +429,8 @@ map = provinces |> tm_shape(bbox=bb) + tm_borders() +
 inner_join(provinces |> rename(Province=NAME_1), wd |> group_by(Province, T.evansi) |> summarize(n=n()) |> ungroup() |> pivot_wider(names_from=T.evansi, values_from=n) |> mutate(prev=100*`1`/(`1`+`0`)) |> select(-c(2,3))) |> tm_shape() + tm_polygons('prev', lwd=0.5, fill.scale = tm_scale_continuous(values='Reds', limits=c(0,100)), fill.legend = tm_legend(
 orientation='landscape',
 title='Prevalence',
-position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23))
+position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23)) +
+tm_text('VARNAME_1')
 CairoPDF(paste0('map_province_', path,'_', seas,'.pdf'), width=9, height=4.5)
 print(map)
 print(insetmap, vp = grid::viewport(0.905, 0.625, width=0.4, height=0.6))
@@ -428,7 +441,8 @@ map = provinces |> tm_shape(bbox=bb) + tm_borders() +
 inner_join(provinces |> rename(Province=NAME_1), wd |> filter(`Animal types`==spec) |> group_by(Province, T.evansi) |> summarize(n=n()) |> ungroup() |> pivot_wider(names_from=T.evansi, values_from=n) |> mutate(prev=100*`1`/(`1`+`0`)) |> select(-c(2,3))) |> tm_shape() + tm_polygons('prev', lwd=0.5, fill.scale = tm_scale_continuous(values='Reds', limits=c(0,100)), fill.legend = tm_legend(
 orientation='landscape',
 title='Prevalence',
-position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23))
+position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23)) +
+tm_text('VARNAME_1')
 CairoPDF(paste0('map_province_', path,'_', seas,'_', spec,'.pdf'), width=9, height=4.5)
 print(map)
 print(insetmap, vp = grid::viewport(0.905, 0.625, width=0.4, height=0.6))
@@ -440,7 +454,8 @@ for(seas in seasons){
   inner_join(provinces |> rename(Province=NAME_1), wd |> filter(s==seas) |> group_by(Province, T.evansi) |> summarize(n=n()) |> ungroup() |> pivot_wider(names_from=T.evansi, values_from=n) |> mutate(prev=100*`1`/(`1`+`0`)) |> select(-c(2,3))) |> tm_shape() + tm_polygons('prev', lwd=0.5, fill.scale = tm_scale_continuous(values='Reds', limits=c(0,100)), fill.legend = tm_legend(
   orientation='landscape',
   title='Prevalence',
-  position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23))
+  position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23)) +
+tm_text('VARNAME_1')
   CairoPDF(paste0('map_province_', path,'_', seas,'.pdf'), width=9, height=4.5)
   print(map)
   print(insetmap, vp = grid::viewport(0.905, 0.625, width=0.4, height=0.6))
@@ -450,7 +465,8 @@ for(seas in seasons){
     inner_join(provinces |> rename(Province=NAME_1), wd |> filter(s==seas, `Animal types`==spec) |> group_by(Province, T.evansi) |> summarize(n=n()) |> ungroup() |> pivot_wider(names_from=T.evansi, values_from=n) |> mutate(prev=100*`1`/(`1`+`0`)) |> select(-c(2,3))) |> tm_shape() + tm_polygons('prev', lwd=0.5, fill.scale = tm_scale_continuous(values='Reds', limits=c(0,100)), fill.legend = tm_legend(
     orientation='landscape',
     title='Prevalence',
-    position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23))
+    position = tm_pos_in(0.22, 0.99), frame=T, bg.color='white', bg.alpha=0.1, width=23)) +
+tm_text('VARNAME_1')
     CairoPDF(paste0('map_province_', path,'_', seas,'_', spec,'.pdf'), width=9, height=4.5)
     print(map)
     print(insetmap, vp = grid::viewport(0.905, 0.625, width=0.4, height=0.6))
@@ -460,8 +476,8 @@ for(seas in seasons){
 
 mogrify -density 600 -format jpg *.pdf
 mkdir pdf
-mv *.pdf pdf
 mkdir jpg
+mv *.pdf pdf
 mv *.jpg jpg
 
 
