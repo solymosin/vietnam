@@ -479,27 +479,27 @@ mkdir pdf
 mkdir jpg
 mv *.pdf pdf
 mv *.jpg jpg
-
-
-inner_join(provinces |> rename(Province=NAME_1), wd |> select(Province) |> unique())
-
-st_within(inner_join(provinces |> rename(Province=NAME_1), wd |> select(Province) |> unique()), vill, sparse=F)
-vill_study = vill[which(st_within(vill, inner_join(provinces |> rename(Province=NAME_1), wd |> select(Province) |> unique()), sparse=F) |> rowSums()==1),]
-
-inner_join(provinces |> rename(Province=NAME_1), wd |> select(Province) |> unique()) |> tm_shape() + tm_borders() +
-communes |> tm_shape() + tm_borders() +
-vill |> tm_shape() + tm_dots()
-
-provinces |> tm_shape(bbox=bb) + tm_borders()
-
-
-communes[which(st_overlaps(inner_join(provinces |> rename(Province=NAME_1), wd |> select(Province) |> unique()), communes, sparse=F) |> rowSums()==1),]
-
-inner_join(
-communes,
-inner_join(provinces |> rename(Province=NAME_1), wd |> select(Province) |> unique()) |> select(Province) |> st_drop_geometry()
-) |> tm_shape() + tm_borders() +
-vill |> tm_shape() + tm_dots()
+#
+#
+# inner_join(provinces |> rename(Province=NAME_1), wd |> select(Province) |> unique())
+#
+# st_within(inner_join(provinces |> rename(Province=NAME_1), wd |> select(Province) |> unique()), vill, sparse=F)
+# vill_study = vill[which(st_within(vill, inner_join(provinces |> rename(Province=NAME_1), wd |> select(Province) |> unique()), sparse=F) |> rowSums()==1),]
+#
+# inner_join(provinces |> rename(Province=NAME_1), wd |> select(Province) |> unique()) |> tm_shape() + tm_borders() +
+# communes |> tm_shape() + tm_borders() +
+# vill |> tm_shape() + tm_dots()
+#
+# provinces |> tm_shape(bbox=bb) + tm_borders()
+#
+#
+# communes[which(st_overlaps(inner_join(provinces |> rename(Province=NAME_1), wd |> select(Province) |> unique()), communes, sparse=F) |> rowSums()==1),]
+#
+# inner_join(
+# communes,
+# inner_join(provinces |> rename(Province=NAME_1), wd |> select(Province) |> unique()) |> select(Province) |> st_drop_geometry()
+# ) |> tm_shape() + tm_borders() +
+# vill |> tm_shape() + tm_dots()
 
 cm = inner_join(
 communes,
@@ -520,4 +520,500 @@ for(j in js){
 }
 tab = tab |> unique()
 
+left_join(
+wd |> select(Commune, Village) |> unique(),
+tab
+) |> data.frame()
+a falvak nem találhatók meg adatbázisokban, ezért a commune-t tudom csak használni
+
+
+wd |> group_by(Commune) |> summarize(Ana=sum(Ana), Babe=sum(Babe), Theile=sum(Theile), T.evansi=sum(T.evansi))
+
+
+wd |> group_by(Commune) |> summarize(bin=ifelse(sum(Ana)>0,1,0))
+
+map = provinces |> tm_shape(bbox=bb) + tm_borders() +
+inner_join(wd_province, wd |> group_by(Commune) |> summarize(n=n()), by='Commune') |> tm_shape() + tm_polygons('n', lwd=0.5, fill.scale = tm_scale_intervals(values='Blues', style='fixed', breaks=c(seq(41,120,by=10),120)),fill.legend = tm_legend(
+# orientation='landscape',
+title='Sample size',
+position = tm_pos_in(0.005, 0.99), frame=T, bg.color='white', bg.alpha=0.1))
+
+wd |> group_by(Province, Commune) |> summarize(bin=ifelse(sum(Ana)>0,1,0))
+
+inner_join(wd_province |> select(Province, Commune) |> unique(), wd |> group_by(Province, Commune) |> summarize(bin=ifelse(sum(Ana)>0,1,0)), by='Commune')
+
+
+insetmap = tm_shape(provinces) + tm_polygons(col=gray.colors(30)[15], border.alpha=0.3, fill_alpha=0.5) +
+tm_compass(color.light='grey90', size=1.5, text.size=0.75, type='arrow', position=c(0.65, 0.99)) +
+tm_shape(st_as_sfc(bb)) + tm_borders(col='blue') + tm_layout(bg.color='white')
+
+setwd('../WP7.1')
+
+path='Ana'
+seas = '4season'
+tmp = inner_join(wd_province |> select(Province, Commune) |> unique(),
+wd |> group_by(Province, Commune) |> summarize(bin=ifelse(sum(Ana)>0,1,0)) |> filter(bin>0),
+by='Commune') |> st_transform(3857) |> st_centroid()
+
+map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
+inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
+CairoPDF(paste0('dots_', path, '_', seas,'.pdf'), width=9, height=4.5)
+print(map)
+print(insetmap, vp = grid::viewport(0.92, 0.325, width=0.7, height=0.5))
+graphics.off()
+
+ds = c(10,15,20)
+for(d in ds){
+  map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+  tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
+  tmp |> st_buffer(d*1000) |> tm_shape() + tm_borders() +
+  inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
+  CairoPDF(paste0('dots_', path, '_', seas,'_buffer', d,'km.pdf'), width=9, height=4.5)
+  print(map)
+  print(insetmap, vp = grid::viewport(0.92, 0.325, width=0.7, height=0.5))
+  graphics.off()
+}
+
+
+path='Babe'
+seas = '4season'
+tmp = inner_join(wd_province |> select(Province, Commune) |> unique(),
+wd |> group_by(Province, Commune) |> summarize(bin=ifelse(sum(Babe)>0,1,0)) |> filter(bin>0),
+by='Commune') |> st_transform(3857) |> st_centroid()
+
+map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
+inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
+CairoPDF(paste0('dots_', path, '_', seas,'.pdf'), width=9, height=4.5)
+print(map)
+print(insetmap, vp = grid::viewport(0.92, 0.325, width=0.7, height=0.5))
+graphics.off()
+
+ds = c(10,15,20)
+for(d in ds){
+  map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+  tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
+  tmp |> st_buffer(d*1000) |> tm_shape() + tm_borders() +
+  inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
+  CairoPDF(paste0('dots_', path, '_', seas,'_buffer', d,'km.pdf'), width=9, height=4.5)
+  print(map)
+  print(insetmap, vp = grid::viewport(0.92, 0.325, width=0.7, height=0.5))
+  graphics.off()
+}
+
+
+path='Theile'
+seas = '4season'
+tmp = inner_join(wd_province |> select(Province, Commune) |> unique(),
+wd |> group_by(Province, Commune) |> summarize(bin=ifelse(sum(Theile)>0,1,0)) |> filter(bin>0),
+by='Commune') |> st_transform(3857) |> st_centroid()
+
+map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
+inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
+CairoPDF(paste0('dots_', path, '_', seas,'.pdf'), width=9, height=4.5)
+print(map)
+print(insetmap, vp = grid::viewport(0.92, 0.325, width=0.7, height=0.5))
+graphics.off()
+
+ds = c(10,15,20)
+for(d in ds){
+  map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+  tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
+  tmp |> st_buffer(d*1000) |> tm_shape() + tm_borders() +
+  inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
+  CairoPDF(paste0('dots_', path, '_', seas,'_buffer', d,'km.pdf'), width=9, height=4.5)
+  print(map)
+  print(insetmap, vp = grid::viewport(0.92, 0.325, width=0.7, height=0.5))
+  graphics.off()
+}
+
+
+path='T.evansi'
+seas = '4season'
+tmp = inner_join(wd_province |> select(Province, Commune) |> unique(),
+wd |> group_by(Province, Commune) |> summarize(bin=ifelse(sum(T.evansi)>0,1,0)) |> filter(bin>0),
+by='Commune') |> st_transform(3857) |> st_centroid()
+
+map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
+inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
+CairoPDF(paste0('dots_', path, '_', seas,'.pdf'), width=9, height=4.5)
+print(map)
+print(insetmap, vp = grid::viewport(0.92, 0.325, width=0.7, height=0.5))
+graphics.off()
+
+ds = c(10,15,20)
+for(d in ds){
+  map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+  tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
+  tmp |> st_buffer(d*1000) |> tm_shape() + tm_borders() +
+  inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
+  CairoPDF(paste0('dots_', path, '_', seas,'_buffer', d,'km.pdf'), width=9, height=4.5)
+  print(map)
+  print(insetmap, vp = grid::viewport(0.92, 0.325, width=0.7, height=0.5))
+  graphics.off()
+}
+
+
+mogrify -density 600 -format jpg *.pdf
+mkdir pdf
+mkdir jpg
+mv *.pdf pdf
+mv *.jpg jpg
+
+
+tcom = communes |> st_transform(3857)
+ttab = tcom |> select(Province, Commune) |> st_drop_geometry()
+
+library(WriteXLS)
+
+path='Ana'
+lst = list()
+
+ds = c(10,15,20)
+for(d in ds){
+tmp = inner_join(wd_province |> select(Province, Commune) |> unique(),
+wd |> group_by(Province, Commune) |> summarize(bin=ifelse(sum(Ana)>0,1,0)) |> filter(bin>0),
+by='Commune') |> st_transform(3857) |> st_centroid() |> st_buffer(d*1000)
+
+m = st_intersects(tcom, tmp, sparse=F)
+src = tmp |> st_drop_geometry() |> select(Province.y, Commune) |> rename(Province=1)
+
+
+js = which(colSums(m)>0)
+j = js[1]
+i = which(m[,j])
+tab = bind_cols(src[j,], ttab[i,])
+for(j in js){
+  i = which(m[,j])
+  tab = bind_rows(tab, bind_cols(src[j,], ttab[i,]))
+}
+tab = tab |> as_tibble() |> unique()
+colnames(tab) = c('source_province', 'source_commune', 'within_buffer_province', 'within_buffer_commune')
+lst[[length(lst)+1]] = tab |> filter(source_commune!=within_buffer_commune)
+}
+
+WriteXLS(lst, ExcelFileName=paste0('spatial_query_', path, '.xls'), SheetNames=paste('radius', ds, sep='_'))
+
+
+path='Babe'
+lst = list()
+
+ds = c(10,15,20)
+for(d in ds){
+tmp = inner_join(wd_province |> select(Province, Commune) |> unique(),
+wd |> group_by(Province, Commune) |> summarize(bin=ifelse(sum(Babe)>0,1,0)) |> filter(bin>0),
+by='Commune') |> st_transform(3857) |> st_centroid() |> st_buffer(d*1000)
+
+m = st_intersects(tcom, tmp, sparse=F)
+src = tmp |> st_drop_geometry() |> select(Province.y, Commune) |> rename(Province=1)
+
+
+js = which(colSums(m)>0)
+j = js[1]
+i = which(m[,j])
+tab = bind_cols(src[j,], ttab[i,])
+for(j in js){
+  i = which(m[,j])
+  tab = bind_rows(tab, bind_cols(src[j,], ttab[i,]))
+}
+tab = tab |> as_tibble() |> unique()
+colnames(tab) = c('source_province', 'source_commune', 'within_buffer_province', 'within_buffer_commune')
+lst[[length(lst)+1]] = tab |> filter(source_commune!=within_buffer_commune)
+}
+
+WriteXLS(lst, ExcelFileName=paste0('spatial_query_', path, '.xls'), SheetNames=paste('radius', ds, sep='_'))
+
+
+path='Theile'
+lst = list()
+
+ds = c(10,15,20)
+for(d in ds){
+tmp = inner_join(wd_province |> select(Province, Commune) |> unique(),
+wd |> group_by(Province, Commune) |> summarize(bin=ifelse(sum(Theile)>0,1,0)) |> filter(bin>0),
+by='Commune') |> st_transform(3857) |> st_centroid() |> st_buffer(d*1000)
+
+m = st_intersects(tcom, tmp, sparse=F)
+src = tmp |> st_drop_geometry() |> select(Province.y, Commune) |> rename(Province=1)
+
+
+js = which(colSums(m)>0)
+j = js[1]
+i = which(m[,j])
+tab = bind_cols(src[j,], ttab[i,])
+for(j in js){
+  i = which(m[,j])
+  tab = bind_rows(tab, bind_cols(src[j,], ttab[i,]))
+}
+tab = tab |> as_tibble() |> unique()
+colnames(tab) = c('source_province', 'source_commune', 'within_buffer_province', 'within_buffer_commune')
+lst[[length(lst)+1]] = tab |> filter(source_commune!=within_buffer_commune)
+}
+
+WriteXLS(lst, ExcelFileName=paste0('spatial_query_', path, '.xls'), SheetNames=paste('radius', ds, sep='_'))
+
+
+path='T.evansi'
+lst = list()
+
+ds = c(10,15,20)
+for(d in ds){
+tmp = inner_join(wd_province |> select(Province, Commune) |> unique(),
+wd |> group_by(Province, Commune) |> summarize(bin=ifelse(sum(T.evansi)>0,1,0)) |> filter(bin>0),
+by='Commune') |> st_transform(3857) |> st_centroid() |> st_buffer(d*1000)
+
+m = st_intersects(tcom, tmp, sparse=F)
+src = tmp |> st_drop_geometry() |> select(Province.y, Commune) |> rename(Province=1)
+
+
+js = which(colSums(m)>0)
+j = js[1]
+i = which(m[,j])
+tab = bind_cols(src[j,], ttab[i,])
+for(j in js){
+  i = which(m[,j])
+  tab = bind_rows(tab, bind_cols(src[j,], ttab[i,]))
+}
+tab = tab |> as_tibble() |> unique()
+colnames(tab) = c('source_province', 'source_commune', 'within_buffer_province', 'within_buffer_commune')
+lst[[length(lst)+1]] = tab |> filter(source_commune!=within_buffer_commune)
+}
+
+WriteXLS(lst, ExcelFileName=paste0('spatial_query_', path, '.xls'), SheetNames=paste('radius', ds, sep='_'))
+
+
+
+map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
+inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
+CairoPDF(paste0('dots_', path, '_', seas,'.pdf'), width=9, height=4.5)
+print(map)
+print(insetmap, vp = grid::viewport(0.92, 0.325, width=0.7, height=0.5))
+graphics.off()
+
+ds = c(10,15,20)
+for(d in ds){
+  map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+  tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
+  tmp |> st_buffer(d*1000) |> tm_shape() + tm_borders() +
+  inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
+  CairoPDF(paste0('dots_', path, '_', seas,'_buffer', d,'km.pdf'), width=9, height=4.5)
+  print(map)
+  print(insetmap, vp = grid::viewport(0.92, 0.325, width=0.7, height=0.5))
+  graphics.off()
+}
+
+
+
+setwd('../WP7.2')
+seasons = c('spring', 'summer', 'autumn', 'winter')
+
+path='Ana'
+for(seas in seasons){
+tmp = inner_join(wd_province |> select(Province, Commune) |> unique(),
+wd |> filter(s==seas) |> group_by(Province, Commune) |> summarize(bin=ifelse(sum(Ana)>0,1,0)) |> filter(bin>0),
+by='Commune') |> st_transform(3857) |> st_centroid()
+
+map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
+inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
+CairoPDF(paste0('dots_', path, '_', seas,'.pdf'), width=9, height=4.5)
+print(map)
+print(insetmap, vp = grid::viewport(0.92, 0.325, width=0.7, height=0.5))
+graphics.off()
+
+ds = c(10,15,20)
+for(d in ds){
+  map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+  tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
+  tmp |> st_buffer(d*1000) |> tm_shape() + tm_borders() +
+  inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
+  CairoPDF(paste0('dots_', path, '_', seas,'_buffer', d,'km.pdf'), width=9, height=4.5)
+  print(map)
+  print(insetmap, vp = grid::viewport(0.92, 0.325, width=0.7, height=0.5))
+  graphics.off()
+}
+}
+
+path='Babe'
+for(seas in seasons){
+tmp = inner_join(wd_province |> select(Province, Commune) |> unique(),
+wd |> filter(s==seas) |> group_by(Province, Commune) |> summarize(bin=ifelse(sum(Babe)>0,1,0)) |> filter(bin>0),
+by='Commune') |> st_transform(3857) |> st_centroid()
+
+map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
+inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
+CairoPDF(paste0('dots_', path, '_', seas,'.pdf'), width=9, height=4.5)
+print(map)
+print(insetmap, vp = grid::viewport(0.92, 0.325, width=0.7, height=0.5))
+graphics.off()
+
+ds = c(10,15,20)
+for(d in ds){
+  map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+  tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
+  tmp |> st_buffer(d*1000) |> tm_shape() + tm_borders() +
+  inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
+  CairoPDF(paste0('dots_', path, '_', seas,'_buffer', d,'km.pdf'), width=9, height=4.5)
+  print(map)
+  print(insetmap, vp = grid::viewport(0.92, 0.325, width=0.7, height=0.5))
+  graphics.off()
+}
+}
+
+
+path='Theile'
+for(seas in seasons){
+tmp = inner_join(wd_province |> select(Province, Commune) |> unique(),
+wd |> filter(s==seas) |> group_by(Province, Commune) |> summarize(bin=ifelse(sum(Theile)>0,1,0)) |> filter(bin>0),
+by='Commune') |> st_transform(3857) |> st_centroid()
+
+map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
+inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
+CairoPDF(paste0('dots_', path, '_', seas,'.pdf'), width=9, height=4.5)
+print(map)
+print(insetmap, vp = grid::viewport(0.92, 0.325, width=0.7, height=0.5))
+graphics.off()
+
+ds = c(10,15,20)
+for(d in ds){
+  map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+  tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
+  tmp |> st_buffer(d*1000) |> tm_shape() + tm_borders() +
+  inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
+  CairoPDF(paste0('dots_', path, '_', seas,'_buffer', d,'km.pdf'), width=9, height=4.5)
+  print(map)
+  print(insetmap, vp = grid::viewport(0.92, 0.325, width=0.7, height=0.5))
+  graphics.off()
+}
+}
+
+path='T.evansi'
+for(seas in seasons){
+tmp = inner_join(wd_province |> select(Province, Commune) |> unique(),
+wd |> filter(s==seas) |> group_by(Province, Commune) |> summarize(bin=ifelse(sum(T.evansi)>0,1,0)) |> filter(bin>0),
+by='Commune') |> st_transform(3857) |> st_centroid()
+
+map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
+inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
+CairoPDF(paste0('dots_', path, '_', seas,'.pdf'), width=9, height=4.5)
+print(map)
+print(insetmap, vp = grid::viewport(0.92, 0.325, width=0.7, height=0.5))
+graphics.off()
+
+ds = c(10,15,20)
+for(d in ds){
+  map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+  tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
+  tmp |> st_buffer(d*1000) |> tm_shape() + tm_borders() +
+  inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
+  CairoPDF(paste0('dots_', path, '_', seas,'_buffer', d,'km.pdf'), width=9, height=4.5)
+  print(map)
+  print(insetmap, vp = grid::viewport(0.92, 0.325, width=0.7, height=0.5))
+  graphics.off()
+}
+}
+
+
+mogrify -density 600 -format jpg *.pdf
+mkdir pdf
+mkdir jpg
+mv *.pdf pdf
+mv *.jpg jpg
+
+
+
+path='Ana'
+
+for(seas in seasons){
+lst = list()
+for(d in ds){
+tmp = inner_join(wd_province |> select(Province, Commune) |> unique(),
+wd |> filter(s==seas) |> group_by(Province, Commune) |> summarize(bin=ifelse(sum(Ana)>0,1,0)) |> filter(bin>0),
+by='Commune') |> st_transform(3857) |> st_centroid() |> st_buffer(d*1000)
+
+m = st_intersects(tcom, tmp, sparse=F)
+src = tmp |> st_drop_geometry() |> select(Province.y, Commune) |> rename(Province=1)
+
+js = which(colSums(m)>0)
+j = js[1]
+i = which(m[,j])
+tab = bind_cols(src[j,], ttab[i,])
+for(j in js){
+  i = which(m[,j])
+  tab = bind_rows(tab, bind_cols(src[j,], ttab[i,]))
+}
+tab = tab |> as_tibble() |> unique()
+colnames(tab) = c('source_province', 'source_commune', 'within_buffer_province', 'within_buffer_commune')
+lst[[length(lst)+1]] = tab |> filter(source_commune!=within_buffer_commune)
+}
+
+WriteXLS(lst, ExcelFileName=paste0('spatial_query_', path, '_', seas, '.xls'), SheetNames=paste('radius', ds, sep='_'))
+}
+
+
+
+path='Babe'
+
+for(seas in seasons){
+lst = list()
+for(d in ds){
+tmp = inner_join(wd_province |> select(Province, Commune) |> unique(),
+wd |> filter(s==seas) |> group_by(Province, Commune) |> summarize(bin=ifelse(sum(Babe)>0,1,0)) |> filter(bin>0),
+by='Commune') |> st_transform(3857) |> st_centroid() |> st_buffer(d*1000)
+
+m = st_intersects(tcom, tmp, sparse=F)
+src = tmp |> st_drop_geometry() |> select(Province.y, Commune) |> rename(Province=1)
+
+js = which(colSums(m)>0)
+j = js[1]
+i = which(m[,j])
+tab = bind_cols(src[j,], ttab[i,])
+for(j in js){
+  i = which(m[,j])
+  tab = bind_rows(tab, bind_cols(src[j,], ttab[i,]))
+}
+tab = tab |> as_tibble() |> unique()
+colnames(tab) = c('source_province', 'source_commune', 'within_buffer_province', 'within_buffer_commune')
+lst[[length(lst)+1]] = tab |> filter(source_commune!=within_buffer_commune)
+}
+
+WriteXLS(lst, ExcelFileName=paste0('spatial_query_', path, '_', seas, '.xls'), SheetNames=paste('radius', ds, sep='_'))
+}
+
+
+
+path='Theile'
+
+for(seas in seasons){
+lst = list()
+for(d in ds){
+tmp = inner_join(wd_province |> select(Province, Commune) |> unique(),
+wd |> filter(s==seas) |> group_by(Province, Commune) |> summarize(bin=ifelse(sum(Theile)>0,1,0)) |> filter(bin>0),
+by='Commune') |> st_transform(3857) |> st_centroid() |> st_buffer(d*1000)
+
+m = st_intersects(tcom, tmp, sparse=F)
+src = tmp |> st_drop_geometry() |> select(Province.y, Commune) |> rename(Province=1)
+
+js = which(colSums(m)>0)
+j = js[1]
+i = which(m[,j])
+tab = bind_cols(src[j,], ttab[i,])
+for(j in js){
+  i = which(m[,j])
+  tab = bind_rows(tab, bind_cols(src[j,], ttab[i,]))
+}
+tab = tab |> as_tibble() |> unique()
+colnames(tab) = c('source_province', 'source_commune', 'within_buffer_province', 'within_buffer_commune')
+lst[[length(lst)+1]] = tab |> filter(source_commune!=within_buffer_commune)
+}
+
+WriteXLS(lst, ExcelFileName=paste0('spatial_query_', path, '_', seas, '.xls'), SheetNames=paste('radius', ds, sep='_'))
+}
 
