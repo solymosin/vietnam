@@ -548,6 +548,8 @@ insetmap = tm_shape(provinces) + tm_polygons(col=gray.colors(30)[15], border.alp
 tm_compass(color.light='grey90', size=1.5, text.size=0.75, type='arrow', position=c(0.65, 0.99)) +
 tm_shape(st_as_sfc(bb)) + tm_borders(col='blue') + tm_layout(bg.color='white')
 
+
+#######################################################################################
 setwd('../WP7.1')
 
 path='Ana'
@@ -556,7 +558,7 @@ tmp = inner_join(wd_province |> select(Province, Commune) |> unique(),
 wd |> group_by(Province, Commune) |> summarize(bin=ifelse(sum(Ana)>0,1,0)) |> filter(bin>0),
 by='Commune') |> st_transform(3857) |> st_centroid()
 
-map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_polygons(fill='green', alpha=0.2) +
 tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
 inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
 CairoPDF(paste0('dots_', path, '_', seas,'.pdf'), width=9, height=4.5)
@@ -566,9 +568,9 @@ graphics.off()
 
 ds = c(10,15,20)
 for(d in ds){
-  map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+  map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_polygons(fill='green', alpha=0.2) +
   tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
-  tmp |> st_buffer(d*1000) |> tm_shape() + tm_borders() +
+  tmp |> st_buffer(d*1000) |> tm_shape() + tm_polygons(fill='red', alpha=0.1, lwd=0) +
   inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
   CairoPDF(paste0('dots_', path, '_', seas,'_buffer', d,'km.pdf'), width=9, height=4.5)
   print(map)
@@ -583,7 +585,7 @@ tmp = inner_join(wd_province |> select(Province, Commune) |> unique(),
 wd |> group_by(Province, Commune) |> summarize(bin=ifelse(sum(Babe)>0,1,0)) |> filter(bin>0),
 by='Commune') |> st_transform(3857) |> st_centroid()
 
-map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_polygons(fill='green', alpha=0.2) +
 tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
 inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
 CairoPDF(paste0('dots_', path, '_', seas,'.pdf'), width=9, height=4.5)
@@ -593,9 +595,9 @@ graphics.off()
 
 ds = c(10,15,20)
 for(d in ds){
-  map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+  map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_polygons(fill='green', alpha=0.2) +
   tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
-  tmp |> st_buffer(d*1000) |> tm_shape() + tm_borders() +
+  tmp |> st_buffer(d*1000) |> tm_shape() + tm_polygons(fill='red', alpha=0.1, lwd=0) +
   inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
   CairoPDF(paste0('dots_', path, '_', seas,'_buffer', d,'km.pdf'), width=9, height=4.5)
   print(map)
@@ -610,7 +612,7 @@ tmp = inner_join(wd_province |> select(Province, Commune) |> unique(),
 wd |> group_by(Province, Commune) |> summarize(bin=ifelse(sum(Theile)>0,1,0)) |> filter(bin>0),
 by='Commune') |> st_transform(3857) |> st_centroid()
 
-map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_polygons(fill='green', alpha=0.2) +
 tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
 inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
 CairoPDF(paste0('dots_', path, '_', seas,'.pdf'), width=9, height=4.5)
@@ -620,9 +622,9 @@ graphics.off()
 
 ds = c(10,15,20)
 for(d in ds){
-  map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+  map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_polygons(fill='green', alpha=0.2) +
   tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
-  tmp |> st_buffer(d*1000) |> tm_shape() + tm_borders() +
+  tmp |> st_buffer(d*1000) |> tm_shape() + tm_polygons(fill='red', alpha=0.1, lwd=0) +
   inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
   CairoPDF(paste0('dots_', path, '_', seas,'_buffer', d,'km.pdf'), width=9, height=4.5)
   print(map)
@@ -637,7 +639,7 @@ tmp = inner_join(wd_province |> select(Province, Commune) |> unique(),
 wd |> group_by(Province, Commune) |> summarize(bin=ifelse(sum(T.evansi)>0,1,0)) |> filter(bin>0),
 by='Commune') |> st_transform(3857) |> st_centroid()
 
-map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_polygons(fill='green', alpha=0.2) +
 tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
 inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
 CairoPDF(paste0('dots_', path, '_', seas,'.pdf'), width=9, height=4.5)
@@ -647,9 +649,9 @@ graphics.off()
 
 ds = c(10,15,20)
 for(d in ds){
-  map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+  map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_polygons(fill='green', alpha=0.2) +
   tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
-  tmp |> st_buffer(d*1000) |> tm_shape() + tm_borders() +
+  tmp |> st_buffer(d*1000) |> tm_shape() + tm_polygons(fill='red', alpha=0.1, lwd=0) +
   inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
   CairoPDF(paste0('dots_', path, '_', seas,'_buffer', d,'km.pdf'), width=9, height=4.5)
   print(map)
@@ -787,27 +789,28 @@ WriteXLS(lst, ExcelFileName=paste0('spatial_query_', path, '.xls'), SheetNames=p
 
 
 
-map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
-tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
-inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
-CairoPDF(paste0('dots_', path, '_', seas,'.pdf'), width=9, height=4.5)
-print(map)
-print(insetmap, vp = grid::viewport(0.92, 0.325, width=0.7, height=0.5))
-graphics.off()
+# map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_polygons(fill='green', alpha=0.2) +
+# tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
+# inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
+# CairoPDF(paste0('dots_', path, '_', seas,'.pdf'), width=9, height=4.5)
+# print(map)
+# print(insetmap, vp = grid::viewport(0.92, 0.325, width=0.7, height=0.5))
+# graphics.off()
+#
+# ds = c(10,15,20)
+# for(d in ds){
+#   map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_polygons(fill='green', alpha=0.2) +
+#   tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
+#   tmp |> st_buffer(d*1000) |> tm_shape() + tm_polygons(fill='red', alpha=0.1, lwd=0) +
+#   inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
+#   CairoPDF(paste0('dots_', path, '_', seas,'_buffer', d,'km.pdf'), width=9, height=4.5)
+#   print(map)
+#   print(insetmap, vp = grid::viewport(0.92, 0.325, width=0.7, height=0.5))
+#   graphics.off()
+# }
 
-ds = c(10,15,20)
-for(d in ds){
-  map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
-  tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
-  tmp |> st_buffer(d*1000) |> tm_shape() + tm_borders() +
-  inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
-  CairoPDF(paste0('dots_', path, '_', seas,'_buffer', d,'km.pdf'), width=9, height=4.5)
-  print(map)
-  print(insetmap, vp = grid::viewport(0.92, 0.325, width=0.7, height=0.5))
-  graphics.off()
-}
 
-
+##################################################################################################
 
 setwd('../WP7.2')
 seasons = c('spring', 'summer', 'autumn', 'winter')
@@ -818,7 +821,7 @@ tmp = inner_join(wd_province |> select(Province, Commune) |> unique(),
 wd |> filter(s==seas) |> group_by(Province, Commune) |> summarize(bin=ifelse(sum(Ana)>0,1,0)) |> filter(bin>0),
 by='Commune') |> st_transform(3857) |> st_centroid()
 
-map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_polygons(fill='green', alpha=0.2) +
 tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
 inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
 CairoPDF(paste0('dots_', path, '_', seas,'.pdf'), width=9, height=4.5)
@@ -828,9 +831,9 @@ graphics.off()
 
 ds = c(10,15,20)
 for(d in ds){
-  map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+  map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_polygons(fill='green', alpha=0.2) +
   tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
-  tmp |> st_buffer(d*1000) |> tm_shape() + tm_borders() +
+  tmp |> st_buffer(d*1000) |> tm_shape() + tm_polygons(fill='red', alpha=0.1, lwd=0) +
   inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
   CairoPDF(paste0('dots_', path, '_', seas,'_buffer', d,'km.pdf'), width=9, height=4.5)
   print(map)
@@ -845,7 +848,7 @@ tmp = inner_join(wd_province |> select(Province, Commune) |> unique(),
 wd |> filter(s==seas) |> group_by(Province, Commune) |> summarize(bin=ifelse(sum(Babe)>0,1,0)) |> filter(bin>0),
 by='Commune') |> st_transform(3857) |> st_centroid()
 
-map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_polygons(fill='green', alpha=0.2) +
 tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
 inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
 CairoPDF(paste0('dots_', path, '_', seas,'.pdf'), width=9, height=4.5)
@@ -855,9 +858,9 @@ graphics.off()
 
 ds = c(10,15,20)
 for(d in ds){
-  map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+  map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_polygons(fill='green', alpha=0.2) +
   tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
-  tmp |> st_buffer(d*1000) |> tm_shape() + tm_borders() +
+  tmp |> st_buffer(d*1000) |> tm_shape() + tm_polygons(fill='red', alpha=0.1, lwd=0) +
   inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
   CairoPDF(paste0('dots_', path, '_', seas,'_buffer', d,'km.pdf'), width=9, height=4.5)
   print(map)
@@ -873,7 +876,7 @@ tmp = inner_join(wd_province |> select(Province, Commune) |> unique(),
 wd |> filter(s==seas) |> group_by(Province, Commune) |> summarize(bin=ifelse(sum(Theile)>0,1,0)) |> filter(bin>0),
 by='Commune') |> st_transform(3857) |> st_centroid()
 
-map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_polygons(fill='green', alpha=0.2) +
 tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
 inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
 CairoPDF(paste0('dots_', path, '_', seas,'.pdf'), width=9, height=4.5)
@@ -883,9 +886,9 @@ graphics.off()
 
 ds = c(10,15,20)
 for(d in ds){
-  map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+  map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_polygons(fill='green', alpha=0.2) +
   tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
-  tmp |> st_buffer(d*1000) |> tm_shape() + tm_borders() +
+  tmp |> st_buffer(d*1000) |> tm_shape() + tm_polygons(fill='red', alpha=0.1, lwd=0) +
   inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
   CairoPDF(paste0('dots_', path, '_', seas,'_buffer', d,'km.pdf'), width=9, height=4.5)
   print(map)
@@ -900,7 +903,7 @@ tmp = inner_join(wd_province |> select(Province, Commune) |> unique(),
 wd |> filter(s==seas) |> group_by(Province, Commune) |> summarize(bin=ifelse(sum(T.evansi)>0,1,0)) |> filter(bin>0),
 by='Commune') |> st_transform(3857) |> st_centroid()
 
-map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_polygons(fill='green', alpha=0.2) +
 tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
 inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
 CairoPDF(paste0('dots_', path, '_', seas,'.pdf'), width=9, height=4.5)
@@ -910,9 +913,9 @@ graphics.off()
 
 ds = c(10,15,20)
 for(d in ds){
-  map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_borders() +
+  map = provinces |> tm_shape(bbox=bb, crs=3857, is.main=T) + tm_polygons(fill='green', alpha=0.2) +
   tmp |> tm_shape() + tm_dots(size=0.5, fill='red') +
-  tmp |> st_buffer(d*1000) |> tm_shape() + tm_borders() +
+  tmp |> st_buffer(d*1000) |> tm_shape() + tm_polygons(fill='red', alpha=0.1, lwd=0) +
   inner_join(provinces, tmp |> st_drop_geometry() |> select(Province.y) |> unique() |> rename(NAME_1=Province.y)) |> tm_shape() + tm_text('VARNAME_1')
   CairoPDF(paste0('dots_', path, '_', seas,'_buffer', d,'km.pdf'), width=9, height=4.5)
   print(map)
