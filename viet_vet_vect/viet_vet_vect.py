@@ -38,6 +38,7 @@ from qgis.PyQt.QtCore import Qt
 from .resources import *
 # Import the code for the dialog
 from .viet_vet_vect_dialog import VietVetVectDialog
+from .sp_query_dlg import spQuery_dlg
 import os.path
 
 
@@ -195,7 +196,25 @@ class VietVetVect:
             self.iface.removeToolBarIcon(action)
 
     def spquery(self):
-        pass
+        if self.first_start == True:
+            self.first_start = False
+            self.dlg = spQuery_dlg()
+        
+        self.dlg.setWindowTitle("Simple spatial query")
+        layers = QgsProject.instance().layerTreeRoot().children()
+        self.dlg.comboBox.clear()
+        self.dlg.comboBox.addItems([layer.name() for layer in layers])
+        self.dlg.comboBox_2.clear()
+        self.dlg.comboBox_2.addItems([layer.name() for layer in layers])
+
+        # show the dialog
+        self.dlg.show()
+        # Run the dialog event loop
+        result = self.dlg.exec_()
+        # See if OK was pressed
+        if result:
+            pass
+
 
     def buffering(self):
         """Run method that performs all the real work"""
