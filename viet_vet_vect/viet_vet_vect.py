@@ -31,7 +31,8 @@ from qgis.core import QgsVectorLayer
 from qgis.core import QgsCoordinateReferenceSystem
 from qgis.core import QgsCoordinateTransform
 from qgis.core import QgsCoordinateTransformContext
-
+from qgis.utils import OverrideCursor
+from qgis.PyQt.QtCore import Qt
 
 # Initialize Qt resources from file resources.py
 from .resources import *
@@ -168,12 +169,18 @@ class VietVetVect:
     def initGui(self):
         """Create the menu entries and toolbar icons inside the QGIS GUI."""
 
-        icon_path = ':/plugins/viet_vet_vect/icon.png'
+        # icon_path = ':/plugins/viet_vet_vect/icon.png'
         self.add_action(
-            icon_path,
-            text=self.tr(u'VietVetVect'),
-            callback=self.run,
+            ':/plugins/viet_vet_vect/icon.png',
+            text=self.tr(u'Buffering'),
+            callback=self.buffering,
             parent=self.iface.mainWindow())
+        
+        self.add_action(
+            ':/plugins/viet_vet_vect/icon.png',
+            text=self.tr(u'Spatial query'),
+            callback=self.spquery,
+            parent=self.iface.mainWindow())        
 
         # will be set False in run()
         self.first_start = True
@@ -187,8 +194,10 @@ class VietVetVect:
                 action)
             self.iface.removeToolBarIcon(action)
 
+    def spquery(self):
+        pass
 
-    def run(self):
+    def buffering(self):
         """Run method that performs all the real work"""
 
         # Create the dialog with elements (after translation) and keep reference
@@ -210,58 +219,76 @@ class VietVetVect:
         # See if OK was pressed
         if result:
             # Do something useful here - delete the line containing pass and
-            # substitute with your code.                        
-            # crsSrc = QgsCoordinateReferenceSystem(4326)
-            # crsDest = QgsCoordinateReferenceSystem(3857)
-            # trafo1 = QgsCoordinateTransform(crsSrc, crsDest)
-            # transform = QgsCoordinateTransform(crsSrc, crsDest, QgsCoordinateTransformContext())            
-            
-            #selidx = self.dlg.comboBox.currentIndex()                   
-            #self.iface.setActiveLayer(layers[selidx].layer())
-            srcLayer = QgsProject.instance().mapLayersByName(self.dlg.comboBox.currentText())[0]
-            # self.iface.setActiveLayer(al)
-            # srcLayer = self.iface.activeLayer()
-            trafo = QgsCoordinateTransform(srcLayer.crs(), QgsCoordinateReferenceSystem(3857), QgsCoordinateTransformContext())
-            
-            # self.iface.messageBar().pushMessage("Info", "Layer index: " + str(srcLayer.crs().authid()), level=Qgis.Info)
-            # dstLayer = QgsVectorLayer("Polygon", "buffer", "memory")
-            # dstLayer = QgsVectorLayer('Polygon?crs=EPSG:4326', 'buffer', 'memory')
-            dstLayer = QgsVectorLayer('Polygon?crs=EPSG:3857', 'buffer', 'memory')   
-            # https://gis.stackexchange.com/questions/351156/copying-attribute-values-to-new-layer-in-qgis-with-python
-            # pr = dstLayer.dataProvider()
-            # dstLayer.addAttributes(srcLayer.fields())
-            # dstLayer.updateFields()    
-            dstLayer.startEditing()                                
-            for feature in srcLayer.getFeatures():
-                # geom = feature.geometry()
-                # buffer = geom.buffer(0.1, 50)
-                # feat = QgsFeature()
-                # feat.setGeometry(buffer)                
-                g = feature.geometry()
-                g.transform(trafo)
-                b = g.buffer(self.dlg.spinBox.value()*1000, 50)
-                f = QgsFeature()
-                f.setGeometry(b)      
-                # f.setAttributes(feature.attributes())
-                # g = f.geometry()
-                # g.transform(transform)
-                # b = geom.buffer(10000, 50)                                
-                dstLayer.addFeature(f)
-            dstLayer.commitChanges()
-            QgsProject.instance().addMapLayer(dstLayer)            
+            # substitute with your code.              
+            with OverrideCursor(Qt.WaitCursor):     
+                srcLayer = QgsProject.instance().mapLayersByName(self.dlg.comboBox.currentText())[0]
+                trafo = QgsCoordinateTransform(srcLayer.crs(), QgsCoordinateReferenceSystem(3857), QgsCoordinateTransformContext())
+                dstLayer = QgsVectorLayer('Polygon?crs=EPSG:3857', 'buffers_'+str(self.dlg.spinBox.value())+'_km_radius', 'memory')   
+                dstLayer.startEditing()        
+                fields = srcLayer.fields()   
+                for field in fields:
+                    dstLayer.addAttribute(field)   
 
-            # dstLayer = QgsVectorLayer('Polygon?crs=EPSG:3857', 'buffer', 'memory')
-            # dstLayer.startEditing()
-            # for feature in srcLayer.getFeatures():
-            #     geom = feature.geometry()
-            #     geom.transform(trafo1)
-            #     buffer = geom.buffer(1000, 50)
-            #     feat = QgsFeature()
-            #     feat.setGeometry(buffer)
-            #     self.iface.messageBar().pushMessage("Info", "Layer index: " + feat.geometry().asWkt() , level=Qgis.Info)
-            #     dstLayer.addFeature(feat)
-            # dstLayer.commitChanges()
-            # QgsProject.instance().addMapLayer(dstLayer)
+                for feature in srcLayer.getFeatures():
+                    g = feature.geometry()
+                    g.transform(trafo)
+                    b = g.buffer(self.dlg.spinBox.value()*1000, 50)
+                    f = QgsFeature(dstLayer.fields())
+                    for index, field in enumerate(srcLayer.fields()):
+                        f.setAttribute(index, feature.attribute(field.name()))                    
+                    f.setGeometry(b)      
+                    dstLayer.addFeature(f)
+                dstLayer.commitChanges()
+                QgsProject.instance().addMapLayer(dstLayer)  
 
-            #pass
+                # crsSrc = QgsCoordinateReferenceSystem(4326)
+                # crsDest = QgsCoordinateReferenceSystem(3857)
+                # trafo1 = QgsCoordinateTransform(crsSrc, crsDest)
+                # transform = QgsCoordinateTransform(crsSrc, crsDest, QgsCoordinateTransformContext())            
+                #selidx = self.dlg.comboBox.currentIndex()                   
+                #self.iface.setActiveLayer(layers[selidx].layer())
+                # srcLayer = QgsProject.instance().mapLayersByName(self.dlg.comboBox.currentText())[0]
+                # self.iface.setActiveLayer(al)
+                # srcLayer = self.iface.activeLayer()
+                # trafo = QgsCoordinateTransform(srcLayer.crs(), QgsCoordinateReferenceSystem(3857), QgsCoordinateTransformContext())
+                # self.iface.messageBar().pushMessage("Info", "Layer index: " + str(srcLayer.crs().authid()), level=Qgis.Info)
+                # dstLayer = QgsVectorLayer("Polygon", "buffer", "memory")
+                # dstLayer = QgsVectorLayer('Polygon?crs=EPSG:4326', 'buffer', 'memory')
+                # dstLayer = QgsVectorLayer('Polygon?crs=EPSG:3857', 'buffers_'+str(self.dlg.spinBox.value())+'_km_radius', 'memory')   
+                # https://gis.stackexchange.com/questions/351156/copying-attribute-values-to-new-layer-in-qgis-with-python
+                # pr = dstLayer.dataProvider()
+                # dstLayer.addAttributes(srcLayer.fields())
+                # dstLayer.updateFields()    
+                # dstLayer.startEditing()                                
+                # for feature in srcLayer.getFeatures():
+                    # geom = feature.geometry()
+                    # buffer = geom.buffer(0.1, 50)
+                    # feat = QgsFeature()
+                    # feat.setGeometry(buffer)                
+                    # g = feature.geometry()
+                    # g.transform(trafo)
+                    # b = g.buffer(self.dlg.spinBox.value()*1000, 50)
+                    # f = QgsFeature()
+                    # f.setGeometry(b)      
+                    # f.setAttributes(feature.attributes())
+                    # g = f.geometry()
+                    # g.transform(transform)
+                    # b = geom.buffer(10000, 50)                                
+                #     dstLayer.addFeature(f)
+                # dstLayer.commitChanges()
+                # QgsProject.instance().addMapLayer(dstLayer)           
+                # dstLayer = QgsVectorLayer('Polygon?crs=EPSG:3857', 'buffer', 'memory')
+                # dstLayer.startEditing()
+                # for feature in srcLayer.getFeatures():
+                #     geom = feature.geometry()
+                #     geom.transform(trafo1)
+                #     buffer = geom.buffer(1000, 50)
+                #     feat = QgsFeature()
+                #     feat.setGeometry(buffer)
+                #     self.iface.messageBar().pushMessage("Info", "Layer index: " + feat.geometry().asWkt() , level=Qgis.Info)
+                #     dstLayer.addFeature(feat)
+                # dstLayer.commitChanges()
+                # QgsProject.instance().addMapLayer(dstLayer)
+                #pass
+
 
