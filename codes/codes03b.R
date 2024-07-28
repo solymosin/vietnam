@@ -100,6 +100,12 @@ print(insetmap, vp = grid::viewport(0.905, 0.55, width=0.4, height=0.6))
 graphics.off()
 
 
+communes_with_data = inner_join(wd_province, wd |> select(-c('Longitude', 'a', 'a1', 'a2', 'a3', 'b', 'b1', 'b2', 'b3', 'x', 'District', 'Province')) |> rename(Animal=`Animal types`, Age=`Age (year)`, Year=y, Season=s), by='Commune')
+
+communes_with_data |> st_write(paste0(getwd(), '/communes_with_data.shp'), layer_options='ENCODING=UTF-8', delete_layer=T)
+
+
+
 wd_commune = inner_join(wd_province, wd, by='Commune')
 
 map = provinces |> tm_shape(bbox=bb) + tm_borders() +

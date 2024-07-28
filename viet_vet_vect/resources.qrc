@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/plugins/viet_vet_vect" >
+        <file>icon.png</file>
+    </qresource>
+</RCC>
