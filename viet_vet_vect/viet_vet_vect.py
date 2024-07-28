@@ -172,13 +172,13 @@ class VietVetVect:
 
         # icon_path = ':/plugins/viet_vet_vect/icon.png'
         self.add_action(
-            ':/plugins/viet_vet_vect/icon.png',
+            ':/plugins/viet_vet_vect/mActionCircleExtent.svg',
             text=self.tr(u'Buffering'),
             callback=self.buffering,
             parent=self.iface.mainWindow())
         
         self.add_action(
-            ':/plugins/viet_vet_vect/icon.png',
+            ':/plugins/viet_vet_vect/mIconBrowserRelations.svg',
             text=self.tr(u'Spatial query'),
             callback=self.spquery,
             parent=self.iface.mainWindow())        

@@ -1,5 +1,8 @@
 <RCC>
     <qresource prefix="/plugins/viet_vet_vect" >
         <file>icon.png</file>
+        <file>buffering.png</file>
+        <file>mActionCircleExtent.svg</file>
+        <file>mIconBrowserRelations.svg</file>
     </qresource>
 </RCC>
