@@ -33,6 +33,7 @@ from qgis.core import QgsCoordinateTransform
 from qgis.core import QgsCoordinateTransformContext
 from qgis.utils import OverrideCursor
 from qgis.PyQt.QtCore import Qt
+from qgis.PyQt import QtGui
 
 # Initialize Qt resources from file resources.py
 from .resources import *
@@ -195,25 +196,71 @@ class VietVetVect:
                 action)
             self.iface.removeToolBarIcon(action)
 
+    def getFldsbyqLyr(self):
+        # model = QtGui.QStandardItemModel()
+        # self.dlg.listView.setModel(model)        
+        self.dlg.listWidget.clear()
+        lyr = QgsProject.instance().mapLayersByName(self.dlg.comboBox.currentText())[0]
+        fields = lyr.fields()   
+        for field in fields:        
+            self.dlg.listWidget.addItem(field.name())
+            # item = QtGui.QStandardItem(field.name())
+            # model.appendRow(item)
+        
+    def getFldsbysLyr(self):
+        # model = QtGui.QStandardItemModel()
+        # self.dlg.listView_2.setModel(model)          
+        self.dlg.listWidget_2.clear()             
+        lyr = QgsProject.instance().mapLayersByName(self.dlg.comboBox_2.currentText())[0]
+        fields = lyr.fields()   
+        for field in fields:      
+            self.dlg.listWidget_2.addItem(field.name())  
+            # item = QtGui.QStandardItem(field.name())
+            # model.appendRow(item)
+
+
     def spquery(self):
-        if self.first_start == True:
-            self.first_start = False
-            self.dlg = spQuery_dlg()
+        # if self.first_start == True:
+        #     self.first_start = False
+        self.dlg = spQuery_dlg()
         
         self.dlg.setWindowTitle("Simple spatial query")
         layers = QgsProject.instance().layerTreeRoot().children()
+
+        self.dlg.comboBox.currentTextChanged.connect(self.getFldsbyqLyr)
+        self.dlg.comboBox_2.currentTextChanged.connect(self.getFldsbysLyr)      
+        
         self.dlg.comboBox.clear()
         self.dlg.comboBox.addItems([layer.name() for layer in layers])
         self.dlg.comboBox_2.clear()
         self.dlg.comboBox_2.addItems([layer.name() for layer in layers])
-
+        
         # show the dialog
         self.dlg.show()
         # Run the dialog event loop
         result = self.dlg.exec_()
         # See if OK was pressed
-        if result:
-            pass
+        if result:     
+            fldas = []        
+            for item in self.dlg.listWidget.selectedItems():
+                fldas.append(item.text())
+            fldbs = []        
+            for item in self.dlg.listWidget_2.selectedItems():
+                fldbs.append(item.text())                
+            
+            # self.iface.messageBar().pushMessage("Info", "Feature id: " + fldbs[0], level=Qgis.Info)
+
+            with OverrideCursor(Qt.WaitCursor):     
+                lyra = QgsProject.instance().mapLayersByName(self.dlg.comboBox.currentText())[0]
+                lyrb = QgsProject.instance().mapLayersByName(self.dlg.comboBox_2.currentText())[0]
+                trafo = QgsCoordinateTransform(lyra.crs(), lyrb.crs(), QgsCoordinateTransformContext())
+                for fa in lyra.getFeatures():
+                    ga = fa.geometry()
+                    ga.transform(trafo)
+                    for fb in lyrb.getFeatures():
+                        gb = fb.geometry()
+                        if ga.intersects(gb):                            
+                            self.iface.messageBar().pushMessage("Info", "Feature id: " + str(fa.id()) + " intersects with feature id: " + str(fb.id()), level=Qgis.Info)
 
 
     def buffering(self):
@@ -221,9 +268,9 @@ class VietVetVect:
 
         # Create the dialog with elements (after translation) and keep reference
         # Only create GUI ONCE in callback, so that it will only load when the plugin is started
-        if self.first_start == True:
-            self.first_start = False
-            self.dlg = VietVetVectDialog()
+        # if self.first_start == True:
+        #     self.first_start = False
+        self.dlg = VietVetVectDialog()
 
         self.dlg.setWindowTitle("Generate buffers around features")
         layers = QgsProject.instance().layerTreeRoot().children()
