@@ -33,7 +33,9 @@ from qgis.core import QgsCoordinateTransform
 from qgis.core import QgsCoordinateTransformContext
 from qgis.utils import OverrideCursor
 from qgis.PyQt.QtCore import Qt
-from qgis.PyQt import QtGui
+from qgis.PyQt.QtWidgets import QFileDialog
+# from qgis.PyQt import QtGui
+# import pandas as pd
 
 # Initialize Qt resources from file resources.py
 from .resources import *
@@ -218,6 +220,9 @@ class VietVetVect:
             # item = QtGui.QStandardItem(field.name())
             # model.appendRow(item)
 
+    def select_output_file(self):
+        filename, _filter = QFileDialog.getSaveFileName(self.dlg, "Select output file ","", '*.csv')
+        self.dlg.lineEdit.setText(filename)
 
     def spquery(self):
         # if self.first_start == True:
@@ -226,7 +231,7 @@ class VietVetVect:
         
         self.dlg.setWindowTitle("Simple spatial query")
         layers = QgsProject.instance().layerTreeRoot().children()
-
+        self.dlg.toolButton.clicked.connect(self.select_output_file)
         self.dlg.comboBox.currentTextChanged.connect(self.getFldsbyqLyr)
         self.dlg.comboBox_2.currentTextChanged.connect(self.getFldsbysLyr)      
         
@@ -247,10 +252,17 @@ class VietVetVect:
             fldbs = []        
             for item in self.dlg.listWidget_2.selectedItems():
                 fldbs.append(item.text())                
-            
-            # self.iface.messageBar().pushMessage("Info", "Feature id: " + fldbs[0], level=Qgis.Info)
 
             with OverrideCursor(Qt.WaitCursor):     
+                filename = self.dlg.lineEdit.text()
+                with open(filename, 'w') as output_file:
+                    line = ""
+                    for flda in fldas:
+                        line += flda + "; "                                                      
+                    for fldb in fldbs:
+                        line += fldb + "; " 
+                    output_file.write(line + "\n")
+
                 lyra = QgsProject.instance().mapLayersByName(self.dlg.comboBox.currentText())[0]
                 lyrb = QgsProject.instance().mapLayersByName(self.dlg.comboBox_2.currentText())[0]
                 trafo = QgsCoordinateTransform(lyra.crs(), lyrb.crs(), QgsCoordinateTransformContext())
@@ -259,8 +271,16 @@ class VietVetVect:
                     ga.transform(trafo)
                     for fb in lyrb.getFeatures():
                         gb = fb.geometry()
-                        if ga.intersects(gb):                            
-                            self.iface.messageBar().pushMessage("Info", "Feature id: " + str(fa.id()) + " intersects with feature id: " + str(fb.id()), level=Qgis.Info)
+                        if ga.intersects(gb):  
+                            line = ""
+                            for flda in fldas:
+                                line += str(fa.attribute(flda)) + "; "                                                      
+                            for fldb in fldbs:
+                                line += str(fb.attribute(fldb)) + "; "            
+                            with open(filename, 'a') as output_file:
+                                output_file.write(line + "\n")
+
+                self.iface.messageBar().pushMessage("Success", "Output file written at " + filename, level=Qgis.Success, duration=3)
 
 
     def buffering(self):
