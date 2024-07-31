@@ -143,7 +143,7 @@ for(f in fs){
 stat = read_tsv(f)
 inner_join(
 shp |> select(GID_1, NAME_1, VARNAME_1) |> rename(gid=1),
-stat |> mutate(band=paste0('bio', formatC(band, width=2, flag='0'))) |> pivot_wider(names_from=band, values_from=mean)
+stat |> mutate(mean=round(mean,1)) |> mutate(band=paste0('bio', formatC(band, width=2, flag='0'))) |> pivot_wider(names_from=band, values_from=mean)
 ) |> st_write(driver='ESRI Shapefile', dsn=gsub('.stat', '', f), layer_options='ENCODING=UTF-8', delete_layer=T)
 }
 
