@@ -5,6 +5,7 @@ the projected climate for ACCESS-CM2 GCM and ssp126 emission scenario between 20
 
 
 ###Bioclimatic variables
+
 Bioclimatic variables are derived from the monthly temperature and rainfall values in order to generate more biologically meaningful variables. These are often used in species distribution modeling and related ecological modeling techniques. The bioclimatic variables represent annual trends (e.g., mean annual temperature, annual precipitation) seasonality (e.g., annual range in temperature and precipitation) and extreme or limiting environmental factors (e.g., temperature of the coldest and warmest month, and precipitation of the wet and dry quarters). A quarter is a period of three months (1/4 of the year).
 
 They are coded as follows:
