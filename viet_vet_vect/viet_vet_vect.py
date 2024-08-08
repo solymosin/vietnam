@@ -42,6 +42,7 @@ from .resources import *
 # Import the code for the dialog
 from .viet_vet_vect_dialog import VietVetVectDialog
 from .sp_query_dlg import spQuery_dlg
+from .clim_proj_dlg import climProj_dlg
 import os.path
 
 
@@ -185,6 +186,12 @@ class VietVetVect:
             text=self.tr(u'Spatial query'),
             callback=self.spquery,
             parent=self.iface.mainWindow())        
+        
+        self.add_action(
+            ':/plugins/viet_vet_vect/icon.png',
+            text=self.tr(u'Load climate projection layer'),
+            callback=self.climproj,
+            parent=self.iface.mainWindow())             
 
         # will be set False in run()
         self.first_start = True
@@ -197,6 +204,21 @@ class VietVetVect:
                 self.tr(u'&VietVetVect'),
                 action)
             self.iface.removeToolBarIcon(action)
+
+    def climproj(self):
+        # if self.first_start == True:
+        #     self.first_start = False
+        self.dlg = climProj_dlg()
+        
+        self.dlg.setWindowTitle("Load climate projection layer")
+        # show the dialog
+        self.dlg.show()
+        # Run the dialog event loop
+        result = self.dlg.exec_()
+        # See if OK was pressed
+        if result:     
+            pass
+
 
     def getFldsbyqLyr(self):
         # model = QtGui.QStandardItemModel()
