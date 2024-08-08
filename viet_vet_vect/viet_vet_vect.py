@@ -190,7 +190,7 @@ class VietVetVect:
             parent=self.iface.mainWindow())        
         
         self.add_action(
-            ':/plugins/viet_vet_vect/icon.png',
+            ':/plugins/viet_vet_vect/mActionDecreaseBrightness.svg',
             text=self.tr(u'Load climate projection layer'),
             callback=self.climproj,
             parent=self.iface.mainWindow())             
@@ -227,18 +227,18 @@ class VietVetVect:
         result = self.dlg.exec_()
         # See if OK was pressed
         if result:    
-            ln = self.dlg.comboBox.currentText() + '_' + self.dlg.comboBox_2.currentText() + '_' + self.dlg.comboBox_3.currentText() 
-            fld = os.path.dirname(os.path.abspath(__file__))
-            pth = os.path.join(fld, 'maps/wc2.1_10m_bioc_' + ln + '.shp')   
-            self.iface.messageBar().pushMessage("Success", pth, level=Qgis.Success, duration=3)
-  
-            vlayer = QgsVectorLayer(pth, ln, "ogr")
-            if not vlayer.isValid():
-                print("Layer failed to load!")
-            else:
-                QgsProject.instance().addMapLayer(vlayer)
-            pass
-
+            with OverrideCursor(Qt.WaitCursor): 
+                ln = self.dlg.comboBox.currentText() + '_' + self.dlg.comboBox_2.currentText() + '_' + self.dlg.comboBox_3.currentText() 
+                fld = os.path.dirname(os.path.abspath(__file__))
+                pth = os.path.join(fld, 'maps/wc2.1_10m_bioc_' + ln + '.shp')   
+                # self.iface.messageBar().pushMessage("Success", pth, level=Qgis.Success, duration=3)
+    
+                vlayer = QgsVectorLayer(pth, ln, "ogr")
+                if not vlayer.isValid():
+                    print("Layer failed to load!")
+                else:
+                    QgsProject.instance().addMapLayer(vlayer)
+                # pass
 
     def getFldsbyqLyr(self):
         # model = QtGui.QStandardItemModel()

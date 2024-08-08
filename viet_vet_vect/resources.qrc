@@ -4,5 +4,6 @@
         <file>buffering.png</file>
         <file>mActionCircleExtent.svg</file>
         <file>mIconBrowserRelations.svg</file>
+        <file>mActionDecreaseBrightness.svg</file>
     </qresource>
 </RCC>
