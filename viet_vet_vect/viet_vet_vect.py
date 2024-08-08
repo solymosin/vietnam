@@ -27,6 +27,7 @@ from qgis.PyQt.QtWidgets import QAction
 from qgis.core import QgsProject
 from qgis.core import QgsFeature
 from qgis.core import Qgis
+from qgis.core import QgsApplication
 from qgis.core import QgsVectorLayer
 from qgis.core import QgsCoordinateReferenceSystem
 from qgis.core import QgsCoordinateTransform
@@ -34,6 +35,7 @@ from qgis.core import QgsCoordinateTransformContext
 from qgis.utils import OverrideCursor
 from qgis.PyQt.QtCore import Qt
 from qgis.PyQt.QtWidgets import QFileDialog
+
 # from qgis.PyQt import QtGui
 # import pandas as pd
 
@@ -211,12 +213,30 @@ class VietVetVect:
         self.dlg = climProj_dlg()
         
         self.dlg.setWindowTitle("Load climate projection layer")
+
+        self.dlg.comboBox.clear()
+        self.dlg.comboBox.addItems(["ACCESS-CM2", "CMCC-ESM2", "EC-Earth3-Veg", "GISS-E2-1-G", "INM-CM5-0", "IPSL-CM6A-LR", "MIROC6", "MPI-ESM1-2-HR", "MRI-ESM2-0", "UKESM1-0-LL"])
+        self.dlg.comboBox_2.clear()
+        self.dlg.comboBox_2.addItems(['ssp126','ssp245','ssp370','ssp585'])  
+        self.dlg.comboBox_3.clear()
+        self.dlg.comboBox_3.addItems(['2041-2060','2061-2080'])          
+
         # show the dialog
         self.dlg.show()
         # Run the dialog event loop
         result = self.dlg.exec_()
         # See if OK was pressed
-        if result:     
+        if result:    
+            ln = self.dlg.comboBox.currentText() + '_' + self.dlg.comboBox_2.currentText() + '_' + self.dlg.comboBox_3.currentText() 
+            fld = os.path.dirname(os.path.abspath(__file__))
+            pth = os.path.join(fld, 'maps/wc2.1_10m_bioc_' + ln + '.shp')   
+            self.iface.messageBar().pushMessage("Success", pth, level=Qgis.Success, duration=3)
+  
+            vlayer = QgsVectorLayer(pth, ln, "ogr")
+            if not vlayer.isValid():
+                print("Layer failed to load!")
+            else:
+                QgsProject.instance().addMapLayer(vlayer)
             pass
 
 
