@@ -35,6 +35,7 @@ from qgis.core import QgsCoordinateTransformContext
 from qgis.utils import OverrideCursor
 from qgis.PyQt.QtCore import Qt
 from qgis.PyQt.QtWidgets import QFileDialog
+import webbrowser
 
 # from qgis.PyQt import QtGui
 # import pandas as pd
@@ -193,7 +194,13 @@ class VietVetVect:
             ':/plugins/viet_vet_vect/mActionDecreaseBrightness.svg',
             text=self.tr(u'Load climate projection layer'),
             callback=self.climproj,
-            parent=self.iface.mainWindow())             
+            parent=self.iface.mainWindow())    
+
+        self.add_action(
+            ':/plugins/viet_vet_vect/metadata.svg',
+            text=self.tr(u'Help'),
+            callback=self.help,
+            parent=self.iface.mainWindow())                      
 
         # will be set False in run()
         self.first_start = True
@@ -206,6 +213,11 @@ class VietVetVect:
                 self.tr(u'&VietVetVect'),
                 action)
             self.iface.removeToolBarIcon(action)
+
+    def help(self):
+        webbrowser.open('https://raw.githubusercontent.com/solymosin/index/master/pages/vietvetvect.html')
+        # https://raw.githubusercontent.com/solymosin/index/master/pages/vietvetvect.html
+        # pass
 
     def climproj(self):
         # if self.first_start == True:
