@@ -182,7 +182,13 @@ class VietVetVect:
 
         # icon_path = ':/plugins/viet_vet_vect/icon.png'
         self.add_action(
-            ':/plugins/viet_vet_vect/icon.png',
+            ':/plugins/viet_vet_vect/mActionAdd3DMap.svg',
+            text=self.tr(u'Load base maps'),
+            callback=self.loadbase,
+            parent=self.iface.mainWindow())
+
+        self.add_action(
+            ':/plugins/viet_vet_vect/dbmanager.svg',
             text=self.tr(u'DB query'),
             callback=self.dbquery,
             parent=self.iface.mainWindow())
@@ -201,7 +207,7 @@ class VietVetVect:
         
         self.add_action(
             ':/plugins/viet_vet_vect/mActionDecreaseBrightness.svg',
-            text=self.tr(u'Load climate projection layer'),
+            text=self.tr(u'Query bioclimatic projection'),
             callback=self.climproj,
             parent=self.iface.mainWindow())    
 
@@ -223,6 +229,26 @@ class VietVetVect:
                 action)
             self.iface.removeToolBarIcon(action)
 
+    def loadbase(self):
+        with OverrideCursor(Qt.WaitCursor):
+            dir = os.path.dirname(os.path.abspath(__file__))
+            database = os.path.join(dir, 'maps/maps.sqlite') 
+            uri = QgsDataSourceUri()
+            uri.setDatabase(database)
+            uri.setDataSource('', 'gadm41_VNM_0', 'geometry')
+            clayer = QgsVectorLayer(uri.uri(), 'Country', 'spatialite')
+            uri.setDataSource('', 'gadm41_VNM_1', 'geometry')
+            player = QgsVectorLayer(uri.uri(), 'Provinces', 'spatialite')
+            uri.setDataSource('', 'gadm41_VNM_2', 'geometry')
+            dlayer = QgsVectorLayer(uri.uri(), 'Districts', 'spatialite')        
+            uri.setDataSource('', 'gadm41_VNM_3', 'geometry')    
+            colayer = QgsVectorLayer(uri.uri(), 'Communes', 'spatialite')                        
+            QgsProject.instance().addMapLayer(clayer)
+            QgsProject.instance().addMapLayer(player)
+            QgsProject.instance().addMapLayer(dlayer)
+            QgsProject.instance().addMapLayer(colayer)
+
+
     def dbquery(self):
         # if self.first_start == True:
         #     self.first_start = False
@@ -241,52 +267,51 @@ class VietVetVect:
         # Run the dialog event loop
         result = self.dlg.exec_()
         # See if OK was pressed
-        if result:  
-            if self.dlg.comboBox.currentText() == "Anaplasma":
-                fld = 'Ana'
-            elif self.dlg.comboBox.currentText() == "Babesia":
-                fld = 'Babe'
-            elif self.dlg.comboBox.currentText() == "Theileria":
-                fld = 'Theile'
-            elif self.dlg.comboBox.currentText() == "Trypanosoma evansi":
-                fld = 'Tevansi'
-            
-            if self.dlg.comboBox_2.currentText() == "":
-                season = ''
-            else:
-                season = " wd.Season='" + self.dlg.comboBox_2.currentText() + "'"
-            
-            if self.dlg.comboBox_3.currentText() == "":
-                host = ''
-            else:
-                host = " wd.Animal_type='" + self.dlg.comboBox_3.currentText() + "'"        
-                    
-            b = ''
-            lname = self.dlg.comboBox.currentText()
-            if season != '':
-                b = ' where ' + season
-                lname = lname + '_' + self.dlg.comboBox_2.currentText()
-                if host != '':
-                    b = b + ' and ' + host
-                    lname = lname + '_' + self.dlg.comboBox_3.currentText()
-            else:
-                if host != '':
-                    b = ' where ' + host
-                    lname = lname + '_' + self.dlg.comboBox_3.currentText()
+        if result: 
+            with OverrideCursor(Qt.WaitCursor): 
+                if self.dlg.comboBox.currentText() == "Anaplasma":
+                    fld = 'Ana'
+                elif self.dlg.comboBox.currentText() == "Babesia":
+                    fld = 'Babe'
+                elif self.dlg.comboBox.currentText() == "Theileria":
+                    fld = 'Theile'
+                elif self.dlg.comboBox.currentText() == "Trypanosoma evansi":
+                    fld = 'Tevansi'
+                
+                if self.dlg.comboBox_2.currentText() == "":
+                    season = ''
+                else:
+                    season = " wd.Season='" + self.dlg.comboBox_2.currentText() + "'"
+                
+                if self.dlg.comboBox_3.currentText() == "":
+                    host = ''
+                else:
+                    host = " wd.Animal_type='" + self.dlg.comboBox_3.currentText() + "'"        
+                        
+                b = ''
+                lname = self.dlg.comboBox.currentText()
+                if season != '':
+                    b = ' where ' + season
+                    lname = lname + '_' + self.dlg.comboBox_2.currentText()
+                    if host != '':
+                        b = b + ' and ' + host
+                        lname = lname + '_' + self.dlg.comboBox_3.currentText()
+                else:
+                    if host != '':
+                        b = ' where ' + host
+                        lname = lname + '_' + self.dlg.comboBox_3.currentText()
 
-            sql = "select a.Province, a.District, a.Commune, a.geometry, COALESCE(b.case_sum, 0) as case_num from (select distinct gadm41_VNM_3.NAME_2 as District, gadm41_VNM_3.NAME_3 as Commune, gadm41_VNM_3.NAME_1 as Province, geometry FROM gadm41_VNM_3 INNER JOIN wd ON gadm41_VNM_3.NAME_3=wd.Commune and gadm41_VNM_3.NAME_1=wd.Province) a LEFT JOIN (SELECT Province, Commune, sum(%s) as case_sum FROM wd%s group by Province, Commune) b on a.Commune=b.Commune and a.Province=b.Province" % (fld, b)
-            # database = r"/home/sn/dev/aote/Para/Vietnam/data/maps.sqlite"
-            dir = os.path.dirname(os.path.abspath(__file__))
-            database = os.path.join(dir, 'maps/maps.sqlite') 
-            uri = QgsDataSourceUri()
-            uri.setDatabase(database)        
-            uri.setDataSource('', "(" + sql + ")", 'geometry', '', '')
-            vlayer = QgsVectorLayer(uri.uri(), lname, 'spatialite')
-            QgsProject.instance().addMapLayer(vlayer)
-            
-            # self.iface.messageBar().pushMessage("Success", sql, level=Qgis.Success, duration=10)
-
-            pass
+                sql = "select a.Province, a.District, a.Commune, a.geometry, COALESCE(b.case_sum, 0) as case_num from (select distinct gadm41_VNM_3.NAME_2 as District, gadm41_VNM_3.NAME_3 as Commune, gadm41_VNM_3.NAME_1 as Province, geometry FROM gadm41_VNM_3 INNER JOIN wd ON gadm41_VNM_3.NAME_3=wd.Commune and gadm41_VNM_3.NAME_1=wd.Province) a LEFT JOIN (SELECT Province, Commune, sum(%s) as case_sum FROM wd%s group by Province, Commune) b on a.Commune=b.Commune and a.Province=b.Province" % (fld, b)
+                dir = os.path.dirname(os.path.abspath(__file__))
+                database = os.path.join(dir, 'maps/maps.sqlite') 
+                uri = QgsDataSourceUri()
+                uri.setDatabase(database)        
+                uri.setDataSource('', "(" + sql + ")", 'geometry', '', '')
+                vlayer = QgsVectorLayer(uri.uri(), lname, 'spatialite')
+                QgsProject.instance().addMapLayer(vlayer)
+                
+                # self.iface.messageBar().pushMessage("Success", sql, level=Qgis.Success, duration=10)
+                # pass
 
     def help(self):
         webbrowser.open('https://raw.githubusercontent.com/solymosin/index/master/pages/vietvetvect.html')

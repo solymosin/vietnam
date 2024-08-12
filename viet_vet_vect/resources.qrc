@@ -6,5 +6,7 @@
         <file>mIconBrowserRelations.svg</file>
         <file>mActionDecreaseBrightness.svg</file>
         <file>metadata.svg</file>
+        <file>dbmanager.svg</file>
+        <file>mActionAdd3DMap.svg</file>
     </qresource>
 </RCC>
