@@ -147,3 +147,14 @@ stat |> mutate(mean=round(mean,1)) |> mutate(band=paste0('bio', formatC(band, wi
 ) |> st_write(driver='ESRI Shapefile', dsn=gsub('.stat', '', f), layer_options='ENCODING=UTF-8', delete_layer=T)
 }
 
+fs = list.files(pattern='.stat')
+i = 1
+stat = read_tsv(fs[i]) |> mutate(fn=fs[i])
+for(i in 2:length(fs)){
+  stat = bind_rows(stat, read_tsv(fs[i]) |> mutate(fn=fs[i]))
+}
+
+stat |> mutate(fn=gsub('.stat', '', gsub('wc2.1_10m_bioc_', '', fn))) |> separate(fn, c('gcm', 'ssp'), '_ssp') |> separate(ssp, c('ssp', 'period'), '_') |> mutate(ssp=paste0('ssp', ssp)) |> write_delim(file='wc.csv', delim=';')
+
+select * from gadm41_VNM_1 INNER JOIN wc on gadm41_VNM_1.gid_1=wc.gid where band=1 and gcm='MIROC6' and ssp='ssp126' and period = '2061-2080'
+

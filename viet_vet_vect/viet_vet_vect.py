@@ -275,7 +275,7 @@ class VietVetVect:
                     lname = lname + '_' + self.dlg.comboBox_3.currentText()
 
             sql = "select a.Province, a.District, a.Commune, a.geometry, COALESCE(b.case_sum, 0) as case_num from (select distinct gadm41_VNM_3.NAME_2 as District, gadm41_VNM_3.NAME_3 as Commune, gadm41_VNM_3.NAME_1 as Province, geometry FROM gadm41_VNM_3 INNER JOIN wd ON gadm41_VNM_3.NAME_3=wd.Commune and gadm41_VNM_3.NAME_1=wd.Province) a LEFT JOIN (SELECT Province, Commune, sum(%s) as case_sum FROM wd%s group by Province, Commune) b on a.Commune=b.Commune and a.Province=b.Province" % (fld, b)
-            database = r"/home/sn/dev/aote/Para/Vietnam/data/maps.sqlite"
+            # database = r"/home/sn/dev/aote/Para/Vietnam/data/maps.sqlite"
             dir = os.path.dirname(os.path.abspath(__file__))
             database = os.path.join(dir, 'maps/maps.sqlite') 
             uri = QgsDataSourceUri()
@@ -321,17 +321,40 @@ class VietVetVect:
     def climproj(self):
         # if self.first_start == True:
         #     self.first_start = False
+        # Bioclimatic variables:
+        # bio01 = Annual Mean Temperature
+        # bio02 = Mean Diurnal Range (Mean of monthly (max temp - min temp))
+        # bio03 = Isothermality (bio02/bio07) (×100)
+        # bio04 = Temperature Seasonality (standard deviation ×100)
+        # bio05 = Max Temperature of Warmest Month
+        # bio06 = Min Temperature of Coldest Month
+        # bio07 = Temperature Annual Range (bio05-bio06)
+        # bio08 = Mean Temperature of Wettest Quarter
+        # bio09 = Mean Temperature of Driest Quarter
+        # bio10 = Mean Temperature of Warmest Quarter
+        # bio11 = Mean Temperature of Coldest Quarter
+        # bio12 = Annual Precipitation
+        # bio13 = Precipitation of Wettest Month
+        # bio14 = Precipitation of Driest Month
+        # bio15 = Precipitation Seasonality (Coefficient of Variation)
+        # bio16 = Precipitation of Wettest Quarter
+        # bio17 = Precipitation of Driest Quarter
+        # bio18 = Precipitation of Warmest Quarter
+        # bio19 = Precipitation of Coldest Quarter
+
         self.dlg = climProj_dlg()
         
-        self.dlg.setWindowTitle("Load climate projection layer")
+        self.dlg.setWindowTitle("Query bioclimatic projection")
 
         self.dlg.comboBox.clear()
         self.dlg.comboBox.addItems(["ACCESS-CM2", "CMCC-ESM2", "EC-Earth3-Veg", "GISS-E2-1-G", "INM-CM5-0", "IPSL-CM6A-LR", "MIROC6", "MPI-ESM1-2-HR", "MRI-ESM2-0", "UKESM1-0-LL"])
         self.dlg.comboBox_2.clear()
         self.dlg.comboBox_2.addItems(['ssp126','ssp245','ssp370','ssp585'])  
         self.dlg.comboBox_3.clear()
-        self.dlg.comboBox_3.addItems(['2041-2060','2061-2080'])          
-
+        self.dlg.comboBox_3.addItems(['2041-2060','2061-2080'])       
+        self.dlg.comboBox_4.clear()
+        self.dlg.comboBox_4.addItems(['Annual Mean Temperature', 'Annual Precipitation', 'Isothermality', 'Max Temperature of Warmest Month', 'Mean Diurnal Range', 'Mean Temperature of Coldest Quarter', 'Mean Temperature of Driest Quarter', 'Mean Temperature of Warmest Quarter', 'Mean Temperature of Wettest Quarter', 'Min Temperature of Coldest Month', 'Precipitation of Coldest Quarter', 'Precipitation of Driest Month', 'Precipitation of Driest Quarter', 'Precipitation of Warmest Quarter', 'Precipitation of Wettest Month', 'Precipitation of Wettest Quarter', 'Precipitation Seasonality', 'Temperature Annual Range', 'Temperature Seasonality'])
+        
         # show the dialog
         self.dlg.show()
         # Run the dialog event loop
@@ -339,17 +362,66 @@ class VietVetVect:
         # See if OK was pressed
         if result:    
             with OverrideCursor(Qt.WaitCursor): 
-                ln = self.dlg.comboBox.currentText() + '_' + self.dlg.comboBox_2.currentText() + '_' + self.dlg.comboBox_3.currentText() 
-                fld = os.path.dirname(os.path.abspath(__file__))
-                pth = os.path.join(fld, 'maps/wc2.1_10m_bioc_' + ln + '.shp')   
-                # self.iface.messageBar().pushMessage("Success", pth, level=Qgis.Success, duration=3)
+                if self.dlg.comboBox_4.currentText() == 'Annual Mean Temperature':
+                    fld = 'bio01'                    
+                if self.dlg.comboBox_4.currentText() == 'Mean Diurnal Range':
+                    fld = 'bio02'
+                if self.dlg.comboBox_4.currentText() == 'Isothermality':
+                    fld = 'bio03'
+                if self.dlg.comboBox_4.currentText() == 'Temperature Seasonality':
+                    fld = 'bio04'
+                if self.dlg.comboBox_4.currentText() == 'Max Temperature of Warmest Month':
+                    fld = 'bio05'
+                if self.dlg.comboBox_4.currentText() == 'Min Temperature of Coldest Month':
+                    fld = 'bio06'
+                if self.dlg.comboBox_4.currentText() == 'Temperature Annual Range':
+                    fld = 'bio07'
+                if self.dlg.comboBox_4.currentText() == 'Mean Temperature of Wettest Quarter':
+                    fld = 'bio08'
+                if self.dlg.comboBox_4.currentText() == 'Mean Temperature of Driest Quarter':
+                    fld = 'bio09'
+                if self.dlg.comboBox_4.currentText() == 'Mean Temperature of Warmest Quarter':
+                    fld = 'bio10'
+                if self.dlg.comboBox_4.currentText() == 'Mean Temperature of Coldest Quarter':
+                    fld = 'bio11'
+                if self.dlg.comboBox_4.currentText() == 'Annual Precipitation':
+                    fld = 'bio12'
+                if self.dlg.comboBox_4.currentText() == 'Precipitation of Wettest Month':
+                    fld = 'bio13'
+                if self.dlg.comboBox_4.currentText() == 'Precipitation of Driest Month':
+                    fld = 'bio14'
+                if self.dlg.comboBox_4.currentText() == 'Precipitation Seasonality':
+                    fld = 'bio15'
+                if self.dlg.comboBox_4.currentText() == 'Precipitation of Wettest Quarter':
+                    fld = 'bio16'
+                if self.dlg.comboBox_4.currentText() == 'Precipitation of Driest Quarter':
+                    fld = 'bio17'
+                if self.dlg.comboBox_4.currentText() == 'Precipitation of Warmest Quarter':
+                    fld = 'bio18'
+                if self.dlg.comboBox_4.currentText() == 'Precipitation of Coldest Quarter':
+                    fld = 'bio19'
+
+                sql = "select gadm41_VNM_1.*, wc.mean as bioclim from gadm41_VNM_1 INNER JOIN wc on gadm41_VNM_1.gid_1=wc.gid where band=%s and gcm='%s' and ssp='%s' and period = '%s'" % (int(fld.replace('bio', '')), self.dlg.comboBox.currentText(), self.dlg.comboBox_2.currentText(), self.dlg.comboBox_3.currentText()) 
+                lname = self.dlg.comboBox_4.currentText() + '_' + self.dlg.comboBox.currentText() + '_' + self.dlg.comboBox_2.currentText() + '_' + self.dlg.comboBox_3.currentText()
+                dir = os.path.dirname(os.path.abspath(__file__))
+                database = os.path.join(dir, 'maps/maps.sqlite') 
+                uri = QgsDataSourceUri()
+                uri.setDatabase(database)        
+                uri.setDataSource('', "(" + sql + ")", 'geometry', '', '')
+                vlayer = QgsVectorLayer(uri.uri(), lname, 'spatialite')
+                QgsProject.instance().addMapLayer(vlayer)
+
+                # ln = self.dlg.comboBox.currentText() + '_' + self.dlg.comboBox_2.currentText() + '_' + self.dlg.comboBox_3.currentText() 
+                # fld = os.path.dirname(os.path.abspath(__file__))
+                # pth = os.path.join(fld, 'maps/wc2.1_10m_bioc_' + ln + '.shp')   
+                # # self.iface.messageBar().pushMessage("Success", pth, level=Qgis.Success, duration=3)
     
-                vlayer = QgsVectorLayer(pth, ln, "ogr")
-                if not vlayer.isValid():
-                    print("Layer failed to load!")
-                else:
-                    QgsProject.instance().addMapLayer(vlayer)
-                # pass
+                # vlayer = QgsVectorLayer(pth, ln, "ogr")
+                # if not vlayer.isValid():
+                #     print("Layer failed to load!")
+                # else:
+                #     QgsProject.instance().addMapLayer(vlayer)
+                # # pass
 
     def getFldsbyqLyr(self):
         # model = QtGui.QStandardItemModel()
