@@ -32,10 +32,12 @@ from qgis.core import QgsVectorLayer
 from qgis.core import QgsCoordinateReferenceSystem
 from qgis.core import QgsCoordinateTransform
 from qgis.core import QgsCoordinateTransformContext
+from qgis.core import QgsDataSourceUri
 from qgis.utils import OverrideCursor
 from qgis.PyQt.QtCore import Qt
 from qgis.PyQt.QtWidgets import QFileDialog
 import webbrowser
+
 
 # from qgis.PyQt import QtGui
 # import pandas as pd
@@ -46,6 +48,7 @@ from .resources import *
 from .viet_vet_vect_dialog import VietVetVectDialog
 from .sp_query_dlg import spQuery_dlg
 from .clim_proj_dlg import climProj_dlg
+from .db_query_dlg import dbQuery_dlg
 import os.path
 
 
@@ -179,6 +182,12 @@ class VietVetVect:
 
         # icon_path = ':/plugins/viet_vet_vect/icon.png'
         self.add_action(
+            ':/plugins/viet_vet_vect/icon.png',
+            text=self.tr(u'DB query'),
+            callback=self.dbquery,
+            parent=self.iface.mainWindow())
+
+        self.add_action(
             ':/plugins/viet_vet_vect/mActionCircleExtent.svg',
             text=self.tr(u'Buffering'),
             callback=self.buffering,
@@ -214,10 +223,100 @@ class VietVetVect:
                 action)
             self.iface.removeToolBarIcon(action)
 
+    def dbquery(self):
+        # if self.first_start == True:
+        #     self.first_start = False
+        self.dlg = dbQuery_dlg()
+        
+        self.dlg.setWindowTitle("Query infection data")
+        self.dlg.comboBox.clear()
+        self.dlg.comboBox.addItems(["Anaplasma", "Babesia", "Theileria", "Trypanosoma evansi"])
+        self.dlg.comboBox_2.clear()
+        self.dlg.comboBox_2.addItems(['', "spring", "summer", "autumn", "winter"])                
+        self.dlg.comboBox_3.clear()
+        self.dlg.comboBox_3.addItems(['', "Buffalo", 'Cattle', "Goat", "Horse"])
+
+        # show the dialog
+        self.dlg.show()
+        # Run the dialog event loop
+        result = self.dlg.exec_()
+        # See if OK was pressed
+        if result:  
+            if self.dlg.comboBox.currentText() == "Anaplasma":
+                fld = 'Ana'
+            elif self.dlg.comboBox.currentText() == "Babesia":
+                fld = 'Babe'
+            elif self.dlg.comboBox.currentText() == "Theileria":
+                fld = 'Theile'
+            elif self.dlg.comboBox.currentText() == "Trypanosoma evansi":
+                fld = 'Tevansi'
+            
+            if self.dlg.comboBox_2.currentText() == "":
+                season = ''
+            else:
+                season = " wd.Season='" + self.dlg.comboBox_2.currentText() + "'"
+            
+            if self.dlg.comboBox_3.currentText() == "":
+                host = ''
+            else:
+                host = " wd.Animal_type='" + self.dlg.comboBox_3.currentText() + "'"        
+                    
+            b = ''
+            lname = self.dlg.comboBox.currentText()
+            if season != '':
+                b = ' where ' + season
+                lname = lname + '_' + self.dlg.comboBox_2.currentText()
+                if host != '':
+                    b = b + ' and ' + host
+                    lname = lname + '_' + self.dlg.comboBox_3.currentText()
+            else:
+                if host != '':
+                    b = ' where ' + host
+                    lname = lname + '_' + self.dlg.comboBox_3.currentText()
+
+            sql = "select a.Province, a.District, a.Commune, a.geometry, COALESCE(b.case_sum, 0) as case_num from (select distinct gadm41_VNM_3.NAME_2 as District, gadm41_VNM_3.NAME_3 as Commune, gadm41_VNM_3.NAME_1 as Province, geometry FROM gadm41_VNM_3 INNER JOIN wd ON gadm41_VNM_3.NAME_3=wd.Commune and gadm41_VNM_3.NAME_1=wd.Province) a LEFT JOIN (SELECT Province, Commune, sum(%s) as case_sum FROM wd%s group by Province, Commune) b on a.Commune=b.Commune and a.Province=b.Province" % (fld, b)
+            database = r"/home/sn/dev/aote/Para/Vietnam/data/maps.sqlite"
+            dir = os.path.dirname(os.path.abspath(__file__))
+            database = os.path.join(dir, 'maps/maps.sqlite') 
+            uri = QgsDataSourceUri()
+            uri.setDatabase(database)        
+            uri.setDataSource('', "(" + sql + ")", 'geometry', '', '')
+            vlayer = QgsVectorLayer(uri.uri(), lname, 'spatialite')
+            QgsProject.instance().addMapLayer(vlayer)
+            
+            # self.iface.messageBar().pushMessage("Success", sql, level=Qgis.Success, duration=10)
+
+            pass
+
     def help(self):
         webbrowser.open('https://raw.githubusercontent.com/solymosin/index/master/pages/vietvetvect.html')
         # https://raw.githubusercontent.com/solymosin/index/master/pages/vietvetvect.html
         # pass
+        # database = r"/home/sn/dev/aote/Para/Vietnam/data/maps.sqlite"
+        # uri = QgsDataSourceUri()
+        # uri.setDatabase(database)
+        # # schema = ''
+        # # table = 'gadm41_VNM_3'
+        # geom_column = 'geometry'
+        # # uri.setDataSource(schema, table, geom_column)
+        # # display_name = 'gadm41_VNM_3'
+        # # vlayer = QgsVectorLayer(uri.uri(), display_name, 'spatialite')
+        # # QgsProject.instance().addMapLayer(vlayer)
+        # uri.setDataSource('', 'select varname_3, geometry from gadm41_VNM_3', 'geometry')
+        # display_name = 'province'
+        # vlayer = QgsVectorLayer(uri.uri(), display_name, 'spatialite')
+        # QgsProject.instance().addMapLayer(vlayer)
+        # 
+        # database = r"/home/sn/dev/aote/Para/Vietnam/data/maps.sqlite"
+        # uri = QgsDataSourceUri()
+        # uri.setDatabase(database)        
+        # sql = ''
+        # uri.setDataSource('', "(" + sql + ")", 'geometry', '', '')
+        # # uri.setDataSource('', '(SELECT gadm41_VNM_3.*, sum(Ana) as case_sum FROM gadm41_VNM_3 INNER JOIN wd ON wd.Commune = gadm41_VNM_3.NAME_3 and wd.Province = gadm41_VNM_3.NAME_1 group by gadm41_VNM_3.NAME_3)', 'geometry', '', '')
+        # display_name = 'selected'
+        # vlayer = QgsVectorLayer(uri.uri(), display_name, 'spatialite')
+        # QgsProject.instance().addMapLayer(vlayer)
+
 
     def climproj(self):
         # if self.first_start == True:
