@@ -1,0 +1,175 @@
+LOCUS       Hi_dv_viet_1            4841 bp    DNA     linear   VRL 05-AUG-2024
+DEFINITION  Haematobia irritans densovirus isolate 45.NAGY.M.
+ACCESSION   Hi_dv_viet_1
+VERSION
+KEYWORDS    .
+SOURCE      Haematobia irritans densovirus
+  ORGANISM  Haematobia irritans densovirus
+            Viruses; Monodnaviria; Shotokuvirae; Cossaviricota;
+            Quintoviricetes; Piccovirales; Parvoviridae; Densovirinae;
+            Muscodensovirus; Muscodensovirus dipteran1.
+REFERENCE   1  (bases 1 to 4841)
+  AUTHORS   Farkas,R., Dao,T.T.H., Duong,N.N. and Truong,D.T.Q.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (05-AUG-2024) Centre for Bioinformatics, University of
+            Veterinary Medicine, Istvan u. 2., Budapest, Budapest 1078, Hungary
+COMMENT     Bankit Comment: ALT EMAIL:solymosi.norbert@univet.hu
+            Bankit Comment: TOTAL # OF SEQS:1
+            
+            ##Assembly-Data-START##
+            Assembly Method       :: MEGAHIT v. 1.2.9
+            Assembly Name         :: Hi_dv_viet
+            Coverage              :: 520
+            Sequencing Technology :: Illumina
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..4841
+                     /organism="Haematobia irritans densovirus"
+                     /mol_type="genomic DNA"
+                     /isolate="45.NAGY.M"
+                     /host="Diptera"
+                     /db_xref="taxon:2575447"
+                     /country="Viet Nam"
+                     /collection_date="2022"
+     gene            283..2184
+                     /locus_tag="Hi_dv_viet_00001"
+     CDS             283..2184
+                     /locus_tag="Hi_dv_viet_00001"
+                     /inference="ab initio prediction:Prodigal:002006"
+                     /codon_start=1
+                     /product="nonstructural protein 1 [Haematobia irritans
+                     densovirus]"
+                     /translation="MYRLLYGDNTIKSEEKSENDGTNELTEEVDEIVLEAGSVAKDYS
+                     TKVSSSSGLGRAEESGIAESAGCSNRCENYNPWSGRSINYQRSRDTIVRRIVELIGTT
+                     NRSSKFISSVVKKGDRIEFERIFNLFNGRCSNALFKWFVVHGDHIHIVHDCTYSNGSC
+                     RCFNKYPFDRRTRRIISSQSLSKEDYELLVNYHFEAGRKAKGVSVGNIDYTRLFCGLE
+                     NVRHEQDSTGGDRIERDVEICDYTHEVLWEQLNRRSNSRSGSESDYNDNKDNQEAPRR
+                     RKYRRTAQKENKEKQQVKLEKFIMAIGKVPLGDFVVTKDFLNSEWKFHNDMSVTFKNA
+                     LRYAKYTFYNMQLRDYRDFYENLTILPYWDTSSRDQFHEKYLSLELSKKFLYKLLIWQ
+                     TNERDIMIDVENGIVDVEKDWKTNFYAYVRNLIQFLDKKRGKLNTDLYVSPSCAGKTL
+                     FMDLIRDYLINCGQMLNWNRNSNFPLQMCGNTRCIFWNEPNYEQSVEKNLLKLLGGDS
+                     LNAQVKNQMDVNIEKTPIFVTSNDYPFPKSAEFNYRIQYYHWKAAPFLKKVNGKKLHP
+                     LSFQYLITDCENYYQEDITQYHEKYTTKEYNLLKQLNIYDLAAIADSTDNETDDEIDT
+                     DNDISNNSN"
+     gene            2239..2532
+                     /locus_tag="Hi_dv_viet_00002"
+     CDS             2239..2532
+                     /locus_tag="Hi_dv_viet_00002"
+                     /inference="ab initio prediction:Prodigal:002006"
+                     /codon_start=1
+                     /product="VP [Haematobia irritans densovirus]"
+                     /translation="MPEFTLIGYKYLGPGNSLDKGEPINKADSIARDHDIAYDRAKTK
+                     EDIYTADREAIIQFKDDLLKNPHLGNIAGFAGLGAKHIVERSLNKVIYPKLSG"
+     gene            2471..4342
+                     /locus_tag="Hi_dv_viet_00003"
+     CDS             2471..4342
+                     /locus_tag="Hi_dv_viet_00003"
+                     /inference="ab initio prediction:Prodigal:002006"
+                     /codon_start=1
+                     /product="VP [Haematobia irritans densovirus]"
+                     /translation="-
+                     LNILLKGVLIKLYTLNFQVSMAPPKNIRGYVINAMKKRKLGAQPPEKKPRQESVSDIP
+                     LPPELDPAQIPLPPSNEMDTNNIDDVDMSSVDDAASDGGNSSTAGSSGVARNIGGSMS
+                     ASSAGGLRGTALLPRGLRQEGMRNIRKFRKQYLLRLQNDVVEISHKYEPVFSTSGEQA
+                     QSTANLNSSNYGSFGIIRYPFHDLPVHMLGFYLTKQEINSLRYYSEARVIKCQVDVYN
+                     KTGVLNFETGASVSTIGNNNVGIYLVELAKDIGRKRTGKLPDQAILLDEVFWGEKLYK
+                     VQKSDTEFTKVDVAKLGARYVRRTLNNKFEYWTPMNQAMDKVASNSYMTYNQNGWNIP
+                     GIVPYFNVNPFIEKRVNASMTEGLFTTWSYKPTDGLVAGYFDTGPLSLYNDKMKFNQN
+                     HLMPLQSNPFTRNIVGNNAMAPALGLYNCGGRDDQQATEVPKVVCQRPFKTLNERNML
+                     IERSIMSGKTVPPLVIGIEPLVSELPTNTGNTWSPVRCFVDLYVDVELEMEVKYGYDF
+                     VDPAMPSIPANYKFPQMDLCPGNHSYAYAQDPNKIDIIDGNIPSNTLNVNYQNNIPVF
+                     PTRVNPLMDIPPPNKVLEETKEYVKPVTRSQTAAKTDKINKN"
+     gene            complement(4378..4716)
+                     /locus_tag="Hi_dv_viet_00004"
+     CDS             complement(4378..4716)
+                     /locus_tag="Hi_dv_viet_00004"
+                     /inference="ab initio prediction:Prodigal:002006"
+                     /codon_start=1
+                     /product="hypothetical protein"
+                     /translation="MEQIFAVNDDTGTVSENTKPYLDFLKKVIGDVLRKEFKVRDDFG
+                     FIWDFKVHCVVNHNRLIHCLVKVPAQTAITVNTMEAVQDIPESLFQVEIHDRKITIFK
+                     SIINIDVNFV"
+BASE COUNT     1720 a    776 c    932 g   1413 t
+ORIGIN      
+        1 ggctagcagc gcagctggct gcggcttgtc ggtggggtcg gctgtcggtc caatcataat
+       61 gggattatga ttgtggcaag caatcagtct tggcgagggt tgtttcgaag ggagataagg
+      121 aggaaataaa aagtgtttta tggtagatga ataatggaag ataataataa taaatggttg
+      181 gtagataatg gttggttatc ggatcatgtg atgggtggct gatagtgata aagagcaggc
+      241 agaatggtat aaaagaggac gtcgaccatc agaaaatgaa gtatgtatcg attgttatac
+      301 ggagacaata caattaagag tgaagaaaaa agcgaaaatg acggaactaa cgaactcaca
+      361 gaagaagttg atgaaattgt tcttgaagcc ggaagtgttg caaaggatta cagtaccaaa
+      421 gtttcgagca gtagtggact tggaagagca gaagagtccg gaattgctga atctgcagga
+      481 tgttctaata gatgtgagaa ctataacccg tggtctggaa ggtccattaa ctaccaacga
+      541 tctagagaca caatcgtcag acgaatcgtc gaacttattg gaacaactaa ccgaagctct
+      601 aagtttattt cttccgtcgt taaaaaagga gacagaattg aatttgaaag aatatttaac
+      661 ttgtttaatg gaagatgcag caacgcctta ttcaagtggt ttgtcgtcca tggggaccac
+      721 atccacatcg tacatgactg cacatacagc aatggatcgt gcagatgctt taacaaatac
+      781 ccgttcgata gacgaactag aagaattata tcgagtcagt ccctcagcaa agaagactat
+      841 gaattactcg tcaactacca ctttgaagct ggacgaaaag ccaaaggagt ttcggtcgga
+      901 aacatcgact acaccagact tttttgtgga cttgaaaatg tacgacatga acaagattcc
+      961 accggaggag ataggatcga aagagatgtg gagatatgcg attatacgca cgaagtttta
+     1021 tgggagcaac ttaatagacg gagcaattca agaagcggct cggaaagtga ctacaatgac
+     1081 aataaagaca atcaagaagc gcctagaaga cgaaaatata gaagaacagc ccagaaagaa
+     1141 aacaaagaga agcagcaagt aaagttagaa aaattcataa tggcaattgg taaagtacct
+     1201 ttaggtgatt tcgtagtgac aaaggatttc ttgaattcag aatggaagtt tcataatgat
+     1261 atgtctgtta cttttaaaaa tgctttacgg tatgctaagt atacatttta taatatgcaa
+     1321 ttgagagact atagagattt ttatgaaaat ttaacaatac taccatattg ggatacatct
+     1381 tctcgagatc aatttcatga aaaatattta tctttggaat tatcaaagaa atttttatac
+     1441 aaattattaa tttggcaaac taatgaacgc gacataatga tagatgtaga aaacggtata
+     1501 gtagatgttg aaaaagattg gaaaacgaat ttttatgcat acgttcgaaa cttaattcaa
+     1561 tttttagata aaaaaagagg aaaattaaat acagatttat atgtttcgcc atcgtgtgca
+     1621 ggtaaaactt tgtttatgga tttgattaga gattatttaa taaattgcgg tcaaatgttg
+     1681 aattggaatc gtaattcaaa ttttccactt cagatgtgtg gtaatacgag atgtatattt
+     1741 tggaatgaac ctaactatga acaaagtgtt gagaaaaatt tattaaaatt attaggagga
+     1801 gattcgctaa acgcacaagt aaaaaatcag atggacgtga atatagaaaa aactccgata
+     1861 tttgtaacat caaatgatta tccttttcca aagtcagcag aatttaatta tagaattcag
+     1921 tattaccatt ggaaagcagc acctttttta aaaaaagtaa atggaaaaaa attacatccc
+     1981 ttatcttttc aatatctaat aactgattgt gaaaattatt atcaagaaga tattacccaa
+     2041 tatcatgaaa aatatactac aaaagagtat aatctattaa agcaattaaa tatttatgac
+     2101 ttagctgcaa tagctgatag tacagacaat gaaacagatg atgaaattga tactgataac
+     2161 gatattagta ataacagcaa ttagattaag cgtatatata tagcatgcat taataaataa
+     2221 atcgcatttc aacaaagtat gcctgagttt acattaattg gttacaagta tttgggtcct
+     2281 ggtaatagtt tggataaagg agaacctata aataaggctg atagcattgc tcgtgaccac
+     2341 gatatagcgt acgatcgagc aaaaactaaa gaagatatat acacagcaga tagagaagct
+     2401 attatccaat ttaaggacga ccttttgaaa aatccacact tgggaaatat agctggattt
+     2461 gcagggttag gtgctaaaca tattgttgaa aggagtctta ataaagttat ataccctaaa
+     2521 ctttcaggtt agtatggcgc caccaaaaaa tataagagga tatgttatta atgctatgaa
+     2581 aaaacgaaaa ttaggtgctc aacctccgga gaagaaacca agacaagaat ctgtgagtga
+     2641 tattccatta ccaccagaac tagatcctgc acaaattcct ttacctcctt caaatgaaat
+     2701 ggatactaat aacattgacg atgttgatat gtctagtgtt gacgatgctg cttcagatgg
+     2761 cggaaatagt tcaactgctg ggtcatcagg agttgctcgt aacattggcg gatctatgtc
+     2821 agcatccagc gcaggtggac tacgaggtac agcactctta cccagaggtt tacgtcagga
+     2881 aggtatgcga aacatacgta aattccggaa gcaatatctt ctccgactac aaaacgatgt
+     2941 tgtggaaatt agtcacaagt acgaacctgt cttttctact agcggcgaac aagcgcaatc
+     3001 aactgcaaac cttaattcta gtaattacgg tagttttggg atcattagat atcctttcca
+     3061 tgatttacca gtgcacatgc ttggttttta ccttactaag caagaaatta attcacttcg
+     3121 gtattattca gaggcgagag taattaaatg tcaagttgat gtctacaata aaactggagt
+     3181 acttaatttt gaaactggcg ctagtgtttc aacaattggc aacaataatg ttggaatata
+     3241 tttagtcgaa cttgcaaagg atattggtcg taagcgtaca ggtaaacttc cagatcaagc
+     3301 tattttattg gatgaagtat tttggggcga aaaattatac aaagttcaaa aatcggacac
+     3361 tgaatttact aaagtagacg ttgcaaaact tggagcaagg tatgtaagga gaacattaaa
+     3421 taataaattt gaatattgga caccaatgaa tcaagctatg gataaagtag caagtaactc
+     3481 ttatatgacc tacaatcaaa atggatggaa tattccaggc atagtaccat atttcaatgt
+     3541 aaatccattc attgaaaaac gcgttaatgc aagtatgact gaaggactct ttaccacatg
+     3601 gtcttataaa cctacagatg gattagttgc tgggtacttt gatactggtc ctttatcact
+     3661 ttataatgac aagatgaaat tcaatcaaaa tcatttaatg ccattacaat ctaatccatt
+     3721 tacgagaaac atagtaggaa ataatgctat ggctccagca cttggtttgt ataattgcgg
+     3781 cggaagagat gatcaacaag caactgaagt gcccaaagta gtatgtcaac gtcctttcaa
+     3841 aactttaaat gagcgtaaca tgcttatcga acgttcaata atgagtggaa aaactgtacc
+     3901 acctttagtt attggtattg aaccacttgt ttctgaattg cctactaata ctggaaatac
+     3961 ttggtctcct gtacgatgtt ttgttgattt gtatgttgat gtggaattag aaatggaagt
+     4021 taaatatgga tatgactttg tagatccagc aatgccgtct attccagcta actacaaatt
+     4081 tcctcaaatg gatctatgtc ctggaaatca ttcatatgca tacgctcaag atcctaataa
+     4141 aattgatatc atagatggaa acattccttc aaataccttg aatgttaatt atcagaacaa
+     4201 tattcctgtt tttccgacaa gagttaatcc attaatggat attcctccac ctaataaagt
+     4261 attggaagaa actaaggaat atgtcaaacc tgtaactaga tcacaaactg ctgcaaaaac
+     4321 tgataaaata aataaaaatt aaaatattgc attaaacatt atttgttgtt gttttattta
+     4381 cacaaaattt acatcaatat ttataattga cttaaatatg gttatcttcc tgtcatgaat
+     4441 ttcaacttgg aataggctct caggaatgtc ctgtactgct tccatagtgt ttacagttat
+     4501 tgctgtttga gctggcacct tcactaagca atgaatcaat ctattatggt tcactacaca
+     4561 atgaacctta aagtcccata tgaatccaaa gtcgtctctt actttgaact cctttctcag
+     4621 gacatcacca atcactttct ttaaaaaatc caaatatggt ttcgtatttt cactaactgt
+     4681 tccggtgtca tcattcactg caaatatttg ctccattagc tcctcctgac tataacccat
+     4741 tccaaaaaag ccttcgaagt ggccttctgg gaaatataca cgatagttat ccatggcgat
+     4801 ttaaaaacaa actgaatgca tttccattgt cgacgtcctc t
+//
