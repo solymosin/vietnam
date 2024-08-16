@@ -1,0 +1,59 @@
+ANI report for assembly: FR5_S79_metadecoder.2.fa
+Submitted organism: Serratia nematodiphila (taxid = 458197, rank = species, lineage = Bacteria; Pseudomonadota; Gammaproteobacteria; Enterobacterales; Yersiniaceae; Serratia)
+Best match: Serratia marcescens (taxid = 615, rank = species, lineage = Bacteria; Pseudomonadota; Gammaproteobacteria; Enterobacterales; Yersiniaceae; Serratia)
+Submitted organism has type: Yes
+Status: INCONCLUSIVE
+Confidence: LOW
+
+Table legend:
+ANI : ANI value between this assembly and the type listed in this row
+(Coverages) : query-coverage and subject-coverage of this assembly (query) and the type (subject)
+NewSeq : the count of bases best assigned to this type assembly
+CntmSeq : the portion of NewSeq allocated for purposes of evaluating contamination
+Flg : Type flags; currently: C = contaminant; E = effectively published; T = trusted species
+Assembly : Release-id of the type-assembly (this value matches the accession and assembly-name on the right column)
+Organism : Organism of this type-assembly
+(assembly_accession, assembly_name) : of this type-assembly
+
+ANI     (Coverages)   NewSeq   CntmSeq  Assembly  Flg Organism  (assembly_accession, assembly_name)
+------- ------------- -------- -------- --------- --- --------------------------------------------------------------------
+ 96.921 ( 92.0  89.8)  1306860  1306860  25480818     Serratia marcescens subsp. marcescens ATCC 13880 (GCA_017301275.1, ASM1730127v1)
+ 96.920 ( 91.9  91.0)   622844   622844   1180898     Serratia marcescens subsp. marcescens ATCC 13880 (GCA_000735445.1, GSMA_DRAFTv1)
+ 96.954 ( 90.5  92.3)   261943   261943   9166768     Serratia marcescens (GCA_004684145.1, ASM468414v1)
+ 96.936 ( 90.6  90.5)     8268     8268   8110198     Serratia marcescens subsp. marcescens ATCC 13880 (GCA_003957875.1, ASM395787v1)
+ 96.921 ( 91.9  91.2)     1771     1771   5930618     Serratia marcescens subsp. marcescens ATCC 13880 (GCA_002899365.1, ASM289936v1)
+ 96.921 ( 92.0  90.2)        0        0  25904888     Serratia marcescens subsp. marcescens ATCC 13880 (GCA_017654245.1, ASM1765424v1)
+ 96.921 ( 92.0  89.9)        0        0  51242088     Serratia marcescens subsp. marcescens ATCC 13880 (GCA_034424255.1, ASM3442425v1)
+ 96.878 ( 91.9  89.9)   860663   860663  12068298     Serratia marcescens subsp. marcescens ATCC 13880 (GCA_006974205.1, ASM697420v1)
+ 96.864 ( 92.0  90.0)   714399   714399   6982288     Serratia marcescens (GCA_900457055.1, 32117_E02)
+ 98.466 ( 95.4  92.0)   187301   187301   1186528     Serratia nematodiphila DZ0503SBS1 (GCA_000738675.1, ASM73867v1)
+ 98.466 ( 95.3  92.8)     8226     8226   3629048     Serratia nematodiphila (GCA_900101535.1, IMG-taxon 2596583578 annotated assembly)
+ 95.435 ( 88.8  84.6)   152762   152762  13259498     Serratia bockelmannii (GCA_008011855.1, ASM801185v1)
+ 95.353 ( 89.4  84.9)   104058   104058  58706358     Serratia ureilytica (GCA_039523675.1, ASM3952367v1)
+ 95.357 ( 89.5  84.8)    51040    51040  20173428     Serratia ureilytica (GCA_013375155.1, ASM1337515v1)
+ 95.437 ( 87.1  84.7)     5987     5987  42542588     Serratia sarumanii (GCA_029962605.1, ASM2996260v1)
+ 95.088 ( 89.8  82.8)   263367   263367  55924408     Serratia nevei (GCA_037948395.1, ASM3794839v1)
+ 94.956 ( 89.3  87.4)    35676    35676  30109978     Serratia montpellierensis (GCA_020858655.1, ASM2085865v1)
+ 95.085 ( 89.7  83.4)     4062     4062  13700208     Serratia nevei (GCA_008364245.1, ASM836424v1)
+ 94.640 ( 91.1  89.8)   352025   352025   3411248     Serratia surfactantfaciens (GCA_001642805.2, ASM164280v2)
+ 88.314 ( 77.3  74.1)      433      433   3050408     Serratia ficaria NBRC 102596 (GCA_001590885.1, ASM159088v1)
+ 88.302 ( 77.3  74.8)      390      390   4960528     Serratia ficaria (GCA_900187015.1, 50465_F01)
+ 87.889 ( 77.6  76.0)     6750     6750  30942458     Serratia entomophila (GCA_021462285.1, ASM2146228v1)
+ 85.244 ( 66.9  63.8)        0        0   3050488     Serratia plymuthica NBRC 102599 (GCA_001590925.1, ASM159092v1)
+ 85.207 ( 67.0  63.2)        0        0   6710228     Serratia plymuthica (GCA_900478125.1, 28193_B02)
+ 85.297 ( 65.9  61.7)        0        0   7492498     Serratia inhibens (GCA_003591175.1, ASM359117v1)
+ 85.230 ( 67.2  63.4)        0        0  23871258     Serratia plymuthica (GCA_016027675.1, ASM1602767v1)
+ 84.546 ( 67.8  64.7)        0        0    731548     Serratia liquefaciens ATCC 27592 (GCA_000422085.1, ASM42208v1)
+ 84.545 ( 65.7  56.4)        0        0   6984048     Serratia quinivorans (GCA_900457075.1, 36672_B01)
+ 84.310 ( 68.6  68.2)    19753    19753  14238968     Serratia proteamaculans (GCA_008830365.1, ASM883036v1)
+ 84.379 ( 53.7  55.0)        0        0   2364698     Serratia rubidaea (GCA_001304675.1, ASM130467v1)
+ 84.301 ( 54.9  55.8)        0        0   3141578     Serratia rubidaea NBRC 103169 (GCA_001598675.1, ASM159867v1)
+ 84.258 ( 54.8  55.3)        0        0  10608518     Serratia rubidaea (GCA_901472405.1, 28771_E01)
+ 84.142 ( 51.9  51.3)        0        0  15713278     Serratia rhizosphaerae (GCA_009817885.1, ASM981788v1)
+ 84.298 ( 55.1  55.6)        0        0  23870318     Serratia rubidaea (GCA_016026735.1, ASM1602673v1)
+ 83.612 ( 50.8  49.9)        0        0    197898     Serratia odorifera DSM 4582 (GCA_000163595.1, ASM16359v1)
+ 83.593 ( 50.7  48.5)        0        0   8119368     Serratia odorifera (GCA_900635445.1, 28869_A02)
+ 83.332 ( 38.3  36.6)        0        0  58722358     Gibbsiella dentisursi (GCA_039539505.1, ASM3953950v1)
+ 82.973 ( 60.8  60.1)      129      129   6984968     Serratia grimesii (GCA_900456935.1, 38109_A02)
+ 82.968 ( 60.7  60.3)        0        0   3050468     Serratia grimesii NBRC 13537 (GCA_001590905.1, ASM159090v1)
+ 82.979 ( 40.3  41.4)        0        0  33170688     Serratia silvae (GCA_023282985.1, ASM2328298v1)

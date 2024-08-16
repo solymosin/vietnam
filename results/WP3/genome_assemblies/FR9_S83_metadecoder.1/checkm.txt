@@ -1,0 +1,2 @@
+Bin Id	Marker lineage	# genomes	# markers	# marker sets	0	1	2	3	4	5+	Completeness	Contamination	Strain heterogeneity
+annotation	Chryseobacterium (5)	6	812	414	11	792	9	0	0	0	98.72	1.31	0.00

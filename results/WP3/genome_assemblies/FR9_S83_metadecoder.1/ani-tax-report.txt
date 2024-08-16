@@ -1,0 +1,59 @@
+ANI report for assembly: FR9_S83_metadecoder.1.fa
+Submitted organism: Chryseobacterium cucumeris (taxid = 1813611, rank = species, lineage = Bacteria; Bacteroidota; Flavobacteriia; Flavobacteriales; Weeksellaceae; Chryseobacterium group; Chryseobacterium)
+Best match: Chryseobacterium cucumeris (taxid = 1813611, rank = species, lineage = Bacteria; Bacteroidota; Flavobacteriia; Flavobacteriales; Weeksellaceae; Chryseobacterium group; Chryseobacterium)
+Submitted organism has type: Yes
+Status: CONFIRMED
+Confidence: HIGH
+
+Table legend:
+ANI : ANI value between this assembly and the type listed in this row
+(Coverages) : query-coverage and subject-coverage of this assembly (query) and the type (subject)
+NewSeq : the count of bases best assigned to this type assembly
+CntmSeq : the portion of NewSeq allocated for purposes of evaluating contamination
+Flg : Type flags; currently: C = contaminant; E = effectively published; T = trusted species
+Assembly : Release-id of the type-assembly (this value matches the accession and assembly-name on the right column)
+Organism : Organism of this type-assembly
+(assembly_accession, assembly_name) : of this type-assembly
+
+ANI     (Coverages)   NewSeq   CntmSeq  Assembly  Flg Organism  (assembly_accession, assembly_name)
+------- ------------- -------- -------- --------- --- --------------------------------------------------------------------
+ 98.677 ( 93.6  87.4)  4651434  4651434   3103028     Chryseobacterium cucumeris (GCA_001593385.1, ASM159338v1)
+ 91.723 ( 84.8  79.1)    56225    56225  47192348     Chryseobacterium metallicongregator (GCA_031324065.1, ASM3132406v1)
+ 90.148 ( 72.5  77.0)    10619    10619   9491478     Chryseobacterium candidae (GCA_004916905.1, ASM491690v1)
+ 87.644 ( 73.0  65.2)     7032     7032    232168     Chryseobacterium gleum ATCC 35910 (GCA_000143785.1, ASM14378v1)
+ 87.655 ( 72.8  64.6)        0        0   8121588     Chryseobacterium gleum (GCA_900636535.1, 42727_A01)
+ 87.643 ( 73.0  64.4)        0        0  24761318     Chryseobacterium gleum (GCA_016766875.1, ASM1676687v1)
+ 87.304 ( 73.2  74.1)    15475    15475  13724788     Chryseobacterium sediminis (GCA_008386505.1, ASM838650v1)
+ 87.442 ( 74.0  71.1)     4344     4344  12057848     Chryseobacterium rhizoplanae (GCA_900182655.1, IMG-taxon 2724679795 annotated assembly)
+ 87.242 ( 72.4  72.3)    13812    10770  13608678     Chryseobacterium panacisoli (GCA_008274625.1, ASM827462v1)
+ 86.928 ( 72.8  71.4)    10701    10701   8130548     Chryseobacterium aureum (GCA_003971235.1, ASM397123v1)
+ 86.759 ( 71.3  62.3)     4558     4558   6541268     Chryseobacterium viscerum (GCA_002899945.2, ASM289994v2)
+ 86.651 ( 71.3  72.4)     5129     5129   3644768     Chryseobacterium culicis (GCA_900108365.1, IMG-taxon 2687453786 annotated assembly)
+ 84.428 ( 45.4  50.6)     1862     1862   7073378     Chryseobacterium flavum (GCA_003385595.1, ASM338559v1)
+ 84.367 ( 52.6  51.8)     1050     1050   3342618     Chryseobacterium arthrosphaerae (GCA_001684965.1, ASM168496v1)
+ 84.418 ( 43.8  46.3)        0        0   3342638     Chryseobacterium contaminans (GCA_001684955.1, ASM168495v1)
+ 84.102 ( 45.2  43.4)     3798     3798   3993518     Chryseobacterium ureilyticum (GCA_900156735.1, IMG-taxon 2681813509 annotated assembly)
+ 84.229 ( 45.9  48.8)     1138     1138   3778268     Chryseobacterium contaminans (GCA_900142615.1, IMG-taxon 2700988701 annotated assembly)
+ 83.914 ( 45.8  42.5)     3889     3889  30703918     Chryseobacterium capnotolerans (GCA_021278965.1, ASM2127896v1)
+ 83.915 ( 44.9  36.1)     1192     1192   7073278     Chryseobacterium pennae (GCA_003385515.1, ASM338551v1)
+ 83.989 ( 46.2  46.6)     1078     1078   3342628     Chryseobacterium artocarpi (GCA_001684975.1, ASM168497v1)
+ 83.911 ( 45.7  44.0)      766      766   3636308     Chryseobacterium jejuense (GCA_900100075.1, IMG-taxon 2684623012 annotated assembly)
+ 84.057 ( 45.8  46.6)      642      642   7905358     Chryseobacterium joostei (GCA_003815775.1, ASM381577v1)
+ 84.056 ( 45.8  43.2)        0        0   3992438     Chryseobacterium joostei (GCA_900156585.1, IMG-taxon 2681813505 annotated assembly)
+ 83.988 ( 46.1  47.8)        0        0   6541328     Chryseobacterium oncorhynchi (GCA_002899895.2, ASM289989v2)
+ 83.888 ( 44.6  39.6)    15456    15456   8123478     Chryseobacterium nakagawai (GCA_900637665.1, 52437_G01)
+ 83.825 ( 44.2  41.7)     2265     2265   7073218     Chryseobacterium rhizosphaerae (GCA_003385455.1, ASM338545v1)
+ 83.834 ( 46.0  49.6)      659      659   6294458     Chryseobacterium aurantiacum (GCA_003020585.1, ASM302058v1)
+ 83.827 ( 43.3  38.3)      122      122  44541288     Chryseobacterium tructae (GCA_030409875.1, ASM3040987v1)
+ 83.897 ( 46.0  42.5)        0        0   5149028     Chryseobacterium timonianum (GCA_900078205.2, PRJEB13113)
+ 83.829 ( 44.0  42.1)        0        0  13184528     Chryseobacterium rhizosphaerae (GCA_007991415.1, ASM799141v1)
+ 83.548 ( 41.7  43.7)      282      282    894128     Chryseobacterium indologenes NBRC 14944 (GCA_000520835.1, ASM52083v1)
+ 83.549 ( 41.8  42.5)        0        0   3708488     Chryseobacterium indologenes (GCA_900113975.1, IMG-taxon 2687453795 annotated assembly)
+ 83.594 ( 47.3  42.1)        0        0   5931628     Chryseobacterium lactis (GCA_002899875.1, ASM289987v1)
+ 83.542 ( 41.8  42.2)        0        0   7043238     Chryseobacterium indologenes (GCA_900460995.1, 42552_F01)
+ 83.534 ( 41.7  42.2)        0        0  23868718     Chryseobacterium indologenes (GCA_016025055.1, ASM1602505v1)
+ 83.320 ( 40.0  43.0)        0        0   1800218     Chryseobacterium gallinarum (GCA_001021975.1, ASM102197v1)
+ 83.459 ( 45.9  43.7)        0        0   6541298     Chryseobacterium phosphatilyticum (GCA_002899825.2, ASM289982v2)
+ 83.344 ( 42.8  44.4)        0        0   7072468     Chryseobacterium pennipullorum (GCA_003384725.1, ASM338472v1)
+ 83.007 ( 30.2  29.3)     1632     1632  15138698     Chryseobacterium vaccae (GCA_009602705.1, ASM960270v1)
+ 82.683 ( 28.9  31.3)        0        0   3776788     Chryseobacterium oranimense (GCA_900129755.1, IMG-taxon 2684623028 annotated assembly)

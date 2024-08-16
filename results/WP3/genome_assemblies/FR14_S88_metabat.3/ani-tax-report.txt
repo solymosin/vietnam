@@ -1,0 +1,26 @@
+ANI report for assembly: FR14_S88_metabat.3.fa
+Submitted organism: Spiroplasma turonicum (taxid = 216946, rank = species, lineage = Bacteria; Mycoplasmatota; Mollicutes; Entomoplasmatales; Spiroplasmataceae; Spiroplasma)
+Best match: Spiroplasma turonicum (taxid = 216946, rank = species, lineage = Bacteria; Mycoplasmatota; Mollicutes; Entomoplasmatales; Spiroplasmataceae; Spiroplasma)
+Submitted organism has type: Yes
+Status: CONFIRMED
+Confidence: LOW
+
+Table legend:
+ANI : ANI value between this assembly and the type listed in this row
+(Coverages) : query-coverage and subject-coverage of this assembly (query) and the type (subject)
+NewSeq : the count of bases best assigned to this type assembly
+CntmSeq : the portion of NewSeq allocated for purposes of evaluating contamination
+Flg : Type flags; currently: C = contaminant; E = effectively published; T = trusted species
+Assembly : Release-id of the type-assembly (this value matches the accession and assembly-name on the right column)
+Organism : Organism of this type-assembly
+(assembly_accession, assembly_name) : of this type-assembly
+
+ANI     (Coverages)   NewSeq   CntmSeq  Assembly  Flg Organism  (assembly_accession, assembly_name)
+------- ------------- -------- -------- --------- --- --------------------------------------------------------------------
+ 97.707 ( 94.6  28.5)   353135   353135   2198388     Spiroplasma turonicum (GCA_001262715.1, ASM126271v1)
+ 97.705 ( 94.6  28.5)     5962     5962   2787138     Spiroplasma turonicum (GCA_001513715.1, ASM151371v1)
+ 81.252 ( 21.6   6.8)        0        0   4894438     Spiroplasma corruscae (GCA_002237575.1, ASM223757v1)
+ 80.993 ( 30.6   9.5)        0        0   2209468     Spiroplasma litorale (GCA_001267155.1, ASM126715v1)
+ 80.665 ( 10.4   4.2)        0        0    746618     Spiroplasma diminutum CUAS-1 (GCA_000439455.1, ASM43945v1)
+ 84.763 (  3.5   1.2)        0        0    746598     Spiroplasma taiwanense CT-1 (GCA_000439435.1, ASM43943v1)
+ 83.593 (  4.2   1.2)        0        0   5715548     Spiroplasma floricola 23-6 (GCA_002813555.1, ASM281355v1)

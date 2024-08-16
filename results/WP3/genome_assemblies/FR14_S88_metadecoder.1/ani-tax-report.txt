@@ -1,0 +1,59 @@
+ANI report for assembly: FR14_S88_metadecoder.1.fa
+Submitted organism: Aeromonas dhakensis (taxid = 196024, rank = species, lineage = Bacteria; Pseudomonadota; Gammaproteobacteria; Aeromonadales; Aeromonadaceae; Aeromonas)
+Best match: Aeromonas dhakensis (taxid = 196024, rank = species, lineage = Bacteria; Pseudomonadota; Gammaproteobacteria; Aeromonadales; Aeromonadaceae; Aeromonas)
+Submitted organism has type: Yes
+Status: CONFIRMED
+Confidence: LOW
+
+Table legend:
+ANI : ANI value between this assembly and the type listed in this row
+(Coverages) : query-coverage and subject-coverage of this assembly (query) and the type (subject)
+NewSeq : the count of bases best assigned to this type assembly
+CntmSeq : the portion of NewSeq allocated for purposes of evaluating contamination
+Flg : Type flags; currently: C = contaminant; E = effectively published; T = trusted species
+Assembly : Release-id of the type-assembly (this value matches the accession and assembly-name on the right column)
+Organism : Organism of this type-assembly
+(assembly_accession, assembly_name) : of this type-assembly
+
+ANI     (Coverages)   NewSeq   CntmSeq  Assembly  Flg Organism  (assembly_accession, assembly_name)
+------- ------------- -------- -------- --------- --- --------------------------------------------------------------------
+ 97.521 ( 94.6  56.0)  2160890  2160890   1478908     Aeromonas dhakensis (GCA_000819705.1, PRJEB7020)
+ 97.453 ( 94.0  55.2)   486548   486548   1479528     Aeromonas dhakensis (GCA_000820305.1, PRJEB7048)
+ 93.236 ( 90.4  52.8)    11915    11915     15608     Aeromonas hydrophila subsp. hydrophila ATCC 7966 (GCA_000014805.1, ASM1480v1)
+ 93.146 ( 89.2  52.7)     4901     4901   1479548     Aeromonas hydrophila subsp. ranae (GCA_000820325.1, PRJEB7049)
+ 93.217 ( 88.6  51.8)      634      634  43514998     Aeromonas hydrophila (GCA_030286065.1, ASM3028606v1)
+ 93.235 ( 90.1  53.4)        0        0   4129138     Aeromonas hydrophila (GCA_001999685.1, ASM199968v1)
+ 93.236 ( 90.4  52.7)        0        0   7044238     Aeromonas hydrophila (GCA_900445175.1, 49243_E02)
+ 93.238 ( 90.4  53.5)        0        0  26720858     Aeromonas hydrophila (GCA_018360025.1, ASM1836002v1)
+ 88.510 ( 85.3  50.4)     1358     1358   1478948     Aeromonas bestiarum (GCA_000819745.1, PRJEB7022)
+ 88.180 ( 83.2  44.7)     4708     4708   1479228     Aeromonas piscicola (GCA_000820005.1, PRJEB7033)
+ 87.944 ( 70.1  45.9)      242      242   1104558     Aeromonas taiwanensis (GCA_000699185.1, ASM69918v1)
+ 87.968 ( 70.4  45.8)        0        0   1479388     Aeromonas taiwanensis (GCA_000820165.1, PRJEB7041)
+ 87.790 ( 71.5  44.3)     8286     8286   1478988     Aeromonas caviae (GCA_000819785.1, PRJEB7024)
+ 87.898 ( 71.1  47.0)      273      273   1479308     Aeromonas sanarellii (GCA_000820085.1, PRJEB7037)
+ 87.816 ( 70.3  42.6)      103      103   2108918     Aeromonas caviae (GCA_000820265.2, PRJEB7046)
+ 87.731 ( 72.0  43.5)        0        0   6716568     Aeromonas caviae (GCA_900476005.1, 51438_H01)
+ 87.728 ( 72.0  44.5)        0        0  26720838     Aeromonas caviae (GCA_018360005.1, ASM1836000v1)
+ 87.608 ( 74.1  43.2)        0        0   1479248     Aeromonas popoffii (GCA_000820025.1, PRJEB7034)
+ 87.352 ( 68.3  43.6)     4958     4958   1479428     Aeromonas enteropelogenes (GCA_000820205.1, PRJEB7043)
+ 87.396 ( 68.3  42.4)      866      866   1479048     Aeromonas enteropelogenes (GCA_000819845.1, PRJEB7028)
+ 87.337 ( 68.4  43.1)        0        0  28992338     Aeromonas enteropelogenes (GCA_020097295.1, ASM2009729v1)
+ 87.368 ( 68.6  41.8)        0        0  28992358     Aeromonas enteropelogenes (GCA_020097315.1, ASM2009731v1)
+ 87.143 ( 76.2  44.5)     5415     5415   1479288     Aeromonas salmonicida subsp. salmonicida (GCA_000820065.1, PRJEB7036)
+ 87.203 ( 70.9  44.0)     2252     2252   1479208     Aeromonas media (GCA_000819985.1, PRJEB7032)
+ 87.242 ( 68.1  42.1)      387      387   1479168     Aeromonas jandaei (GCA_000819955.1, PRJEB7031)
+ 87.181 ( 75.1  46.2)      139      139   1023958     Aeromonas salmonicida subsp. masoucida NBRC 13784 (GCA_000647955.1, ASM64795v1)
+ 87.133 ( 77.2  44.8)        0        0   1737078     Aeromonas salmonicida subsp. pectinolytica 34mel (GCA_000447435.2, ASM44743v2)
+ 87.128 ( 76.2  44.6)        0        0   3235728     Aeromonas salmonicida subsp. salmonicida (GCA_001643305.1, ASM164330v1)
+ 87.135 ( 77.2  42.7)        0        0   5589198     Aeromonas salmonicida subsp. pectinolytica 34mel (GCA_002735225.1, ASM273522v1)
+ 87.188 ( 68.7  41.8)        0        0  24000728     Aeromonas jandaei (GCA_016127195.1, ASM1612719v1)
+ 87.167 ( 71.3  44.2)        0        0  26720818     Aeromonas media (GCA_018359985.1, ASM1835998v1)
+ 87.188 ( 68.7  41.9)        0        0  29355508     Aeromonas jandaei (GCA_020341535.1, ASM2034153v1)
+ 87.180 ( 68.7  41.8)        0        0  55834218     Aeromonas jandaei (GCA_037890695.1, ASM3789069v1)
+ 86.913 ( 67.8  42.4)     5301     5301   1479508     Aeromonas veronii (GCA_000820285.1, PRJEB7047)
+ 86.985 ( 71.1  43.3)      530      530   8123258     Aeromonas encheleia (GCA_900637545.1, 51438_G01)
+ 86.995 ( 70.9  44.0)        0        0   1479028     Aeromonas encheleia (GCA_000819825.1, PRJEB7027)
+ 86.884 ( 68.7  42.2)     9174     9174   1479448     Aeromonas veronii bv. veronii (GCA_000820225.1, PRJEB7044)
+ 86.861 ( 68.3  43.0)     4817     4817   1479588     Aeromonas veronii (GCA_000820365.1, PRJEB7050)
+ 86.888 ( 68.7  42.2)        0        0   3844638     Aeromonas veronii bv. veronii (GCA_001908535.1, ASM190853v1)
+ 86.886 ( 68.7  42.2)        0        0  26720738     Aeromonas veronii bv. veronii (GCA_018359905.1, ASM1835990v1)

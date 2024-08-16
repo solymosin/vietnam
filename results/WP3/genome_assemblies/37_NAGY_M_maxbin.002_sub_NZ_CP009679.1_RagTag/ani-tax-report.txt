@@ -1,0 +1,59 @@
+ANI report for assembly: 37_NAGY_M_maxbin.002_sub_NZ_CP009679.1_RagTag.fa
+Submitted organism: Bacillus velezensis (taxid = 492670, rank = species, lineage = Bacteria; Bacillota; Bacilli; Bacillales; Bacillaceae; Bacillus; Bacillus amyloliquefaciens group)
+Best match: Bacillus velezensis (taxid = 492670, rank = species, lineage = Bacteria; Bacillota; Bacilli; Bacillales; Bacillaceae; Bacillus; Bacillus amyloliquefaciens group)
+Submitted organism has type: Yes
+Status: CONFIRMED
+Confidence: HIGH
+
+Table legend:
+ANI : ANI value between this assembly and the type listed in this row
+(Coverages) : query-coverage and subject-coverage of this assembly (query) and the type (subject)
+NewSeq : the count of bases best assigned to this type assembly
+CntmSeq : the portion of NewSeq allocated for purposes of evaluating contamination
+Flg : Type flags; currently: C = contaminant; E = effectively published; T = trusted species
+Assembly : Release-id of the type-assembly (this value matches the accession and assembly-name on the right column)
+Organism : Organism of this type-assembly
+(assembly_accession, assembly_name) : of this type-assembly
+
+ANI     (Coverages)   NewSeq   CntmSeq  Assembly  Flg Organism  (assembly_accession, assembly_name)
+------- ------------- -------- -------- --------- --- --------------------------------------------------------------------
+ 99.976 ( 98.9  98.2)  3855780  3855780   2714108     Bacillus velezensis (GCA_001461835.1, ASM146183v1)
+ 98.787 ( 93.7  93.3)     1030     1030  14013358     Bacillus velezensis FZB42 (GCA_000015785.2, ASM1578v2)
+ 98.330 ( 94.6  91.3)     3641     3641   2239618     Bacillus velezensis (GCA_001267695.1, ASM126769v1)
+ 98.329 ( 94.6  91.4)      188      188   2714068     Bacillus velezensis (GCA_001461825.1, ASM146182v1)
+ 98.207 ( 93.8  93.1)      866      866   4429078     Bacillus velezensis (GCA_002117165.1, ASM211716v1)
+ 98.210 ( 93.7  94.0)        0        0   2683398     Bacillus velezensis (GCA_000960265.2, ASM96026v2)
+ 98.215 ( 93.7  94.0)        0        0   3630468     Bacillus velezensis (GCA_900100225.1, IMG-taxon 2654588201 annotated assembly)
+ 98.207 ( 93.8  93.1)        0        0   7201998     Bacillus velezensis (GCA_003431885.1, ASM343188v1)
+ 94.183 ( 87.8  92.2)      110      110   1714668     Bacillus siamensis (GCA_000966575.1, ASM96657v1)
+ 94.213 ( 88.7  91.5)        0        0    378598     Bacillus siamensis KCTC 13613 (GCA_000262045.1, KCTC_13613_01)
+ 94.001 ( 87.0  85.2)      106      106    257558     Bacillus amyloliquefaciens DSM 7 = ATCC 23350 (GCA_000196735.1, ASM19673v1)
+ 86.319 ( 78.0  82.4)        0        0   2939868     Bacillus nakamurai (GCA_001584325.1, ASM158432v1)
+ 80.115 ( 43.0  38.6)     8544     8544   6535928     Bacillus inaquosorum (GCA_003148415.1, ASM314841v1)
+ 79.987 ( 40.6  37.6)     1030     1030   3370188     Bacillus subtilis subsp. subtilis (GCA_001697265.1, ASM169726v1)
+ 80.031 ( 40.3  37.2)      551      551  24347478     Bacillus subtilis subsp. subtilis str. 168 (GCA_012931705.2, ASM1293170v2)
+ 79.995 ( 40.5  37.5)        0        0      9848     Bacillus subtilis subsp. subtilis str. 168 (GCA_000009045.1, ASM904v1)
+ 79.992 ( 40.5  37.5)        0        0    181578     Bacillus subtilis subsp. subtilis str. 168 (GCA_000155325.1, ASM15532v1)
+ 79.993 ( 40.5  36.8)        0        0    239888     Bacillus subtilis subsp. subtilis NCIB 3610 = ATCC 6051 = DSM 10 (GCA_000186085.1, ASM18608v1)
+ 79.987 ( 40.6  37.6)        0        0    555328     Bacillus subtilis subsp. subtilis 6051-HGW (GCA_000344745.1, ASM34474v1)
+ 79.946 ( 40.4  39.6)        0        0    875308     Bacillus tequilensis KCTC 13622 (GCA_000507145.1, KCTC_13622_01)
+ 79.992 ( 40.4  37.7)        0        0   1086988     Bacillus subtilis subsp. subtilis str. 168 (GCA_000696635.1, ASM69663v1)
+ 79.995 ( 40.5  37.5)        0        0   1401338     Bacillus subtilis subsp. subtilis str. 168 (GCA_000789275.1, ASM78927v1)
+ 79.992 ( 40.5  37.4)        0        0   4164268     Bacillus subtilis subsp. subtilis str. 168 (GCA_002009095.1, ASM200909v1)
+ 79.992 ( 40.5  37.4)        0        0   4164308     Bacillus subtilis subsp. subtilis str. 168 (GCA_002009135.1, ASM200913v1)
+ 79.988 ( 40.6  36.8)        0        0   4268168     Bacillus subtilis (GCA_002055965.1, ASM205596v1)
+ 79.949 ( 40.6  36.5)        0        0   6755668     Bacillus subtilis (GCA_900445475.1, 27294_A01)
+ 79.986 ( 40.6  36.9)        0        0  10954178     Bacillus subtilis subsp. subtilis NCIB 3610 = ATCC 6051 = DSM 10 (GCA_006088795.1, ASM608879v1)
+ 79.986 ( 40.6  36.9)        0        0  11804788     Bacillus subtilis subsp. subtilis (GCA_006741845.1, ASM674184v1)
+ 80.031 ( 40.3  36.4)        0        0  19479768     Bacillus subtilis subsp. subtilis str. 168 (GCA_013009385.1, ASM1300938v1)
+ 79.969 ( 40.6  38.0)        0        0  24783028     Bacillus subtilis subsp. subtilis (GCA_014389245.2, ASM1438924v2)
+ 79.995 ( 40.5  37.4)        0        0  35511828     Bacillus subtilis subsp. subtilis str. 168 (GCA_024917115.1, ASM2491711v1)
+ 79.982 ( 40.6  36.9)        0        0  41261438     Bacillus subtilis (GCA_029027845.1, ASM2902784v1)
+ 79.986 ( 40.6  36.8)        0        0  41877278     Bacillus subtilis (GCA_029537415.1, ASM2953741v1)
+ 79.980 ( 40.6  37.1)        0        0  47175778     Bacillus subtilis subsp. subtilis NCIB 3610 = ATCC 6051 = DSM 10 (GCA_031316525.1, ASM3131652v1)
+ 79.965 ( 40.0  38.9)        0        0  47176778     Bacillus tequilensis (GCA_031317525.1, ASM3131752v1)
+ 79.989 ( 40.5  37.4)        0        0  48918738     Bacillus subtilis subsp. subtilis str. 168 (GCA_032681245.1, ASM3268124v1)
+ 79.989 ( 40.5  37.4)        0        0  55312188     Bacillus subtilis subsp. subtilis str. 168 (GCA_037414465.1, ASM3741446v1)
+ 79.995 ( 40.5  37.5)        0        0  55411128     Bacillus subtilis subsp. subtilis str. 168 (GCA_964017255.1, ASM904v2)
+ 79.995 ( 40.5  37.5)        0        0  55732008     Bacillus subtilis subsp. subtilis str. 168 (GCA_964019285.1, ASM904v3)
+ 79.986 ( 40.6  36.9)        0        0  55868598     Bacillus subtilis (GCA_037914925.1, ASM3791492v1)

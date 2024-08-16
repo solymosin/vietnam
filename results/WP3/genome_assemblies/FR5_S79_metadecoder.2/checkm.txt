@@ -1,0 +1,2 @@
+Bin Id	Marker lineage	# genomes	# markers	# marker sets	0	1	2	3	4	5+	Completeness	Contamination	Strain heterogeneity
+annotation	Serratia marcescens (6)	2	1727	324	21	1687	16	3	0	0	97.10	3.07	0.00

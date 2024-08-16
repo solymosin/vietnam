@@ -1,0 +1,2 @@
+Bin Id	Marker lineage	# genomes	# markers	# marker sets	0	1	2	3	4	5+	Completeness	Contamination	Strain heterogeneity
+annotation	Stenotrophomonas (5)	10	1276	380	22	1252	2	0	0	0	97.59	0.30	0.00

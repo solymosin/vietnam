@@ -1,0 +1,2 @@
+Bin Id	Marker lineage	# genomes	# markers	# marker sets	0	1	2	3	4	5+	Completeness	Contamination	Strain heterogeneity
+annotation	Bacillus (5)	122	491	170	24	466	1	0	0	0	98.56	0.20	0.00

@@ -1,0 +1,59 @@
+ANI report for assembly: FR9_S83_metadecoder.2.fa
+Submitted organism: Stenotrophomonas sepilia (taxid = 2860290, rank = species, lineage = Bacteria; Pseudomonadota; Gammaproteobacteria; Lysobacterales; Lysobacteraceae; Stenotrophomonas; Stenotrophomonas maltophilia group)
+Best match: Stenotrophomonas sepilia (taxid = 2860290, rank = species, lineage = Bacteria; Pseudomonadota; Gammaproteobacteria; Lysobacterales; Lysobacteraceae; Stenotrophomonas; Stenotrophomonas maltophilia group)
+Submitted organism has type: Yes
+Status: CONFIRMED
+Confidence: HIGH
+
+Table legend:
+ANI : ANI value between this assembly and the type listed in this row
+(Coverages) : query-coverage and subject-coverage of this assembly (query) and the type (subject)
+NewSeq : the count of bases best assigned to this type assembly
+CntmSeq : the portion of NewSeq allocated for purposes of evaluating contamination
+Flg : Type flags; currently: C = contaminant; E = effectively published; T = trusted species
+Assembly : Release-id of the type-assembly (this value matches the accession and assembly-name on the right column)
+Organism : Organism of this type-assembly
+(assembly_accession, assembly_name) : of this type-assembly
+
+ANI     (Coverages)   NewSeq   CntmSeq  Assembly  Flg Organism  (assembly_accession, assembly_name)
+------- ------------- -------- -------- --------- --- --------------------------------------------------------------------
+ 96.768 ( 87.7  84.9)  3845026  3845026   6677308     Stenotrophomonas sepilia (GCA_003244875.1, ASM324487v1)
+ 92.959 ( 87.4  81.8)    93084    93084  35149428     Stenotrophomonas muris (GCA_024621935.1, ASM2462193v1)
+ 92.349 ( 86.6  86.9)    54352    54352   3636408     Stenotrophomonas pavanii (GCA_900101175.1, IMG-taxon 2623620583 annotated assembly)
+ 92.365 ( 84.8  87.2)    15304    15304   2572628     Stenotrophomonas pavanii (GCA_001431565.1, ASM143156v1)
+ 92.235 ( 84.9  85.1)    24768    24768    607478     [Pseudomonas] hibiscicola ATCC 19867 (GCA_000382065.1, ASM38206v1)
+ 91.618 ( 84.1  77.5)    29928    29928   2572688     Stenotrophomonas geniculata ATCC 19374 = JCM 13324 (GCA_001431625.1, ASM143162v1)
+ 91.505 ( 84.5  76.7)    19821    19821    972148     Stenotrophomonas maltophilia MTCC 434 (GCA_000597745.1, XMT-16JAN14)
+ 91.491 ( 86.1  77.1)    31681    31681   4125518     Stenotrophomonas maltophilia (GCA_001997185.1, ASM199718v1)
+ 91.450 ( 82.6  73.2)    22126    22126  36690768     Stenotrophomonas riyadhensis (GCA_025697965.1, ASM2569796v1)
+ 91.476 ( 84.7  82.1)    18957    18957  19474788     Stenotrophomonas maltophilia (GCA_013004645.1, ASM1300464v1)
+ 91.423 ( 86.4  76.6)     3107     3107  55062848     Stenotrophomonas maltophilia (GCA_037213995.1, ASM3721399v1)
+ 91.452 ( 86.5  77.3)     2146     2146  36570538     Stenotrophomonas maltophilia (GCA_025617355.1, ASM2561735v1)
+ 91.488 ( 83.1  81.7)     1983     1983   2572748     Stenotrophomonas maltophilia (GCA_001431675.1, ASM143167v1)
+ 91.485 ( 86.2  77.4)     1744     1744   3050988     Stenotrophomonas maltophilia NBRC 14161 (GCA_001591205.1, ASM159120v1)
+ 91.460 ( 86.5  76.7)     1027     1027   4960768     Stenotrophomonas maltophilia (GCA_900186865.1, 49243_F02)
+ 90.917 ( 82.8  81.9)    18199    18199   2572728     Stenotrophomonas maltophilia (GCA_001431665.1, ASM143166v1)
+ 88.071 ( 70.5  74.1)     5490     5490  14084168     Stenotrophomonas cyclobalanopsidis (GCA_008710035.1, ASM871003v1)
+ 87.306 ( 78.5  71.5)    10564    10564   5696748     Stenotrophomonas lactitubi (GCA_002803515.1, ASM280351v1)
+ 87.372 ( 79.0  76.8)     3943     3943   5615518     Stenotrophomonas indicatrix (GCA_002750975.1, ASM275097v1)
+ 84.042 ( 48.2  53.9)        0        0   2572608     Stenotrophomonas chelatiphaga (GCA_001431535.1, ASM143153v1)
+ 83.777 ( 47.2  48.3)     2045     2045  21488518     Stenotrophomonas tumulicola (GCA_014117215.1, ASM1411721v1)
+ 83.780 ( 48.6  54.1)        0        0  22135458     Stenotrophomonas lacuserhaii (GCA_014596295.1, ASM1459629v1)
+ 83.718 ( 49.0  55.3)        0        0  22430128     Stenotrophomonas pennii (GCA_014836545.1, ASM1483654v1)
+ 83.516 ( 49.6  50.8)      126      126  47835218     Stenotrophomonas aracearum (GCA_031834615.1, ASM3183461v1)
+ 83.552 ( 53.7  51.2)        0        0   1038448     Stenotrophomonas rhizophila (GCA_000661955.1, ASM66195v1)
+ 83.641 ( 49.2  49.4)        0        0  19751008     Stenotrophomonas bentonitica (GCA_013185915.1, ASM1318591v1)
+ 83.445 ( 45.8  43.4)        0        0  47835198     Stenotrophomonas oahuensis (GCA_031834595.1, ASM3183459v1)
+ 83.141 ( 35.2  39.2)        0        0   2572468     Stenotrophomonas nitritireducens (GCA_001431425.1, ASM143142v1)
+ 83.134 ( 33.3  45.0)        0        0   2572558     Stenotrophomonas daejeonensis (GCA_001431505.1, ASM143150v1)
+ 83.295 ( 49.6  50.0)        0        0  14953478     Stenotrophomonas nematodicola (GCA_009467805.1, ASM946780v1)
+ 83.213 ( 40.3  45.9)        0        0  46390238     Xanthomonas chitinilytica (GCA_026107455.2, ASM2610745v2)
+ 82.949 ( 36.6  41.7)      470      470  34622998     Stenotrophomonas acidaminiphila (GCA_024221815.1, ASM2422181v1)
+ 83.021 ( 35.5  39.9)        0        0   2572658     Stenotrophomonas acidaminiphila (GCA_001431595.1, ASM143159v1)
+ 82.619 ( 31.6  41.4)        0        0  33548008     Stenotrophomonas mori (GCA_023556335.1, ASM2355633v1)
+ 82.367 ( 32.9  29.6)        0        0   6054008     Xanthomonas sacchari (GCA_002940085.1, ASM294008v1)
+ 82.376 ( 33.1  29.1)        0        0  47055898     Xanthomonas sontii (GCA_008119715.3, ASM811971v3)
+ 82.361 ( 32.9  29.4)        0        0  48937408     Xanthomonas sacchari (GCA_032699665.1, ASM3269966v1)
+ 82.151 ( 34.0  28.0)        0        0  22429918     Xanthomonas surreyensis (GCA_014836395.1, ASM1483639v1)
+ 82.142 ( 34.0  28.0)        0        0  25323658     Xanthomonas bonasiae (GCA_017163705.1, ASM1716370v1)
+ 81.966 ( 33.7  38.1)        0        0   2572708     Stenotrophomonas panacihumi (GCA_001431645.1, ASM143164v1)

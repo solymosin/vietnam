@@ -1,0 +1,59 @@
+ANI report for assembly: 37_NAGY_M_metadecoder.1.fa
+Submitted organism: Bacillus tropicus (taxid = 2026188, rank = species, lineage = Bacteria; Bacillota; Bacilli; Bacillales; Bacillaceae; Bacillus; Bacillus cereus group)
+Best match: Bacillus tropicus (taxid = 2026188, rank = species, lineage = Bacteria; Bacillota; Bacilli; Bacillales; Bacillaceae; Bacillus; Bacillus cereus group)
+Submitted organism has type: Yes
+Status: CONFIRMED
+Confidence: LOW
+
+Table legend:
+ANI : ANI value between this assembly and the type listed in this row
+(Coverages) : query-coverage and subject-coverage of this assembly (query) and the type (subject)
+NewSeq : the count of bases best assigned to this type assembly
+CntmSeq : the portion of NewSeq allocated for purposes of evaluating contamination
+Flg : Type flags; currently: C = contaminant; E = effectively published; T = trusted species
+Assembly : Release-id of the type-assembly (this value matches the accession and assembly-name on the right column)
+Organism : Organism of this type-assembly
+(assembly_accession, assembly_name) : of this type-assembly
+
+ANI     (Coverages)   NewSeq   CntmSeq  Assembly  Flg Organism  (assembly_accession, assembly_name)
+------- ------------- -------- -------- --------- --- --------------------------------------------------------------------
+ 96.641 ( 61.9  16.8)   762390   762390   3737568     Bacillus tropicus (GCA_001884035.1, ASM188403v1)
+ 95.401 ( 60.0  15.4)    51838    51838    203198     Bacillus anthracis str. Vollum (GCA_000167275.1, ASM16727v1)
+ 95.441 ( 59.0  15.4)        0        0    229838     Bacillus anthracis str. A0488 (GCA_000181835.1, ASM18183v1)
+ 95.378 ( 60.3  15.5)        0        0   1191088     Bacillus anthracis str. Vollum (GCA_000742895.1, ASM74289v1)
+ 95.372 ( 60.3  15.5)        0        0  31807478     Bacillus anthracis (GCA_022221345.1, ASM2222134v1)
+ 94.754 ( 60.6  15.5)   116451   116451   3737518     Bacillus paranthracis (GCA_001883995.1, ASM188399v1)
+ 94.758 ( 60.2  15.4)    25414    25414  43389308     Bacillus shihchuchen (GCA_030272635.1, ASM3027263v1)
+ 93.890 ( 59.6  15.5)    12812    12812   3737548     Bacillus pacificus (GCA_001884025.1, ASM188402v1)
+ 93.334 ( 62.3  15.8)    10927    10927  11528168     Bacillus dicomae (GCA_006494425.1, ASM649442v1)
+ 93.199 ( 60.7  15.6)    39497    39497  26667658     Bacillus sanguinis (GCA_018332475.1, ASM1833247v1)
+ 92.858 ( 56.2  14.1)    11428    11428   5606588     Bacillus fungorum (GCA_002746455.1, ASM274645v1)
+ 92.658 ( 59.8  14.5)    24461    24461   3737698     Bacillus albus (GCA_001884185.1, ASM188418v1)
+ 92.610 ( 60.3  15.8)    16673    16673  37053028     Bacillus pretiosus (GCA_025916425.1, ASM2591642v1)
+ 92.532 ( 58.9  15.6)     5824     5824   2937398     Bacillus wiedmannii (GCA_001583695.1, ASM158369v1)
+ 92.556 ( 58.5  14.1)     1836     1836  26667678     Bacillus paramobilis (GCA_018332495.1, ASM1833249v1)
+ 92.259 ( 58.8  14.7)     4739     4739   3737588     Bacillus mobilis (GCA_001884045.1, ASM188404v1)
+ 91.337 ( 59.0  15.4)    38637    38637      8628     Bacillus cereus ATCC 14579 (GCA_000007825.1, ASM782v1)
+ 91.410 ( 59.0  15.5)        0        0   4170808     Bacillus cereus (GCA_002014665.1, ASM201466v1)
+ 91.370 ( 58.6  15.3)        0        0   6755708     Bacillus cereus (GCA_900445355.1, 43024_D01)
+ 91.386 ( 59.1  15.4)        0        0  10959688     Bacillus cereus ATCC 14579 (GCA_006094295.1, ASM609429v1)
+ 91.398 ( 59.0  15.5)        0        0  42845298     Bacillus cereus ATCC 14579 (GCA_918184965.1, DSM 31)
+ 91.106 ( 55.9  15.5)     7315     7315   3737618     Bacillus luti (GCA_001884105.1, ASM188410v1)
+ 91.135 ( 60.9  13.6)     2603     2603   4455558     Bacillus thuringiensis (GCA_002119445.1, ASM211944v1)
+ 91.084 ( 61.0  13.8)    11262    11262    193978     Bacillus thuringiensis serovar berliner ATCC 10792 (GCA_000161615.1, ASM16161v1)
+ 91.043 ( 61.1  13.4)        0        0   4909218     Bacillus thuringiensis (GCA_002243685.1, ASM224368v1)
+ 90.401 ( 54.3  15.3)     9977     9977    856218     Bacillus toyonensis BCT-7112 (GCA_000496285.1, ASM49628v1)
+ 90.385 ( 56.5  13.5)      556      556  54508478     Bacillus toyonensis (GCA_037026485.1, ASM3702648v1)
+ 89.967 ( 55.2  14.2)        0        0   3737658     Bacillus nitratireducens (GCA_001884135.1, ASM188413v1)
+ 89.903 ( 55.5  13.2)        0        0  53364898     Bacillus nitratireducens (GCA_036320425.1, ASM3632042v1)
+ 89.813 ( 55.2  13.3)     2095     2095   3737598     Bacillus proteolyticus (GCA_001884065.1, ASM188406v1)
+ 89.422 ( 49.5  13.3)        0        0  26667698     Bacillus hominis (GCA_018332515.1, ASM1833251v1)
+ 89.147 ( 53.2  13.6)     9508     9508    279058     Bacillus mycoides DSM 2048 (GCA_000003925.1, ASM392v1)
+ 89.114 ( 53.3  13.4)     2679     2679   1513738     Bacillus mycoides (GCA_000832605.1, ASM83260v1)
+ 89.291 ( 54.9  13.9)      937      937    885748     Bacillus mycoides NBRC 101238 = DSM 11821 (GCA_000513155.1, ASM51315v1)
+ 89.159 ( 53.0  13.1)      709      709  47175888     Bacillus mycoides (GCA_031316615.1, ASM3131661v1)
+ 89.112 ( 54.9  14.1)      253      253  32349668     Bacillus mycoides (GCA_022630575.1, ASM2263057v1)
+ 89.258 ( 55.0  13.9)        0        0   1375448     Bacillus mycoides (GCA_000775975.1, ASM77597v1)
+ 89.122 ( 53.3  13.4)        0        0  41258478     Bacillus mycoides (GCA_029024805.1, ASM2902480v1)
+ 89.274 ( 55.0  13.9)        0        0  42845278     Bacillus mycoides NBRC 101238 = DSM 11821 (GCA_918180265.1, DSM 11821)
+ 88.673 ( 49.7  12.9)      395      395   3737778     Bacillus paramycoides (GCA_001884235.1, ASM188423v1)
